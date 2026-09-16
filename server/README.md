@@ -65,7 +65,7 @@ assume the identity. Nothing to rotate, and nothing to leak in a public repo.
 | Service account | `gh-deploy@retroxr-rendezvous.iam.gserviceaccount.com` |
 | Roles | `compute.osAdminLogin`, `iap.tunnelResourceAccessor`, `compute.viewer` |
 | WIF provider | `projects/557677039441/locations/global/workloadIdentityPools/github/providers/retroxr-site` |
-| Pinned to | `XenuIsWatching/retroxr-site` |
+| Pinned to | `RetroXR/retroxr-site` |
 
 **SSH is over IAP, and port 22 is shut.** `default-allow-ssh` and
 `default-allow-rdp` - both `0.0.0.0/0`, both created by the default network -

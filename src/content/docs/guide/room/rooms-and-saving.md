@@ -32,7 +32,7 @@ that everything must be free of trademarked text and images, and licensed so the
 can ship it.
 
 Say hello on [Discord](https://discord.gg/mdjdBDTdW) or open an issue on
-[GitHub](https://github.com/XenuIsWatching/RetroXR/issues).
+[GitHub](https://github.com/RetroXR/RetroXR/issues).
 :::
 
 ## Saving a layout

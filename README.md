@@ -1,6 +1,6 @@
 # retroxr.app
 
-The player-facing website for [RetroXR](https://github.com/XenuIsWatching/RetroXR) — what
+The player-facing website for [RetroXR](https://github.com/RetroXR/RetroXR) — what
 it is, how to get it, and how to play it.
 
 Built with [Astro Starlight](https://starlight.astro.build/) plus
@@ -72,4 +72,4 @@ Two things about the domain, both of which will waste an afternoon if missed:
 ## License
 
 Site content and code © Ryan McClelland. RetroXR itself is GPL-3.0 with a linking
-exception — see [the game repository](https://github.com/XenuIsWatching/RetroXR).
+exception — see [the game repository](https://github.com/RetroXR/RetroXR).

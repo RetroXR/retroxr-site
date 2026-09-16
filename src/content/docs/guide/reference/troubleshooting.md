@@ -65,4 +65,4 @@ tested. Treat problems there as expected rather than as something you have misco
 ## Still stuck
 
 Ask in [Discord](https://discord.gg/mdjdBDTdW), or open an issue on
-[GitHub](https://github.com/XenuIsWatching/RetroXR/issues).
+[GitHub](https://github.com/RetroXR/RetroXR/issues).

@@ -4,7 +4,7 @@ import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 
 const SITE = 'https://retroxr.app';
-const GAME_REPO = 'https://github.com/XenuIsWatching/RetroXR';
+const GAME_REPO = 'https://github.com/RetroXR/RetroXR';
 
 export default defineConfig({
 	// A custom domain serves from the root, so there is no `base` here. Setting one
@@ -38,7 +38,7 @@ export default defineConfig({
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/mdjdBDTdW' },
 			],
 			editLink: {
-				baseUrl: 'https://github.com/XenuIsWatching/retroxr-site/edit/main/',
+				baseUrl: 'https://github.com/RetroXR/retroxr-site/edit/main/',
 			},
 			lastUpdated: true,
 			head: [
