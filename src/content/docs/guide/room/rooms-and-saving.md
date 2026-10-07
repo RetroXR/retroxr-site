@@ -31,7 +31,7 @@ win than any single console shell, and there is no existing art to match. The on
 that everything must be free of trademarked text and images, and licensed so the project
 can ship it.
 
-Say hello on [Discord](https://discord.gg/mdjdBDTdW) or open an issue on
+Say hello on [Discord](https://discord.gg/pgUkRhafca) or open an issue on
 [GitHub](https://github.com/RetroXR/RetroXR/issues).
 :::
 

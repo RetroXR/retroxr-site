@@ -35,7 +35,7 @@ export default defineConfig({
 			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: GAME_REPO },
-				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/mdjdBDTdW' },
+				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/pgUkRhafca' },
 			],
 			editLink: {
 				baseUrl: 'https://github.com/RetroXR/retroxr-site/edit/main/',
