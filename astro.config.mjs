@@ -46,6 +46,17 @@ export default defineConfig({
 				{ tag: 'meta', attrs: { name: 'twitter:image', content: `${SITE}/og.jpg` } },
 				{ tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
 				{ tag: 'meta', attrs: { name: 'theme-color', content: '#0b0f1c' } },
+				// Cloudflare Web Analytics. Installed by hand because the domain is
+				// DNS-only on Cloudflare: GitHub Pages serves the pages, so there is no
+				// proxy to inject the beacon for us.
+				{
+					tag: 'script',
+					attrs: {
+						type: 'module',
+						src: 'https://static.cloudflareinsights.com/beacon.min.js',
+						'data-cf-beacon': '{"token": "b7db32319daa48198d4f8b7dd5005046"}',
+					},
+				},
 			],
 			plugins: [
 				starlightBlog({
