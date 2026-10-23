@@ -4,7 +4,6 @@ import starlight from '@astrojs/starlight';
 import starlightBlog from 'starlight-blog';
 
 const SITE = 'https://retroxr.app';
-const GAME_REPO = 'https://github.com/RetroXR/RetroXR';
 
 export default defineConfig({
 	// A custom domain serves from the root, so there is no `base` here. Setting one
@@ -33,10 +32,9 @@ export default defineConfig({
 				// extended rather than replaced.
 				SocialIcons: './src/components/SocialIcons.astro',
 			},
-			// GitHub last, so the release tag SocialIcons.astro appends sits beside it.
+			// GitHub is drawn by SocialIcons.astro, beside the latest release tag.
 			social: [
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/pgUkRhafca' },
-				{ icon: 'github', label: 'GitHub', href: GAME_REPO },
 			],
 			editLink: {
 				baseUrl: 'https://github.com/RetroXR/retroxr-site/edit/main/',

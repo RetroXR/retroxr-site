@@ -1,13 +1,23 @@
 ---
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import { Icon } from '@astrojs/starlight/components';
 import { latestRelease } from '../lib/release';
 
+const GAME_REPO = 'https://github.com/RetroXR/RetroXR';
 const KOFI_URL = 'https://ko-fi.com/ryanmcclelland';
 // Read at build time, so no script ships; see src/lib/release.ts.
 const release = await latestRelease;
 ---
 
 <Default><slot /></Default>
+
+{/* GitHub is drawn here rather than listed in the config's `social`: the blog
+    plugin's RSS icon follows the configured links, and would otherwise land
+    between the GitHub mark and the release tag that belongs beside it. */}
+<a href={GAME_REPO} rel="me" class="social sl-flex">
+	<span class="sr-only">GitHub</span>
+	<Icon name="github" size="1em" />
+</a>
 
 {
 	release && (
@@ -36,10 +46,15 @@ const release = await latestRelease;
 <style>
 	/* Matches the padding/margin the built-in social anchors use, so the Ko-fi
 	   cup sits on the same baseline as the GitHub mark beside it. */
-	.kofi {
+	.kofi,
+	.social {
 		color: var(--sl-color-text-accent);
 		padding: 0.5em;
 		margin: -0.5em;
+	}
+	.social:hover,
+	.social:focus-visible {
+		color: var(--sl-color-white);
 	}
 	.kofi:hover,
 	.kofi:focus-visible {
