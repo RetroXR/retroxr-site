@@ -1,6 +1,6 @@
 ---
 title: Plugging things in
-description: A/V leads, RF switches, antennas, VGA and surround speakers — how a machine actually reaches a screen, and your ears, in RetroXR.
+description: A/V leads, RF switches, antennas, VGA and surround speakers. This is how a machine actually reaches a screen, and your ears, in RetroXR.
 sidebar:
   order: 2
 ---
@@ -24,12 +24,12 @@ import seatPoster from '../../../../assets/av/plug_seat_poster.png';
 import rfPoster from '../../../../assets/av/rf_switch_poster.png';
 
 Nothing in RetroXR is wired for you. A console reaches a television because you ran a
-cable between them, and if you run it to the wrong socket you get the wrong result — not
+cable between them, and if you run it to the wrong socket you get the wrong result, not
 an error message.
 
 ## Seating a plug
 
-Grab the plug — not the cable — with **grip**, bring it to a socket, and it snaps in when
+Grab the plug (not the cable) with **grip**, bring it to a socket, and it snaps in when
 it is close enough and roughly lined up.
 
 <Turntable
@@ -42,13 +42,13 @@ it is close enough and roughly lined up.
 A few things that trip people up:
 
 - **Plugs fall.** Let go of one in mid-air and it drops, swinging on its cable. If it
-  lands near a panel of sockets it can seat itself in one of them — which is how a picture
+  lands near a panel of sockets it can seat itself in one of them, which is how a picture
   lead ends up in the wrong input without you touching it.
 - **Sockets are close together.** A TV's input panel has several video sockets within a
   couple of centimeters of each other. Aim deliberately.
 - **Pull a plug out** by grabbing it and moving it away from the socket.
 
-The cables are simulated, not decorative — they hang, swing, and take up slack. Give
+The cables are simulated, not decorative. They hang, swing, and take up slack. Give
 yourself room.
 
 ## The connectors
@@ -68,7 +68,7 @@ the socket it goes into on the right.
 	</Connector>
 	<Connector plug={plugVga} jack={jackVga} title="VGA (DE-15)"
 		plugAlt="A blue DE-15 VGA plug." jackAlt="A DE-15 VGA socket.">
-		For a computer monitor. Carries picture only — audio needs its own lead.
+		For a computer monitor. Carries picture only, so audio needs its own lead.
 	</Connector>
 	<Connector plug={plugTrs} jack={jackTrs} title="3.5 mm (TRS)"
 		plugAlt="A 3.5 millimeter TRS audio plug." jackAlt="A green-ringed 3.5 millimeter socket.">
@@ -91,7 +91,7 @@ There is also an **aspect ratio** button, switching the set between 16:9 and 4:3
 
 ## AV OUT: the machine's panel
 
-The console end is the mirror image — a row of phono sockets on the back, sometimes
+The console end is the mirror image: a row of phono sockets on the back, sometimes
 alongside an RF output.
 
 <Image src={consoleCart} alt="A console stand-in: a gray box with a RESET button, a green START button, four numbered controller ports, and a cartridge seated in the top slot." />
@@ -99,7 +99,7 @@ alongside an RF output.
 <Aside type="note" title="Not every machine has phono out">
 	Older consoles predate composite sockets entirely and reach a television through an RF
 	switch instead. The Wii goes the other way and uses a single **AV Multi Out** connector
-	that fans out to phono — see [the Wii page](/guide/platforms/wii/).
+	that fans out to phono. See [the Wii page](/guide/platforms/wii/).
 </Aside>
 
 ## Composite: the normal way
@@ -111,7 +111,7 @@ plus stereo audio.
 2. Push it into the matching row of phono sockets on the back of the TV.
 3. Set the TV to that input.
 
-Some machines only put out **mono composite** — video plus a single audio channel. It
+Some machines only put out **mono composite**, which is video plus a single audio channel. It
 seats in the same row; there is simply one fewer plug.
 
 ## RF: the antenna way
@@ -132,7 +132,7 @@ console → RF switch → TV antenna socket
 ```
 
 Then tune the television to the channel the switch outputs on. On a channel with nothing
-on it you get **snow**, exactly as you would have in 1988 — that is not a bug, it means
+on it you get **snow**, exactly as you would have in 1988. That is not a bug. It means
 the set is working and the machine is not reaching it.
 
 A console can feed composite and RF at the same time. Both outputs are live; which one you
@@ -141,7 +141,7 @@ see depends on the input the TV is showing.
 ## VGA and monitors
 
 A **CRT computer monitor** takes a DE-15 (VGA) lead and has no phono row at all. If you
-are staring at a monitor wondering where to put a composite plug, that is why — it takes a
+are staring at a monitor wondering where to put a composite plug, that is why. It takes a
 different cable, and machines that can drive it have a VGA output of their own.
 
 ## Audio
@@ -150,38 +150,38 @@ Composite carries its own audio. Where a machine has a separate **3.5 mm** outpu
 that to a speaker pair or to the set, or you will have a picture and silence.
 
 The television's own volume and mute controls act on whatever input it is currently
-showing — so a source you cannot hear may simply not be the selected input.
+showing, so a source you cannot hear may simply not be the selected input.
 
 ## Speakers and surround
 
 The set's own speakers are fine, but the back of the television also has a row of six
-phono **speaker outputs** — **FL**, **FR**, **C**, **SUB**, **SL** and **SR** — and the
+phono **speaker outputs** (**FL**, **FR**, **C**, **SUB**, **SL** and **SR**), and the
 `objects` tab of the spawn menu has the hardware to fill them:
 
-- **Loudspeakers** — one cone each, carried anywhere. A speaker carries whichever channel
+- **Loudspeakers**: one cone each, carried anywhere. A speaker carries whichever channel
   its lead is plugged into on the back of the set, so the same cabinet can be a front, a
-  centre or a rear.
-- A **subwoofer**. Cable it to the **SUB** output specifically — it handles spatial audio
+  center or a rear.
+- A **subwoofer**. Cable it to the **SUB** output specifically, because it handles spatial audio
   differently from the satellites, and a sub on a satellite's output will not sound right.
 - **Speaker stands** at 1 m and 1.2 m, measured to the plate the cabinet stands on.
-- **RCA speaker wire**. Hold the spawn button for a second to pick the jack colour, so the
+- **RCA speaker wire**. Hold the spawn button for a second to pick the jack color, so the
   six leads can be told apart behind the set.
 - A **surround amplifier**, if you would rather the decoding happened in a box of its own.
 
 Then press **Audio output** on the set (or the remote) until it reads **SURROUND**. The
-game's stereo is matrix-decoded to the six outputs — exactly what a Dolby Pro Logic II
+game's stereo is matrix-decoded to the six outputs, exactly what a Dolby Pro Logic II
 receiver did with a surround-encoded game in the living room.
 
 <Aside type="caution" title="Surround needs two things switched on">
 	**Spatial Audio** must be on in `OPTIONS`; without it every machine plays plain stereo,
 	and the set says **SURROUND NEEDS SPATIAL AUDIO**. And the game has to be producing a
-	surround-encoded mix in the first place — many from the era put it behind an option,
+	surround-encoded mix in the first place. Many from the era put it behind an option,
 	such as **SURROUND** in Donkey Kong 64's audio settings.
 </Aside>
 
 Position the speakers where you actually play, the way you would in a real room: fronts
-either side of the set, centre on or under it, surrounds beside or behind you. A channel
-with no speaker cabled to it is not lost — it folds onto the nearest speakers that are.
+either side of the set, center on or under it, surrounds beside or behind you. A channel
+with no speaker cabled to it is not lost. It folds onto the nearest speakers that are.
 
 ### Through an amplifier
 
@@ -189,7 +189,7 @@ The amplifier takes a stereo line in and has the same six outputs. Feed it eithe
 
 - **A machine's own white and red leads** into its **AUDIO IN**. The picture still goes to
   the television as usual; the sound goes to the amplifier.
-- **The set's FL and FR** into its **AUDIO IN**, with the set on **STEREO OUT** — the set
+- **The set's FL and FR** into its **AUDIO IN**, with the set on **STEREO OUT**. The set
   is then only a line out, and the amplifier does the decoding.
 
 Its **SURROUND MODE** switch steps between the two decoders of the era: **Pro Logic II**,
@@ -200,20 +200,20 @@ band-limited rear channel shared by both surround speakers.
 
 The set has no tuner of its own. Spawn the **antenna**, push its coax lead into the TV's
 **RF IN** (or an RF switch's **ANT** socket), set the source to the antenna input, and the
-channel buttons cycle the channels it receives — your real local ones, if you have an
+channel buttons cycle the channels it receives. They are your real local ones if you have an
 **HDHomeRun** on the network. See [the television](/guide/room/television/#live-tv-through-the-antenna).
 
 ## When there is no picture
 
-Work down this list — it is ordered by how often each one is the answer.
+Work down this list, which is ordered by how often each one is the answer.
 
 1. **The plug is not seated**, or is seated in the neighboring socket.
 2. **The TV is showing a different input.**
 3. **The TV is switched off.** Its own power button, not the console's.
 4. **The machine is off**, or has no cartridge or disc in it.
-5. **The channel is untuned**, if you went through an RF switch — snow means exactly this.
+5. **The channel is untuned**, if you went through an RF switch. Snow means exactly this.
 6. **The set is on stereo out or surround with no speakers cabled**, if you have a picture
-   but no sound — the TV goes silent and says **NO SPEAKERS CONNECTED**.
+   but no sound. The TV goes silent and says **NO SPEAKERS CONNECTED**.
 7. **No core is installed** for that system, so there is nothing to produce a picture.
 
 A blank input paints blank. That is deliberate: the television behaves like a television,

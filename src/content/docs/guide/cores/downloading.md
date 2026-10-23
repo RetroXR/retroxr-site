@@ -26,8 +26,8 @@ with. Systems are shown as a grid, each labeled with its current default.
 
 ![The core Manager: a grid of systems, each labeled with its currently selected core.](../../../../assets/screenshots/cores_manager.png)
 
-This is also where **core options** live. Every core exposes its own settings — region,
-video filters, accuracy trade-offs, controller emulation — and you can change them here,
+This is also where **core options** live. Every core exposes its own settings, such as region,
+video filters, accuracy trade-offs and controller emulation, and you can change them here,
 or reset them back to the core's defaults if you have made a mess.
 
 ## BIOS / Extras
@@ -43,7 +43,7 @@ Everything the `CORES` section touches is written into one folder, `libretro/`:
 | --- | --- |
 | Windows | `%USERPROFILE%\retroxr\libretro` |
 | Linux / macOS | `~/retroxr/libretro` |
-| Quest | `/data/user/0/com.xenu.retroxr/files/libretro` — the app's **internal** storage, browsable as `libretro/` in the [web file manager](/guide/adding-games/) |
+| Quest | `/data/user/0/com.xenu.retroxr/files/libretro`, the app's **internal** storage, browsable as `libretro/` in the [web file manager](/guide/adding-games/) |
 
 On Quest this is worth reading twice: `libretro/` is **not** next to your games on
 `/sdcard`. It is inside the app's private storage, which is why `adb push` and SideQuest's
@@ -54,8 +54,8 @@ file browser cannot see it. The web file manager is the way in.
 | Folder | What it holds | Do you touch it? |
 | --- | --- | --- |
 | `cores/` | The emulator cores themselves, one file each. | **No.** Download them here. A core dropped in by hand is never registered in the manifest, so nothing will use it. |
-| `system/` | BIOS and firmware, **in a subfolder per core**. | Sometimes — this is the one folder you may legitimately need to open. See [BIOS files](/guide/cores/bios/). |
-| `core_assets/` | Asset packs some cores need, also per core. | No — the downloader fills these. |
+| `system/` | BIOS and firmware, **in a subfolder per core**. | Sometimes. This is the one folder you may legitimately need to open. See [BIOS files](/guide/cores/bios/). |
+| `core_assets/` | Asset packs some cores need, also per core. | No. The downloader fills these. |
 | `core_options/` | Your settings for each core, written when you change something in Manager. | Prefer resetting from the Manager over editing the file. |
 | `save/` | Battery saves and memory cards. See [game saves](/guide/connecting/saves/). | Back it up; don't hand-edit it. |
 | `temp/` | Scratch. A core is copied here before it runs, so two machines can run the same core without treading on each other. | Nothing here is worth keeping. |
@@ -65,7 +65,7 @@ And three files at the top level:
 | File | What it is |
 | --- | --- |
 | `cores_manifest.json` | What is available to download, and what you already have. |
-| `core_defaults.json` | Which core each system launches with — what the Manager writes. |
+| `core_defaults.json` | Which core each system launches with, as written by the Manager. |
 | `firmware_state.json` | A hash cache for BIOS checking. Presence is always re-read from disk, so deleting this changes nothing except that files get re-hashed. |
 
 ### The per-core rule
@@ -82,23 +82,23 @@ is the usual reason a game that ran fine yesterday boots to a black screen after
 switched cores.
 
 Saves are the exception. Since v0.8.0, cartridge saves and memory cards are filed **by
-system**, so they follow the game to a different core — except on the Nintendo 64, 64DD
+system**, so they follow the game to a different core. The exception is the Nintendo 64, 64DD
 and Famicom Disk System, whose cores cannot read each other's files. See
 [the libretro folder](/guide/cores/libretro-folder/#save).
 
 ## Updating and removing
 
 Cores can be re-downloaded to pick up a newer build, and removed when you no longer want
-them. A system with no core installed simply cannot be spawned — that is the constraint
+them. A system with no core installed simply cannot be spawned, and that is the constraint
 you are managing.
 
 Since v0.4.0 you can **delete cores and BIOS files from inside the headset**, from the
 same screens you installed them on, rather than going back to a PC to reclaim the space.
-The storage screen will also clear out **orphaned metadata** — box art and scraped details
+The storage screen will also clear out **orphaned metadata**, meaning box art and scraped details
 left behind by games that are no longer there.
 
 :::note
-Changing the default core for a system keeps your cartridge saves and memory cards — they
+Changing the default core for a system keeps your cartridge saves and memory cards, because they
 belong to the system, not the core. **Savestates** do not move: a savestate is a dump of
 one core's internal state, and another core cannot read it. Nintendo 64, 64DD and Famicom
 Disk System saves are also still per core.

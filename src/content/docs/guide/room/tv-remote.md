@@ -16,12 +16,12 @@ Hold the remote and point it at something. The target is outlined in maroon, and
 menu appears above the remote with the controls that make sense for whatever you are
 aiming at.
 
-**In VR** — flick the thumbstick up or down to move the selection, then press the primary
+**In VR**, flick the thumbstick up or down to move the selection, then press the primary
 button (`A` / `X`) or click the thumbstick to activate.
 
-**On desktop** — the remote snaps to the lower-right of the screen, aiming where you look.
+**On desktop**, the remote snaps to the lower-right of the screen, aiming where you look.
 `Arrow Up` / `Arrow Down` move the selection and `Enter` activates. Because it is
-FPS-snapped, dropping it needs **`Ctrl` + Left-click** — a plain click will not let go.
+FPS-snapped, dropping it needs **`Ctrl` + Left-click**, because a plain click will not let go.
 
 ## What it can drive
 
@@ -31,7 +31,7 @@ FPS-snapped, dropping it needs **`Ctrl` + Left-click** — a plain click will no
 | **VCR** | Eject, play, pause, stop, fast-forward, rewind |
 | **DVD player** | The same, plus chapter skip, `MENU`, a direction cluster with `OK` for disc menus, and audio and subtitle track cycling |
 | **CD player** | Play, pause, stop, fast-forward, rewind, track skip |
-| **Cassette deck** | The same, but track skip is greyed out — a cassette cannot seek to a track |
+| **Cassette deck** | The same, but track skip is grayed out because a cassette cannot seek to a track |
 
 Cells light up only when they would do something: the disc-menu cluster is live only while
 a disc menu is showing, and audio and subtitle cycling only during playback.

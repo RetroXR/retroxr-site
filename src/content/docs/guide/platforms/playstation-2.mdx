@@ -1,6 +1,6 @@
 ---
 title: PlayStation 2
-description: The PlayStation 2 — its BIOS, memory cards with a save viewer that shows each game's 3-D icon, the GunCon 2, and linking consoles over i.LINK or a LAN.
+description: "The PlayStation 2: its BIOS, memory cards with a save viewer that shows each game's 3-D icon, the GunCon 2, and linking consoles over i.LINK or a LAN."
 ---
 
 import { Aside, Steps } from '@astrojs/starlight/components';
@@ -10,7 +10,7 @@ downloads its own build of it, which adds the console's i.LINK port and network 
 It is a heavy machine to emulate: it runs best on a PC, and a standalone headset will
 struggle with many games.
 
-Out of the box the console is a procedural stand-in; modelled PS2 shells are published as
+Out of the box the console is a procedural stand-in; modeled PS2 shells are published as
 [mods](/guide/room/mods/).
 
 ## The BIOS is required
@@ -32,7 +32,7 @@ objects, as the PlayStation's are: spawn a **Memory Card** from the PS2's spawn 
 it into a slot, and the game saves to it.
 
 Point at a card and open its menu to see what is on it. The save viewer lists each game's
-save with **its own 3-D icon**, the way the PS2's browser showed it — the
+save with **its own 3-D icon**, the way the PS2's browser showed it. The
 icons are the models the games themselves stored on the card, not pictures.
 
 Each card is an ordinary 8 MB `.ps2` image, the format PCSX2 and every PS2 card tool on a
@@ -61,21 +61,21 @@ The PS2 had two ways of putting several consoles in one game, and both are in th
 ### i.LINK
 
 As of **v0.9.0** the fat PS2's **i.LINK** port works. Run an **i.LINK cable** between two
-consoles, or plug up to **six** into the **i.LINK hub** — both are on the PS2's spawn card.
+consoles, or plug up to **six** into the **i.LINK hub**. Both are on the PS2's spawn card.
 Gran Turismo 3's i.LINK Battle, Time Crisis II and others see each other as they did on the
 hardware.
 
 ### Network adapter and LAN
 
 As of **v0.11.0** the PS2's **Network Adapter** works. Seat it in the bay at the back of
-the console, then run an **Ethernet cable** from it to an **Ethernet hub** — or straight to
+the console, then run an **Ethernet cable** from it to an **Ethernet hub**, or straight to
 another console. Gran Turismo 4's Multi-LAN race links up to six consoles that way, and a
 GameCube with its Broadband Adapter goes on the same kind of LAN.
 
 <Aside type="note" title="Seat the adapter before you switch on">
 	Seating the Network Adapter is what switches the console's network on, and the core reads
-	that as the game starts. Moved while the console runs, it counts from the next power-on —
-	you get a message saying so.
+	that as the game starts. Moved while the console runs, it counts from the next power-on,
+	and you get a message saying so.
 </Aside>
 
 Both links are **local only**: the PS2 is not one of the [netplay](/guide/connecting/netplay/)

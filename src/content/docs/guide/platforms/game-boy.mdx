@@ -1,6 +1,6 @@
 ---
 title: Game Boy and Game Boy Color
-description: The original Game Boy and the Game Boy Color — two machines, two folders, the green screen and the Color's palettes, cartridges in the right plastic, link leads and infrared.
+description: "The original Game Boy and the Game Boy Color: two machines, two folders, the green screen and the Color's palettes, cartridges in the right plastic, link leads and infrared."
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -13,14 +13,14 @@ roms/gb/     original Game Boy games (.gb)
 roms/gbc/    Game Boy Color games (.gbc)
 ```
 
-Both are still clean **procedural stand-ins** rather than modelled shells — see
+Both are still clean **procedural stand-ins** rather than modeled shells. See
 [contributing](/contributing/) if you would like to change that.
 
 Two accessories have pages of their own:
 
-- **[Game Boy Camera](/guide/platforms/game-boy-camera/)** — a cartridge with a lens on top
+- **[Game Boy Camera](/guide/platforms/game-boy-camera/)**: a cartridge with a lens on top
   that photographs the room you are standing in.
-- **[Game Boy Printer](/guide/platforms/game-boy-printer/)** — prints from any game that
+- **[Game Boy Printer](/guide/platforms/game-boy-printer/)**: prints from any game that
   supports it, onto paper you tear off and keep.
 
 ## Which machine a game runs as
@@ -28,18 +28,18 @@ Two accessories have pages of their own:
 As of **v0.11.1** each machine runs as the hardware it is, whichever cartridge is in it:
 
 - **An original Game Boy is an original Game Boy.** Its screen is drawn as the green
-  dot-matrix LCD, in the DMG's four shades, rather than in whatever colours the core would
+  dot-matrix LCD, in the DMG's four shades, rather than in whatever colors the core would
   otherwise pick.
-- **A Game Boy Color colours original Game Boy games itself**, from the per-game palettes
-  built into its boot ROM — the reason Tetris or Link's Awakening looked different on a
-  Color than on the grey brick.
+- **A Game Boy Color colors original Game Boy games itself**, from the per-game palettes
+  built into its boot ROM. That is why Tetris or Link's Awakening looked different on a
+  Color than on the gray brick.
 - **An original Game Boy takes Game Boy Color cartridges.** A *dual-mode* game (the black
-  cartridges — Pokémon Gold, Silver and plenty of others) plays in four shades of green, as
-  it did on the real thing. A Color-only game puts up its own "this game is for Game Boy
-  Color" screen, which is also what it did on the real thing.
+  cartridges, such as Pokémon Gold, Silver and plenty of others) plays in four shades of
+  green, as it did on the real thing. A Color-only game puts up its own "this game is for
+  Game Boy Color" screen, which is also what it did on the real thing.
 
 <Aside type="note" title="The Color's own boot ROM is optional">
-	If you have a `gbc_bios.bin`, the Game Boy Color boots through it — logo and all — even
+	If you have a `gbc_bios.bin`, the Game Boy Color boots through it, logo and all, even
 	for an original Game Boy game. Without one it boots straight into the game. See
 	[BIOS files](/guide/cores/bios/).
 </Aside>
@@ -50,38 +50,38 @@ runs on mGBA, because it is the only one of the two that supports it.
 
 ## Cartridges in the right plastic
 
-As of **v0.9.0** a Game Boy cartridge is a modelled shell, and its colour is read off the
-ROM's own header — never guessed from the filename:
+As of **v0.9.0** a Game Boy cartridge is a modeled shell, and its color is read off the
+ROM's own header, never guessed from the filename:
 
 | Cartridge | Shell |
 | --- | --- |
 | Pokémon Red, Blue, Yellow (outside Japan) | red, blue, yellow |
-| Pokémon Red, Green, Blue, Pikachu (Japan) | standard grey, as they were |
+| Pokémon Red, Green, Blue, Pikachu (Japan) | standard gray, as they were |
 | Pokémon Gold and Silver | gold and silver |
 | The Donkey Kong Land series | yellow |
 | Dual-mode games (run on both machines) | black |
 | Game Boy Color-only games | the clear Game Boy Color cartridge |
 | Pokémon Crystal | clear, with Crystal's glitter |
-| Everything else | grey |
+| Everything else | gray |
 
-The scraped label is printed on the sticker, if you have one — see
+The scraped label is printed on the sticker, if you have one. See
 [box art and scraping](/guide/connecting/box-art/).
 
-To pick a colour yourself, **hold the game for a second** in the spawn menu instead of
+To pick a color yourself, **hold the game for a second** in the spawn menu instead of
 tapping it. That opens the cartridge options: a **Body** row (Auto, Game Boy, Game Boy
-Color, Game Boy Camera) and the colours that body comes in, plus a custom colour picker.
+Color, Game Boy Camera) and the colors that body comes in, plus a custom color picker.
 More on this in [cartridges and discs](/guide/playing/cartridges-and-discs/).
 
 ## Link leads
 
-The Game Boy family has three link leads, and they do not all fit everything — on the real
-hardware the Pocket and the Color shrank the plug:
+The Game Boy family has three link leads, and they do not all fit everything, because on
+the real hardware the Pocket and the Color shrank the plug:
 
 | Lead | Plugs | Fits |
 | --- | --- | --- |
 | **DMG-04** | large at both ends | two original Game Boys |
 | **CGB-003** | small at both ends | two Game Boy Colors, a Color and a Game Boy Advance, and the Game Boy Printer |
-| **DMG-14 Universal Game Link Adapter** | a dongle: large plug, small socket on the back | lets an original Game Boy take a small lead — to a Color, or to the Printer |
+| **DMG-14 Universal Game Link Adapter** | a dongle: large plug, small socket on the back | lets an original Game Boy take a small lead to a Color or to the Printer |
 
 The Game Boy's spawn card offers the DMG-04 and the adapter; the Color's offers the
 CGB-003 and the adapter. Gambatte and mGBA speak the same link, so a Game Boy on one core
@@ -90,16 +90,16 @@ for how leads work in general.
 
 ## Infrared, on the Game Boy Color
 
-As of **v0.10.0** the Game Boy Color's **infrared port** works, on both cores — Pokémon
-Gold and Silver's Mystery Gift, for instance. There is no lead: two Colors link while
+As of **v0.10.0** the Game Boy Color's **infrared port** works on both cores, for instance
+for Pokémon Gold and Silver's Mystery Gift. There is no lead: two Colors link while
 **each one's IR window can see the other's**.
 
 - Hold them within about **60 cm** of each other, roughly facing, and keep them there for a
   moment. Once linked, they stay linked out to about 80 cm.
 - There has to be a clear line of sight. A wall or a loose object between them breaks it;
   your hands do not.
-- **The IR window glows red while the link is live** — both machines switched on and
-  talking, not merely in view of each other.
+- **The IR window glows red while the link is live**, meaning both machines are switched
+  on and talking, not merely in view of each other.
 - A machine with a link lead plugged into a partner is left out of infrared.
 
 These distances are far more forgiving than the hardware's, which wanted its partner a
@@ -107,6 +107,6 @@ hand's width away and nearly dead ahead.
 
 ## Netplay
 
-Both Game Boys support rollback netplay, and a linked pair plays over netplay too — see
-[netplay](/guide/connecting/netplay/). Everyone in the session needs to be on **v0.11.1 or
+Both Game Boys support rollback netplay, and a linked pair plays over netplay too (see
+[netplay](/guide/connecting/netplay/)). Everyone in the session needs to be on **v0.11.1 or
 later** for a link to cross the network.

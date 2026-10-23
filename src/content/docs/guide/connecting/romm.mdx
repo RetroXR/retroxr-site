@@ -14,7 +14,7 @@ import { Image } from 'astro:assets';
 import RommMark from '../../../../components/RommMark.astro';
 
 [RomM](https://romm.app) is a self-hosted library manager for a ROM collection. If you run
-one, RetroXR talks to it directly — so instead of copying files into the headset, you
+one, RetroXR talks to it directly, so instead of copying files into the headset, you
 browse your whole collection from inside it and pull down only what you want to play.
 
 Saves sync back the other way, so a game you played in the headset carries on where you
@@ -34,13 +34,13 @@ look at it through the headset's camera.
 
    <Image src={tokenList} alt="The Client API Tokens page in RomM, listing existing tokens by name with their permissions, expiry and last-used date, above a Create button." />
 
-3. **Click Create.** Give the token a name you will recognize — `RetroXR` is the obvious
-   one — and leave the permissions alone. RetroXR uses the full set to browse your
+3. **Click Create.** Give the token a name you will recognize (`RetroXR` is the obvious
+   one) and leave the permissions alone. RetroXR uses the full set to browse your
    library, download games and firmware, and write saves back.
 
    <Image src={createToken} alt="The Create new API token dialog: a token name field, an expiration dropdown set to Never, and a grid of permission checkboxes covering personal, library, administration and other scopes, all ticked." />
 
-4. **Choose how to deliver it.** The token is shown exactly once. Press **Pair device** —
+4. **Choose how to deliver it.** The token is shown exactly once. Press **Pair device**,
    not *Copy token*, unless you genuinely want to type it by hand.
 
    <Image src={deliverToken} alt="The Deliver token dialog: a warning that the token will not be shown again, and two buttons, Copy token and Pair device." />
@@ -65,7 +65,7 @@ look at it through the headset's camera.
 
 ## If you would rather not scan
 
-The same screen accepts a server URL and credentials typed by hand — either an API token
+The same screen accepts a server URL and credentials typed by hand: either an API token
 from step 4's *Copy token*, or your RomM username and password. Since v0.7.0, signing in
 with a username and password **fetches a token for you** automatically, so the result is
 the same as pairing.
@@ -74,7 +74,7 @@ the same as pairing.
 
 - **Browse the whole collection** from the menu, not just what is on the headset.
 - **Download individual games** on demand, rather than syncing everything.
-- **Firmware and BIOS** files, if your server holds them — see
+- **Firmware and BIOS** files, if your server holds them. See
   [BIOS files](/guide/cores/bios/).
 - **Save sync** back to the server, including PlayStation memory cards.
 

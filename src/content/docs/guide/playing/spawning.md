@@ -8,8 +8,8 @@ sidebar:
 Everything in the room got there because you spawned it. The spawn menu is where that
 happens.
 
-- **In VR** — **press your left thumbstick in**.
-- **On desktop** — press `Tab`.
+- **In VR**: **press your left thumbstick in**.
+- **On desktop**: press `Tab`.
 
 The panel appears in front of you, facing the way you were looking. Point at it and pull
 the **trigger** to click.
@@ -34,50 +34,50 @@ Across the top are the sections of the menu:
 
 ## What you can spawn
 
-Under `SPAWN` there are ten tabs — Systems, Games, TVs, Books, Videos, DVDs, CDs,
+Under `SPAWN` there are ten tabs: Systems, Games, TVs, Books, Videos, DVDs, CDs,
 Tapes, Objects and Controllers:
 
-**Games** — your ROMs. Clicking one spawns a cartridge carrying that game, straight
+**Games**: your ROMs. Clicking one spawns a cartridge carrying that game, straight
 into the hand that clicked. If a game has been scraped, its row also has a 📖 button that
 spawns the scanned manual as a book, a **flag** for the game's region, and a **number** for
 the disc it is in a multi-disc set.
 
 With a [RomM server](/guide/connecting/romm/) connected, a source filter narrows the list
-to **All**, **Downloaded**, **Downloaded + local**, **Not downloaded** or **Local only** —
-*Downloaded + local* being everything you can spawn right now without waiting on the
+to **All**, **Downloaded**, **Downloaded + local**, **Not downloaded** or **Local only**.
+*Downloaded + local* is everything you can spawn right now without waiting on the
 network.
 
-Some cartridges come in more than one shape or colour. **Hold the button for a second**
-instead of clicking it to choose — see
-[cartridges and discs](/guide/playing/cartridges-and-discs/#shells-colours-and-regions).
+Some cartridges come in more than one shape or color. To choose, **hold the button for a
+second** instead of clicking it. See
+[cartridges and discs](/guide/playing/cartridges-and-discs/#shells-colors-and-regions).
 
-**Books** — your PDFs and CBZs, as physical books.
+**Books**: your PDFs and CBZs, as physical books.
 
-**Videos** — your video files, as VHS tapes.
+**Videos**: your video files, as VHS tapes.
 
-**DVDs** — your disc images, as DVDs.
+**DVDs**: your disc images, as DVDs.
 
-**Objects** — the hardware itself: the VCR, the DVD player, the CD player and cassette
+**Objects**: the hardware itself, meaning the VCR, the DVD player, the CD player and cassette
 deck, speakers, surround cabinets, a subwoofer, stands and an amplifier, the antenna, the
 TV remote, every kind of A/V cable, the RF switch, the Wii sensor bar, a table to stand
 things on, and the room's own props like the storage box.
 
 :::note[New in v0.5.0]
-The **table** is spawnable, and is no longer part of the arcade room by default — the room
+The **table** is spawnable, and is no longer part of the arcade room by default. The room
 starts empty and you furnish it. The bin became a **storage box**: things dropped into it
 are animated away rather than simply disappearing.
 :::
 
 ![The Objects tab, listing spawnable hardware: trash can, VCR, DVD player, CD player, cassette player and more.](../../../../assets/screenshots/menu_spawn_objects.png)
 
-**Controllers** — pads, peripherals and the receivers they plug into.
+**Controllers**: pads, peripherals and the receivers they plug into.
 
-Colour variants that are their own machine get their own tile in the Systems grid: the
+Color variants that are their own machine get their own tile in the Systems grid: the
 **Game Boy Color**, **WonderSwan Color** and **Neo Geo Pocket Color** sit beside the
 originals rather than inside them, and so do **Naomi**, **Naomi 2** and **Atomiswave**.
 
-Consoles that grew add-ons — a Sega CD, a 32X, a 64DD, a Super Game Boy — spawn their
-expansion from the **Systems** grid, filed under the system whose media it takes. See
+Consoles that grew add-ons, such as a Sega CD, a 32X, a 64DD or a Super Game Boy, spawn
+their expansion from the **Systems** grid, filed under the system whose media it takes. See
 [expansion hardware](/guide/playing/expansion-hardware/).
 
 ![The Controllers tab, listing a primitive controller, ray gun, mouse and keyboard.](../../../../assets/screenshots/menu_spawn_controllers.png)
@@ -98,7 +98,7 @@ to chase it across the floor.
 
 ## Keeping a layout
 
-A room you have wired up is worth keeping. The `SCENE` tab saves the whole arrangement —
-every object, where it sits, and what is plugged into what — and restores it later.
+A room you have wired up is worth keeping. The `SCENE` tab saves the whole arrangement,
+including every object, where it sits and what is plugged into what, and restores it later.
 
 See [rooms and saving](/guide/room/rooms-and-saving/).

@@ -1,6 +1,6 @@
 ---
 title: The libretro folder
-description: Where cores, BIOS files, core options and battery saves actually live — and which parts you should never touch.
+description: Where cores, BIOS files, core options and battery saves actually live, and which parts you should never touch.
 sidebar:
   order: 4
 ---
@@ -17,7 +17,7 @@ corrupted core option actually lives.
 | --- | --- |
 | Windows | `%USERPROFILE%\retroxr\libretro` |
 | Linux / macOS | `~/retroxr/libretro` |
-| Quest | internal app storage — reachable as **`libretro/`** in the [web file manager](/guide/adding-games/) |
+| Quest | internal app storage, reachable as **`libretro/`** in the [web file manager](/guide/adding-games/) |
 
 On Quest this folder is *not* next to your games. Your games live in external storage
 where you can copy files freely; `libretro/` is in the app's own private storage. The web
@@ -42,13 +42,13 @@ libretro/
 ### cores
 
 One file per emulator. These arrive through `CORES` → Download and there is no reason to
-put them here by hand — a core dropped in manually will not be registered in the manifest.
+put them here by hand, because a core dropped in manually will not be registered in the manifest.
 
 ### system
 
 **This is the one you may legitimately need to open.** Cores look for their BIOS and
 firmware here, in a folder named after the core. The PlayStation's `scph5500.bin` and
-friends, the Dreamcast's boot ROM, the DS firmware — all of it lands under `system/`.
+friends, the Dreamcast's boot ROM and the DS firmware all land under `system/`.
 
 The [BIOS page](/guide/cores/bios/) is the friendlier route: it tells you which files a
 system wants, by exact name, and where they go.
@@ -57,26 +57,26 @@ system wants, by exact name, and where they go.
 
 Your settings for each core, written when you change something in `CORES` → Manager. If a
 core is behaving strangely and you want a clean slate, resetting its options from the
-Manager rewrites the file for you — safer than editing it.
+Manager rewrites the file for you, which is safer than editing it.
 
 ### save
 
 Two different things, filed two different ways:
 
 ```
-save/carts/<systemid>/<game>/<save>.srm   cartridge battery saves — per system, per game
-save/memcards/<family>/<card>.<ext>       memory cards — per console family, no core
+save/carts/<systemid>/<game>/<save>.srm   cartridge battery saves, per system, per game
+save/memcards/<family>/<card>.<ext>       memory cards, per console family, no core
 save/<core>/...                           the core's own files, and N64 / 64DD / FDS saves
 ```
 
 A **cartridge** kept its save on its own chip, so the path is keyed by the game. A **memory
-card** is one image that every game on that console writes into — which is the entire point
-of a card — so it is keyed by the card instead.
+card** is one image that every game on that console writes into. That is the entire point
+of a card, so it is keyed by the card instead.
 
 Neither path carries a core name. Since v0.8.0 a cartridge's battery is filed under the
 **system** it belongs to, so it survives switching cores the way a real cartridge survives
-being moved to another console — and a Transfer Pak reads the same file a Game Boy playing
-that cartridge does. A card was always like that.
+being moved to another console. It also means a Transfer Pak reads the same file a Game
+Boy playing that cartridge does. A card was always like that.
 
 Three systems are the exception and still keep their saves per core: the **Nintendo 64**,
 the **64DD** and the **Famicom Disk System**. Their cores store saves in layouts that are
@@ -92,7 +92,7 @@ first launch. See [the PlayStation](/guide/platforms/playstation/) and
 Scratch space. RetroXR copies a core here before running it, so one machine's core cannot
 tread on another's. Nothing in here is worth keeping.
 
-:::danger[On Quest, use the web file manager — not adb or SideQuest]
+:::danger[On Quest, use the web file manager rather than adb or SideQuest]
 `libretro/` is in the app's **internal** storage, not on `/sdcard` with your games. Two
 consequences:
 

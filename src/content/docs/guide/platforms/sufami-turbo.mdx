@@ -1,6 +1,6 @@
 ---
 title: Sufami Turbo
-description: Bandai's two-slot adapter for the Super Famicom — the only expansion in RetroXR with more than one bay, and the nine games that link the second cartridge into the first.
+description: Bandai's two-slot adapter for the Super Famicom. It is the only expansion in RetroXR with more than one bay, and the nine games that link the second cartridge into the first.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -15,7 +15,7 @@ than one bay, and the reason a bay is addressed by number at all.
 	src="/video/sufami/stack.mp4"
 	poster={sufamiPoster}
 	alt="A Super Famicom rotating with the Sufami Turbo adapter standing in its cartridge slot, a cartridge seated in each of the adapter's two wells side by side."
-	caption="The adapter in the console's slot with both wells filled. The Super Famicom wears the procedural stand-in — it has no modelled shell yet — and the cartridges are unlabelled here."
+	caption="The adapter in the console's slot with both wells filled. The Super Famicom wears the procedural stand-in, since it has no modeled shell yet, and the cartridges are unlabeled here."
 />
 
 ## Two slots, and why they matter
@@ -26,19 +26,19 @@ each other their units, and SD Ultra Battle lends its characters across the pair
 one-slot Sufami Turbo would be the wrong machine rather than a simplified one.
 
 Put the adapter into the Super Famicom's slot, then drop a cartridge into each well. One
-cartridge on its own is a **first-class configuration**, not half a pair — the core sniffs
+cartridge on its own is a **first-class configuration**, not half a pair. The core sniffs
 the first cartridge and maps slot B empty. Poi Poi Ninja World runs that way.
 
 See [expansion hardware](/guide/playing/expansion-hardware/) for how a stack is assembled.
 
 ## What you need
 
-- **`STBIOS.bin`** in `libretro/system/snes9x/` — the adapter's own shell program. Until it
+- **`STBIOS.bin`** in `libretro/system/snes9x/`: the adapter's own shell program. Until it
   is installed, the Sufami Turbo is not offered in the spawn menu at all.
 - **snes9x**, which RetroXR selects for you when the adapter goes in.
 - Your cartridge dumps in the `sufami` folder of your ROM library.
 
-<Aside type="caution" title="Without the BIOS it does not quietly degrade — it refuses">
+<Aside type="caution" title="Without the BIOS it refuses rather than quietly degrading">
 	A missing `STBIOS.bin` does not fall back to loading the cartridge as an ordinary Super
 	Famicom game. The load is refused outright: zero frames, and a content-load failure. The
 	spawn gate is there so you meet that as a missing file rather than as a black screen.
@@ -48,7 +48,7 @@ See [expansion hardware](/guide/playing/expansion-hardware/) for how a stack is 
 
 Every Sufami Turbo dump in circulation carries the `.sfc` extension, the same as an
 ordinary Super Famicom game. RetroXR therefore accepts **both `.st` and `.sfc`** under this
-system — otherwise your cartridges would be filed under Super Nintendo and the adapter's
+system, because otherwise your cartridges would be filed under Super Nintendo and the adapter's
 bays would refuse them.
 
 <Aside type="tip" title="Keep them in their own folder">
@@ -59,14 +59,14 @@ bays would refuse them.
 
 ## Both cartridges keep their saves
 
-The adapter has no battery — the cartridges do — so each one saves independently, and
+The adapter has no battery, but the cartridges do, so each one saves independently, and
 RetroXR gives slot B a save file of its own.
 
 That took a fix. snes9x reports slot A's save RAM and the plain save RAM from the same
 place, while slot B sits behind a **core-specific memory id** of its own. Reading only the
 obvious one gave the same 16 KB whether one cartridge was in or two, so **a linked pair
-kept only half its progress** — SD Ultra Battle said as much on every launch, reporting
-that the B cassette's backup was not initialised.
+kept only half its progress**. SD Ultra Battle said as much on every launch, reporting
+that the B cassette's backup was not initialized.
 
 A save is keyed to the **cartridge**, not to the slot it sits in, so a game carries its
 save between the two wells, and lending it to a different pairing does not overwrite what
@@ -75,6 +75,6 @@ is on it.
 ## Verified with
 
 Measured 2026-08-30 against the No-Intro set: **SD Ultra Battle: Ultraman Densetsu** in
-slot A with **Seven Densetsu** in slot B, running 767 frames at 256×224 — with the game
+slot A with **Seven Densetsu** in slot B, running 767 frames at 256×224, with the game
 itself reporting the B cassette's backup state, which is the proof the link is live. A game
 that could not see slot B would have nothing to say about it.

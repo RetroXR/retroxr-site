@@ -17,14 +17,14 @@ import biosPsx from '../../../../assets/screenshots/cores_bios_psx.png';
 import RommMark from '../../../../components/RommMark.astro';
 
 The PlayStation is the platform that best shows what RetroXR does with saves. Your save is
-not a hidden file in a folder — it is on a **memory card**, and the card is an object you
+not a hidden file in a folder. It is on a **memory card**, and the card is an object you
 hold, slot in, and can lose.
 
 <Turntable
 	src="/video/ps1/console.mp4"
 	poster={consolePoster}
-	alt="The grey PlayStation console rotating, showing the sprung disc lid on top, the POWER, RESET and OPEN buttons, the two controller ports and the two memory card slots along the front."
-	caption="The PlayStation — a modelled shell as of v0.4.0, replacing the procedural box. The lid springs, the buttons press, and both card slots and both controller ports take real objects."
+	alt="The gray PlayStation console rotating, showing the sprung disc lid on top, the POWER, RESET and OPEN buttons, the two controller ports and the two memory card slots along the front."
+	caption="The PlayStation, a modeled shell as of v0.4.0 that replaced the procedural box. The lid springs, the buttons press, and both card slots and both controller ports take real objects."
 />
 
 ## The BIOS is optional
@@ -34,7 +34,7 @@ BIOSes as optional and emulates the firmware itself, so a game will boot without
 
 A real BIOS is still worth having. It is more accurate than the built-in stand-in, it is
 what a few awkward titles want, and it is the only way to get the console's own startup
-screen — the one that boots to the CD player and memory card manager when you power the
+screen, the one that boots to the CD player and memory card manager when you power the
 machine on with no disc in it.
 
 RetroXR cannot ship those files. Open `CORES` → **BIOS / Extras** and pick PlayStation to
@@ -42,14 +42,14 @@ see which ones it knows about, and which of them your chosen core marks as requi
 
 <Image src={biosPsx} alt="The BIOS / Extras view for PlayStation, listing scph5500.bin, scph5501.bin, scph5502.bin and psxonpsp660.bin with their required or optional status and per-file download buttons." />
 
-The filenames have to match exactly — `scph5500.bin`, `scph5501.bin`, `scph5502.bin` and
+The filenames have to match exactly: `scph5500.bin`, `scph5501.bin`, `scph5502.bin` and
 `psxonpsp660.bin`. A file that is right in every way except its name will not be found.
 
-Required-or-optional is not RetroXR's judgement: it is read out of each core's own
+Required-or-optional is not RetroXR's judgment: it is read out of each core's own
 metadata, so a different PlayStation core can be stricter than pcsx_rearmed is.
 
 If you run a [RomM](https://romm.app) server holding your firmware, RetroXR can pull these
-down directly. Otherwise copy them in the usual way — see
+down directly. Otherwise copy them in the usual way, as described in
 [adding your games](/guide/adding-games/) and [BIOS files](/guide/cores/bios/).
 
 ## Memory cards
@@ -89,8 +89,8 @@ one work here:
 There is a manager for all of this, reachable from the card itself: point at it and press
 **clicking the left thumbstick**.
 
-The running game notices when a card is **pulled or pushed in**, the way the console did —
-pull the card mid-game and the machine sees it go. That began with slot 1 in v0.4.0; since
+The running game notices when a card is **pulled or pushed in**, the way the console did.
+Pull the card mid-game and the machine sees it go. That began with slot 1 in v0.4.0; since
 v0.7.0 the **second slot** is a real card under PCSX ReARMed too, so a game that copies
 between cards, or wants its save on card 2, has a card 2 to use.
 
@@ -100,13 +100,13 @@ between cards, or wants its save on card 2, has a card 2 to use.
 </Aside>
 
 <Aside type="caution" title="You cannot delete a save while the console is on">
-	Power the machine down first. It is the same rule cartridge saves follow — see
+	Power the machine down first. It is the same rule cartridge saves follow, covered in
 	[game saves and backups](/guide/connecting/saves/).
 </Aside>
 
 ### Where a card lives on disk
 
-Each card is one ordinary `.mcr` image — the same 128 KB format any PlayStation memory card
+Each card is one ordinary `.mcr` image, the same 128 KB format any PlayStation memory card
 tool on your PC will open.
 
 ```
@@ -123,17 +123,17 @@ Two things about that path are deliberate and worth knowing.
 
 **The card's name is its filename.** Renaming a card in the manager renames the file, so
 the folder reads as a shelf of cards rather than a pile of hashes. Which also means the
-name has to survive being a filename — the manager strips characters your operating system
+name has to survive being a filename, so the manager strips characters your operating system
 would refuse.
 
 **There is no core in the path.** Compare that with everything else under `libretro/`,
-which is filed per core — BIOS, core assets, cartridge battery saves. A card is *hardware*,
+which is filed per core: BIOS, core assets, cartridge battery saves. A card is *hardware*,
 and the raw image is identical for every PlayStation core, so a card follows you when you
 switch cores exactly as a real one follows you when you switch consoles. Cartridge saves do
 not; see [the libretro folder](/guide/cores/downloading/#where-all-of-this-actually-lives).
 
 <Aside type="caution" title="On Quest, copy cards OUT but not back IN">
-	Reading a card off the headset is fine. Copying one back is not — a file pushed from a
+	Reading a card off the headset is fine. Copying one back is not, because a file pushed from a
 	PC lands owned by the shell rather than the app, and RetroXR can no longer write your
 	saves into it. A card it cannot update looks exactly like a card that was wiped. Use
 	RomM to restore, or let the app write a fresh card.
@@ -155,7 +155,7 @@ A card you can lose is a card worth backing up, and this is the reason to connec
 </Steps>
 
 That matters more here than for most saves: on a Quest you cannot safely copy save files
-back **in** from a PC — files pushed from a computer land owned by the shell rather than
+back **in** from a PC, since files pushed from a computer land owned by the shell rather than
 the app, and RetroXR can no longer write to them. RomM is the route that avoids the
 problem entirely.
 
@@ -166,18 +166,18 @@ Full detail on [game saves and backups](/guide/connecting/saves/).
 Spawn a game from `SPAWN` → **Games** and it arrives as a disc rather than a
 cartridge. Open the console's lid, set the disc in the tray, close it, and power on.
 
-Multi-disc games work — RetroXR retrieves the right image for each disc rather than
+Multi-disc games work. RetroXR retrieves the right image for each disc rather than
 handing every disc the first one, which was a real bug fixed in
 [v0.3.0](/blog/).
 
 Multi-disc games can also be **swapped mid-game** on cores that support disc control: take
 disc 1 out and put disc 2 in, and the game carries on. Pulling a disc no longer switches
-the machine off either — see [cartridges and discs](/guide/playing/cartridges-and-discs/).
+the machine off either. See [cartridges and discs](/guide/playing/cartridges-and-discs/).
 
 ## Controllers
 
-Both PlayStation pads are modelled, and which one you plug in is what decides how the
-console reads it — there is no controller-type setting to find.
+Both PlayStation pads are modeled, and which one you plug in is what decides how the
+console reads it. There is no controller-type setting to find.
 
 <Turntable
 	src="/video/ps1/controller.mp4"
@@ -189,8 +189,8 @@ console reads it — there is no controller-type setting to find.
 <Turntable
 	src="/video/ps1/dualshock.mp4"
 	poster={dualshockPoster}
-	alt="The DualShock controller rotating, showing its two analogue sticks, the ANALOG button between them, the D-pad and the four face buttons."
-	caption="The DualShock. Plug it in and the core switches to the dual-shock controller — sticks and all."
+	alt="The DualShock controller rotating, showing its two analog sticks, the ANALOG button between them, the D-pad and the four face buttons."
+	caption="The DualShock. Plug it in and the core switches to the dual-shock controller, sticks and all."
 />
 
 Push either into one of the two controller ports on the front:
@@ -199,17 +199,17 @@ Push either into one of the two controller ports on the front:
 - **The DualShock** selects the dual-shock controller.
 
 **The ANALOG button works.** Put a fingertip on it and press, and the DualShock drops back
-to behaving as a standard controller, exactly as the real one toggled — which is the fix
+to behaving as a standard controller, exactly as the real one toggled. That is the fix
 for games that predate the sticks and get confused by them.
 
-For a real gamepad, spawn a **Controller Receiver** and plug that in instead — see
+For a real gamepad, spawn a **Controller Receiver** and plug that in instead, as described in
 [controllers and peripherals](/guide/playing/controllers/).
 
 ## The serial link
 
 The PlayStation's **SERIAL I/O** socket on the back is wired. Run a link cable between two
-consoles and games that supported it will see each other — see [link
-cables](/guide/playing/link-cables/). It needs PCSX ReARMed in RetroXR's own build, which
+consoles and games that supported it will see each other (see [link
+cables](/guide/playing/link-cables/)). It needs PCSX ReARMed in RetroXR's own build, which
 is what the core manager downloads.
 
 Looking for the PlayStation 2? It has [a page of its own](/guide/platforms/playstation-2/).
@@ -217,7 +217,7 @@ Looking for the PlayStation 2? It has [a page of its own](/guide/platforms/plays
 ## Cores
 
 The PlayStation has several libretro cores with different accuracy and speed trade-offs.
-Pick the default in `CORES` → **Manager** — see [downloading and managing
+Pick the default in `CORES` → **Manager**, covered in [downloading and managing
 cores](/guide/cores/downloading/).
 
 :::caution[Needs an in-headset pass]

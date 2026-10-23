@@ -1,6 +1,6 @@
 ---
 title: Nintendo 64DD
-description: The magnetic disk drive that bolts under a Nintendo 64 — which core runs which half of the library, the IPL you have to supply, and how to tell whether the disk actually attached.
+description: "The magnetic disk drive that bolts under a Nintendo 64: which core runs which half of the library, the IPL you have to supply, and how to tell whether the disk actually attached."
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -14,10 +14,10 @@ Put your disks in `roms/n64dd`. See
 
 ## The drive and its disks
 
-Since v0.7.0 the drive is a modelled shell, in the retail colours and in the development
-kit's, and the disks are modelled too. A disk is grey like a retail one unless its dump is
-one of the **blue development disks** — recognised by the system-area name those dumps
-carry (`DDDiskD-…`, `NUD-…`) or by "dev" in the filename — and then it comes out blue.
+Since v0.7.0 the drive is a modeled shell, in the retail colors and in the development
+kit's, and the disks are modeled too. A disk is gray like a retail one unless its dump is
+one of the **blue development disks**, and then it comes out blue. Those are recognized by the
+system-area name the dumps carry (`DDDiskD-…`, `NUD-…`) or by "dev" in the filename.
 
 The drive's **access lamp** lights when the disk is being read, driven by the core. The
 microcontroller behind it is barely documented, so the lamp may not always behave the way
@@ -35,10 +35,10 @@ playing. RetroXR picks for you; this is what it is picking between.
 
 | What you are playing | Core |
 | --- | --- |
-| **Disk only** — Mario Artist, Kyojin no Doshin | **parallel_n64** |
-| **Cartridge + expansion disk** — F-Zero X Expansion Kit | **mupen64plus_next** |
+| **Disk only** (Mario Artist, Kyojin no Doshin) | **parallel_n64** |
+| **Cartridge + expansion disk** (F-Zero X Expansion Kit) | **mupen64plus_next** |
 
-mupen64plus_next **refuses a bare `.ndd`** outright — it does not list the extension at all,
+mupen64plus_next **refuses a bare `.ndd`** outright. It does not list the extension at all,
 so you get "failed to load ROM" and nothing rendered. parallel_n64, in turn, cannot do the
 cartridge-plus-disk pairing. Hence both.
 
@@ -71,7 +71,7 @@ install both:
 | mupen64plus_next | `system/mupen64plus_next/Mupen64plus/IPL.n64` |
 
 <Aside type="caution" title="Both cores declare it optional. It is not.">
-	The `.info` files mark the IPL optional, and that flag is simply wrong here — believe the
+	The `.info` files mark the IPL optional, and that flag is simply wrong here, so believe the
 	measurement, not the declaration.
 
 	Without it, parallel_n64 logs "Disabling 64DD" and then **the process dies**: exit 127,
@@ -81,7 +81,7 @@ install both:
 
 ## Telling whether the disk actually attached
 
-Nothing is printed either way, so **the game's own screen is the only oracle** — and a
+Nothing is printed either way, so **the game's own screen is the only oracle**, and a
 cartridge that merely booted looks exactly like a success until you read it.
 
 The worked example is F-Zero X. On its own, the title screen reads `(c) 1998 Nintendo`.

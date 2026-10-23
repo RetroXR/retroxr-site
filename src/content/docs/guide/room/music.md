@@ -6,18 +6,18 @@ sidebar:
 ---
 
 Alongside the video hardware there is audio hardware: a **CD player**, a **cassette deck**
-and, new in v0.5.0, a **record player** — all three take your own music files.
+and, new in v0.5.0, a **record player**. All three take your own music files.
 
 ## Getting music in
 
 Put audio files into the `music/` folder:
 
-- **Windows** — `%USERPROFILE%\retroxr\music`
-- **Linux / macOS** — `~/retroxr/music`
-- **Quest** — `/sdcard/Android/data/com.xenu.retroxr/files/music`
+- **Windows**: `%USERPROFILE%\retroxr\music`
+- **Linux / macOS**: `~/retroxr/music`
+- **Quest**: `/sdcard/Android/data/com.xenu.retroxr/files/music`
 
 Each **subfolder is an album**, and so is a loose audio file on its own. A **playlist**
-(`.m3u` or `.m3u8`) is an album too — of exactly the tracks it lists, in its order — so you
+(`.m3u` or `.m3u8`) is an album too, made of exactly the tracks it lists in its order, so you
 can make a cassette or a record out of tracks that live anywhere, without copying them
 into a folder of their own. A folder that contains a playlist plays in the playlist's
 order rather than alphabetically.
@@ -41,11 +41,11 @@ Spawn a **CD player**, a **cassette deck** or a **record player** from **`SPAWN`
 **Objects**, along with a pair of **speakers**. Wire the deck to the speakers with a 3.5 mm lead, put a disc or a
 cassette in, and press play.
 
-A deck can feed a television's audio input too — and from there a full surround rig. See
+A deck can feed a television's audio input too, and from there a full surround rig. See
 [speakers and surround](/guide/playing/plugging-in/#speakers-and-surround).
 
 Both decks have the transport buttons you would expect. The CD player can skip tracks; the
-cassette deck cannot, because a cassette could not — you rewind and fast-forward and
+cassette deck cannot, because a cassette could not. You rewind and fast-forward and
 listen for the gap.
 
 The [TV remote](/guide/room/tv-remote/) drives them from across the room.
@@ -56,32 +56,32 @@ The turntable is the odd one out, and deliberately so: **it has no transport row
 You work it by hand, the way you work a real one.
 
 Drop a record onto the platter, then **take hold of the tonearm and swing it over**. The
-arm is the control — parked on its rest, the record is loose and liftable; cued over the
+arm is the control. Parked on its rest, the record is loose and liftable; cued over the
 band, the deck is committed and the needle is down. Where you set it down across the
 record is **where in the album you start**, so dropping the needle two thirds of the way in
 starts you two thirds of the way in.
 
 There is no fast-forward or rewind, because a turntable has neither. Those two cells are
-greyed out on the TV remote for this deck. START and STOP drive the platter, and it
+grayed out on the TV remote for this deck. START and STOP drive the platter, and it
 **spins up and coasts down** rather than snapping between still and turning.
 
 ### 33 and 45
 
 The speed switch is real, and so is getting it wrong. Every record here is a 12" LP cut at
-33⅓, so playing one at **45** runs it about a third fast and a fifth higher — the whole
+33⅓, so playing one at **45** runs it about a third fast and a fifth higher, which is the whole
 point of the control. Flip it back and it settles.
 
 ### Touch the record
 
 Put a fingertip on the spinning record and you drag it. The pitch **follows the platter**,
 so slowing it down bends the note down, letting go lets it glide back up to speed, and
-stopping it dead stops the sound — which is what a record halted under your hand does.
+stopping it dead stops the sound, which is what a record halted under your hand does.
 
 ## Sound placement
 
 Audio is positioned in the room, so a deck playing across from you sounds like it is
 across from you. On Quest this goes through Meta's XR Audio SDK, which renders it with
-HRTF — the reason you can point at a sound with your eyes closed. Where that is
+HRTF, which is why you can point at a sound with your eyes closed. Where that is
 unavailable, RetroXR falls back to Godot's own 3D audio.
 
 :::caution[Needs an in-headset pass]

@@ -1,6 +1,6 @@
 ---
 title: Game Boy Printer
-description: The Game Boy Printer on a real link lead — paper that feeds out of the slot as the game prints, and a print you tear off and keep as a PNG.
+description: The Game Boy Printer on a real link lead, with paper that feeds out of the slot as the game prints, and a print you tear off and keep as a PNG.
 ---
 
 import { Aside, Steps } from '@astrojs/starlight/components';
@@ -12,7 +12,7 @@ Deluxe's calendars and cards, and more.
 
 As of **v0.11.0** it is in the room. The game sends the picture down the cable exactly as
 it did to the hardware, the **paper feeds out of the slot line by line** as it prints, and
-when you **tear it off** you are holding the print — and it is saved as an image file.
+when you **tear it off** you are holding the print, and it is saved as an image file.
 
 ## Setting it up
 
@@ -29,7 +29,7 @@ when you **tear it off** you are holding the print — and it is saved as an ima
    one, so:
    - from a **Game Boy Color**, use the **CGB-003** lead (small at both ends);
    - from an **original Game Boy**, fit the **DMG-14 adapter** into the Game Boy's large
-     socket first, then run the CGB-003 from the adapter to the printer — which is how the
+     socket first, then run the CGB-003 from the adapter to the printer. That is how the
      printer was sold outside Japan.
 
 4. **Switch the printer on** with its POWER switch, and the Game Boy too.
@@ -39,7 +39,7 @@ when you **tear it off** you are holding the print — and it is saved as an ima
 
 </Steps>
 
-Either Game Boy core works on the other end of the lead — Gambatte or mGBA.
+Either Game Boy core works on the other end of the lead, whether Gambatte or mGBA.
 
 ## The paper
 
@@ -63,12 +63,12 @@ Every torn print is written as a PNG:
 | Linux / macOS | `~/retroxr/prints/` |
 | Quest | `prints/` in the [web file manager](/guide/adding-games/) |
 
-The image is the printer's 160 dots across, centred on the real paper's width.
+The image is the printer's 160 dots across, centered on the real paper's width.
 
 <Aside type="note" title="The sound is a best guess">
 	You will hear the stepper motor and the print head. Nothing published describes what the
-	real MGB-007 sounds like, and there was no unit to record, so the sound is synthesised
-	from how the mechanism works. A recording of a real one would be very welcome — see
+	real MGB-007 sounds like, and there was no unit to record, so the sound is synthesized
+	from how the mechanism works. A recording of a real one would be very welcome, so please see
 	[contributing](/contributing/).
 </Aside>
 
@@ -76,13 +76,13 @@ The image is the printer's 160 dots across, centred on the real paper's width.
 
 A printer cabled to a Game Boy joins that Game Boy in a netplay session, and every player
 prints the same paper. To press FEED or tear the paper off, you need to be the player
-holding it. Everyone needs to be on **v0.11.1 or later**, with updated cores — see
+holding it. Everyone needs to be on **v0.11.1 or later**, with updated cores. See
 [netplay](/guide/connecting/netplay/).
 
 ## Known limits
 
 - On **mGBA**, pulling the lead out **while a netplay session is running** can stall the
   session. Plugging in and printing are fine; on Gambatte, so is pulling it.
-- Only a handful of printing games have been tried so far — the Game Boy Camera and Super
+- Only a handful of printing games have been tried so far. The Game Boy Camera and Super
   Mario Bros. Deluxe are known to work. If another game will not print, please
   [report it](/guide/reference/reporting-bugs/).

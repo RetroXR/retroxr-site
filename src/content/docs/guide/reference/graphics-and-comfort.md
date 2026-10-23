@@ -11,15 +11,15 @@ sidebar:
 
 Under **`GRAPHICS`**:
 
-- **Quality preset** — the single dial to reach for first.
-- **Render scale** and **eye buffer** — resolution, traded against frame rate.
-- **Refresh rate** — a higher rate is smoother but leaves less time per frame.
-- **CPU and GPU levels** — how hard the headset is allowed to work.
+- **Quality preset**: the single dial to reach for first.
+- **Render scale** and **eye buffer**: resolution, traded against frame rate.
+- **Refresh rate**: a higher rate is smoother but leaves less time per frame.
+- **CPU and GPU levels**: how hard the headset is allowed to work.
 - **Anti-aliasing**, **shadows** and **ambient occlusion**.
 
 ### Foveation, on Quest
 
-As of v0.5.0, **foveated rendering works** — the headset spends its pixels where you are
+As of v0.5.0, **foveated rendering works**. The headset spends its pixels where you are
 looking and saves them at the edges of the lens, which is free frame time. Getting there
 meant rewriting fragment shaders that the mobile GPU would not accept under variable-rate
 shading.
@@ -34,7 +34,7 @@ Restart the app to get it back.
 There is a HUD showing frame timing, memory, scene load and emulation cost. You can mount
 it in view, or on your wrist so it is there when you look down and gone when you do not.
 
-If the room feels heavy, turn this on before changing settings blindly — it tells you
+If the room feels heavy, turn this on before changing settings blindly, because it tells you
 whether you are short on CPU or GPU, which point at completely different fixes.
 
 ## Comfort
@@ -45,7 +45,7 @@ Under **`OPTIONS`**:
 - **Snap or smooth** turning, with an adjustable snap angle.
 - A **field-of-view vignette** while moving.
 - **Height offset** and **world scale**. The default world scale is **0.85×** as of
-  v0.4.0, up from 0.8× — the room reads a little larger around you.
+  v0.4.0, up from 0.8×, so the room reads a little larger around you.
 
 If VR movement bothers you, teleport plus snap turning plus the vignette is the
 combination to start from.
@@ -55,12 +55,12 @@ combination to start from.
 For a long session, or a game that is struggling for frame rate, point at the TV or
 handheld and click the right thumbstick. **Focus Mode** puts the game on a floating screen
 in front of you and stops drawing the room, so the headset's whole budget goes into the
-emulator — on a black background, or your real room with **Passthrough in Focus Mode**
+emulator. It sits on a black background, or your real room with **Passthrough in Focus Mode**
 turned on. See [VR controls](/guide/reference/vr-controls/#focus-mode).
 
 ## Emulator picture
 
-Emulated screens are deliberately kept sharp rather than smoothed — a blurry CRT
+Emulated screens are deliberately kept sharp rather than smoothed, since a blurry CRT
 defeats the point. The picture is sampled so that pixel edges stay crisp without the
 shimmering you would get from no filtering at all.
 

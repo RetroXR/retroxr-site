@@ -2,7 +2,7 @@
 title: 'RetroXR v0.7 to v0.11: catching up'
 date: 2026-10-23T12:00:00Z
 authors: ryan
-excerpt: Five releases since the last post — the Dreamcast VMU, Focus Mode, 5.1 surround, microphones, a dozen new link cables, a shelf of modelled hardware, mods from mod.io, and the Game Boy Printer and Camera.
+excerpt: Five releases since the last post, covering the Dreamcast VMU, Focus Mode, 5.1 surround, microphones, a dozen new link cables, a shelf of modeled hardware, mods from mod.io, and the Game Boy Printer and Camera.
 tags:
   - release
 ---
@@ -14,13 +14,13 @@ import { Aside } from '@astrojs/starlight/components';
 [SideQuest](https://sidequestvr.com/app/61366/retroxr) ·
 [Discord](https://discord.gg/pgUkRhafca)
 
-The devlog fell behind the releases. v0.7.0, v0.8.0, v0.9.0, v0.10.0 and v0.11.0 — plus the
-v0.11.1 hotfix — all shipped without a post, so this one rounds them up by theme rather than
+The devlog fell behind the releases. v0.7.0, v0.8.0, v0.9.0, v0.10.0 and v0.11.0, plus the
+v0.11.1 hotfix, all shipped without a post, so this one rounds them up by theme rather than
 by version. Each section points at the guide page that now covers it properly.
 
 ## New ways to play
 
-### 🎴 The Dreamcast VMU — *v0.7, v0.9*
+### 🎴 The Dreamcast VMU (*v0.7, v0.9*)
 
 The VMU is a memory card with a screen, and in RetroXR it is both. Saves go on it, its
 screen shows what the game sends it, and it **plays its own games**: put them in
@@ -29,7 +29,7 @@ English or Japanese BIOS and keeps save states. The controller dongle now has bo
 expansion slots, and a **Jump Pack** gives the pad rumble. See
 [Dreamcast](/guide/platforms/dreamcast/).
 
-### 🖥️ Focus Mode and full screen — *v0.7*
+### 🖥️ Focus Mode and full screen (*v0.7*)
 
 Sometimes you want the game, not the room. Point at a TV or handheld and **click the right
 stick** in VR, or press **F11** on the desktop. In VR the picture fills your view over a
@@ -38,23 +38,23 @@ screen to drag it, and use the stick while holding to resize it or change its de
 [VR controls](/guide/reference/vr-controls/) and
 [desktop controls](/guide/reference/desktop-controls/).
 
-### 🔊 5.1 surround — *v0.8, v0.10*
+### 🔊 5.1 surround (*v0.8, v0.10*)
 
-The TV grew RCA outputs for front left and right, centre, sub and the two surrounds, plus
+The TV grew RCA outputs for front left and right, center, sub and the two surrounds, plus
 a setting choosing between its own speakers and external stereo or surround. Stand the
 speakers where you sit, run the wires, and games that offer **Dolby Surround or Pro Logic
-II** decode properly — pick SURROUND in a game like Donkey Kong 64. v0.10 added an
+II** decode properly. Pick SURROUND in a game like Donkey Kong 64. v0.10 added an
 amplifier that takes a stereo signal and does the decoding itself. Spatial Audio has to be
 on. See [speakers and surround](/guide/playing/plugging-in/).
 
-### 🎤 Microphones — *v0.8*
+### 🎤 Microphones (*v0.8*)
 
 Your headset's microphone is now a controller accessory: the N64 **Voice Recognition Unit**
 for Hey You, Pikachu! (with a speech pack to download), the GameCube microphone in memory
 card slot 2 for Mario Party 6, the Dreamcast microphone, and the Famicom's. See
 [controllers](/guide/playing/controllers/).
 
-### 🖨️ The Game Boy Printer and Camera — *v0.10, v0.11*
+### 🖨️ The Game Boy Printer and Camera (*v0.10, v0.11*)
 
 Cable a Game Boy to the **Game Boy Printer** and print; tear the paper off and the print is
 saved as a PNG in the `prints/` folder. The **Game Boy Camera** (on mGBA) photographs the
@@ -62,11 +62,11 @@ room you are standing in. Each has its own page:
 [Game Boy Printer](/guide/platforms/game-boy-printer/) and
 [Game Boy Camera](/guide/platforms/game-boy-camera/).
 
-v0.11.1 also made the original Game Boy a real DMG — a green LCD, and dual-mode Game Boy
-Color cartridges play in it — while the Game Boy Color colours original games with its own
+v0.11.1 also made the original Game Boy a real DMG. It has a green LCD, and dual-mode Game Boy
+Color cartridges play in it. The Game Boy Color, meanwhile, colors original games with its own
 built-in palettes. See [Game Boy](/guide/platforms/game-boy/).
 
-## Link cables, everywhere — *v0.9, v0.10, v0.11*
+## Link cables, everywhere (*v0.9, v0.10, v0.11*)
 
 The link bus that started with Game Boys and GameCubes now carries far more:
 
@@ -74,7 +74,7 @@ The link bus that started with Game Boys and GameCubes now carries far more:
 - The **Sega Saturn** link cable and the **Game Gear**'s Gear-to-Gear
 - **Atari Lynx** ComLynx, the **Neo Geo Pocket** and **WonderSwan** cables, the
   **Atari Jaguar** JagLink, and the **Virtual Boy** link
-- **Game Boy Color infrared** — the window glows red when two are talking
+- **Game Boy Color infrared**: the window glows red when two are talking
 - **LAN** through a Network Adapter, for the PlayStation 2 and the GameCube
 
 See [link cables](/guide/playing/link-cables/).
@@ -82,28 +82,28 @@ See [link cables](/guide/playing/link-cables/).
 <Aside type="caution" title="Linking over netplay needs v0.11.1 everywhere">
 	v0.11.1 renamed the link protocols, so every player in a linked netplay session has to be
 	on v0.11.1 with updated cores. v0.11.0's own builds would not plug link cables in at
-	all — that is what the hotfix was for.
+	all, which is what the hotfix was for.
 </Aside>
 
-Rollback netplay also got serialisation fixes in a long list of cores — see
+Rollback netplay also got serialization fixes in a long list of cores. See
 [netplay](/guide/connecting/netplay/).
 
-## Hardware with real shells — *v0.7, v0.8, v0.9*
+## Hardware with real shells (*v0.7, v0.8, v0.9*)
 
-The grey boxes are giving way. New models include the **Dreamcast**, **Genesis 2** and its
+The gray boxes are giving way. New models include the **Dreamcast**, **Genesis 2** and its
 cartridge, the **32X** and its cartridge, the **Game Boy Advance** and **e-Reader**, the
 **Nintendo 64DD** and its disks, and cartridges for nearly everything: NES (redone, at the
 proper thickness), SNES in Type A, Type B, PAL and Japanese shapes, N64 in Japanese and
 US/European shapes, Game Boy, Game Boy Color, GBA, DS and 3DS.
 
-Cartridges **pick their own colour** where the real one was special — gold Zelda carts,
-Pokémon carts, Killer Instinct — and the right regional shape from the scraped region and
-date. Hold a cartridge for a second as you spawn it to choose the shape or any colour you
+Cartridges **pick their own color** where the real one was special (gold Zelda carts,
+Pokémon carts, Killer Instinct), and the right regional shape from the scraped region and
+date. Hold a cartridge for a second as you spawn it to choose the shape or any color you
 like. See [cartridges and discs](/guide/playing/cartridges-and-discs/).
 
 Trademarks had to come off the models for legal reasons.
 
-## Mods — *v0.10, v0.11*
+## Mods (*v0.10, v0.11*)
 
 There is now an in-game **Mod Browser**, backed by [mod.io](https://mod.io/g/retroxr),
 with an initial set of models to download and update from inside the headset. See
@@ -111,14 +111,14 @@ with an initial set of models to download and update from inside the headset. Se
 
 ## More places to run it
 
-Releases now ship for **Meta Quest** (2, 3 and Pro) and **Windows** — desktop and PCVR —
+Releases now ship for **Meta Quest** (2, 3 and Pro) and **Windows** (desktop and PCVR),
 plus experimental **Linux** (x86_64 and arm64) and **macOS** builds. See
 [download & install](/download/).
 
 ## Smaller things worth knowing
 
-- **Saves are kept per system, not per core** — the N64, 64DD and Famicom Disk System
-  cores are the exceptions for now — and the folders were moved for you on update. ROM
+- **Saves are kept per system, not per core**, and the folders were moved for you on
+  update. The N64, 64DD and Famicom Disk System cores are the exceptions for now. ROM
   folders were renamed at the same time (`snes`, `psx`, `n64`…); the old names still work.
   The Sega CD, Saturn and 3DO save inside the console like the real ones, with backup carts
   to move saves around. See [saves](/guide/connecting/saves/).
@@ -130,7 +130,7 @@ plus experimental **Linux** (x86_64 and arm64) and **macOS** builds. See
   auto-accepted results, easier region and language priority, and region flags and disc
   numbers in the game lists. See [box art](/guide/connecting/box-art/).
 - **RomM** logins by username and password fetch the token for you.
-- **The live TV tuner** is no longer built into the TV — spawn the antenna and cable it
+- **The live TV tuner** is no longer built into the TV. Spawn the antenna and cable it
   in. See [television](/guide/room/television/).
 - **Books** flop more naturally, turn with Q and E (tap quickly to riffle), and scale down
   to a tenth of their size. See [books](/guide/room/books/).

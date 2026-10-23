@@ -7,8 +7,8 @@ sidebar:
 
 import { Steps, Tabs, TabItem, Aside, LinkCard, CardGrid } from '@astrojs/starlight/components';
 
-RetroXR is free and open source. It runs on **Meta Quest** and on **Windows** — as PCVR
-with a headset attached, or in a desktop mode with mouse and keyboard without one. Since
+RetroXR is free and open source. It runs on **Meta Quest** and on **Windows**, either as PCVR
+with a headset attached or in a desktop mode with mouse and keyboard without one. Since
 v0.10.0 there are also **Linux** and **macOS** builds, which are experimental.
 
 | Platform | File | Status |
@@ -21,7 +21,7 @@ v0.10.0 there are also **Linux** and **macOS** builds, which are experimental.
 
 <CardGrid>
 	<LinkCard
-		title="Quest — via SideQuest"
+		title="Quest, via SideQuest"
 		description="The easy route. One click from the SideQuest listing."
 		href="https://sidequestvr.com/app/61366"
 	/>
@@ -33,7 +33,7 @@ v0.10.0 there are also **Linux** and **macOS** builds, which are experimental.
 </CardGrid>
 
 <Aside type="note" title="RetroXR does not come with games">
-	No ROMs, no disc images, no BIOS files are included — you supply your own. See
+	No ROMs, no disc images, no BIOS files are included, so you supply your own. See
 	[adding your games](/guide/adding-games/) for how to get them into the headset.
 </Aside>
 
@@ -46,7 +46,7 @@ after that it is a single click.
 Quest 2, Quest 3 and Quest Pro are all supported, with the same install process. Most
 testing happens on a **Quest 3**.
 
-### Step 1 — Turn on Developer Mode
+### Step 1: Turn on Developer Mode
 
 <Steps>
 
@@ -55,7 +55,7 @@ testing happens on a **Quest 3**.
 
 2. Create a developer organization at
    [developers.meta.com](https://developers.meta.com/horizon/manage/organizations/create).
-   It is free, and it only asks for a name — you are not signing up for anything.
+   It is free, and it only asks for a name. You are not signing up for anything.
 
 3. In the Meta Horizon phone app, open your headset's settings, find **Developer Mode**,
    and turn it on.
@@ -69,26 +69,26 @@ testing happens on a **Quest 3**.
 	developer organization. If the toggle is missing, step 2 is the one that was skipped.
 </Aside>
 
-### Step 2 — Install SideQuest on your PC
+### Step 2: Install SideQuest on your PC
 
 Download **SideQuest Advanced Installer** from
 [sidequestvr.com/setup](https://sidequestvr.com/setup) and install it. It is available for
 Windows, macOS and Linux.
 
-### Step 3 — Connect the headset
+### Step 3: Connect the headset
 
 <Steps>
 
 1. Plug the headset into your computer with a USB-C cable.
 
-2. Put the headset on. You will be asked to **Allow USB debugging** — accept it, and check
+2. Put the headset on. You will be asked to **Allow USB debugging**. Accept it, and check
    *Always allow from this computer* so you are not asked again.
 
 3. Back on the PC, SideQuest's indicator in the top-left should turn green.
 
 </Steps>
 
-### Step 4 — Install RetroXR
+### Step 4: Install RetroXR
 
 <Tabs>
 <TabItem label="From the SideQuest listing">
@@ -101,13 +101,13 @@ Open the [RetroXR listing](https://sidequestvr.com/app/61366) and press
 
 Download `RetroXR-v<version>.apk` from the
 [latest release](https://github.com/RetroXR/RetroXR/releases/latest), then drag the
-file onto the SideQuest window — or use the *Install APK file from folder* button in
+file onto the SideQuest window, or use the *Install APK file from folder* button in
 SideQuest's top-right toolbar.
 
 </TabItem>
 </Tabs>
 
-### Step 5 — Launch it
+### Step 5: Launch it
 
 In the headset, open the app library and switch the source dropdown from *All* to
 **Unknown Sources**. RetroXR is in there. Sideloaded apps never appear in the main
@@ -125,16 +125,16 @@ library list, which is the single most common "where did it go?" moment.
 1. Download `RetroXR-win-v<version>.zip` from the
    [latest release](https://github.com/RetroXR/RetroXR/releases/latest).
 
-2. Unpack it somewhere sensible — not inside `Downloads`, since the app writes its data
+2. Unpack it somewhere sensible, not inside `Downloads`, since the app writes its data
    folder alongside your user profile.
 
 3. Run `RetroXR.exe`.
 
 </Steps>
 
-If an **OpenXR runtime** is running with a headset attached — SteamVR, or the Meta Quest
-Link app with a Quest over Link or Air Link — RetroXR runs as **PCVR**. With no headset it
-falls back to a **desktop mode** with mouse and keyboard — see the
+If an **OpenXR runtime** is running with a headset attached (SteamVR, or the Meta Quest
+Link app with a Quest over Link or Air Link), RetroXR runs as **PCVR**. With no headset it
+falls back to a **desktop mode** with mouse and keyboard, described in the
 [desktop controls](/guide/reference/desktop-controls/).
 
 ## Linux and macOS
@@ -153,13 +153,13 @@ executable and run it; unpack the tarball and run the executable inside it.
 - The DVD player and the VCR use your system's libVLC, so install your distro's
   **`vlc-libs`** package (on some distros just `vlc`). Without it the rest of the app works
   and those two do not.
-- SDL3, for game controllers, ships beside the binary — there is nothing to install.
+- SDL3, for game controllers, ships beside the binary, so there is nothing to install.
 
 </TabItem>
 <TabItem label="macOS">
 
-Download the **macOS** zip — one build for both Apple Silicon and Intel Macs — and unzip
-it.
+Download the **macOS** zip, which is one build for both Apple Silicon and Intel Macs, and
+unzip it.
 
 - The app is ad-hoc signed rather than notarized, so the first time, **right-click it and
   choose Open** rather than double-clicking.
@@ -180,7 +180,7 @@ recipe.
 
 The Windows, Linux and macOS builds check GitHub for a newer release shortly after launch.
 When one is out, a banner appears on the menu: press **Update** and RetroXR downloads it,
-checks it against the release's checksum, swaps the files and restarts — with your room
+checks it against the release's checksum, swaps the files and restarts with your room
 as you left it. Nothing is installed until you press the button, and the check can be
 switched off under `OPTIONS` → ABOUT → **Updates**.
 
@@ -204,7 +204,7 @@ Where that tree lives depends on the platform:
 | Linux / macOS | `~/retroxr` |
 | Quest | `/sdcard/Android/data/com.xenu.retroxr/files` |
 
-On a headset you do not have a file manager, so RetroXR includes one — turn on **Web File
-Manager** in `OPTIONS`, and copy files over from any browser on your network. That is the
+On a headset you do not have a file manager, so RetroXR includes one. Turn on **Web File
+Manager** in `OPTIONS` and copy files over from any browser on your network. That is the
 route to use on Quest, and it is covered step by step in
 [adding your games](/guide/adding-games/).

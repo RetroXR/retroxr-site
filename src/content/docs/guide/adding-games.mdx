@@ -1,6 +1,6 @@
 ---
 title: Adding your games
-description: Copy ROMs, videos, DVDs, music and books into RetroXR — over the built-in web file manager, or straight onto disk.
+description: Copy ROMs, videos, DVDs, music and books into RetroXR, either over the built-in web file manager or straight onto disk.
 sidebar:
   order: 3
 ---
@@ -47,14 +47,14 @@ Where that tree lives:
 | Quest | `/sdcard/Android/data/com.xenu.retroxr/files` |
 
 The **system folder name** under `roms/` is what tells RetroXR which console a game belongs
-to, and it has to match exactly. The names are the ones **ES-DE** uses — `snes`, `psx`,
-`n64`, `genesis`, `gba`, `gc` — so a library already laid out for ES-DE drops straight in.
+to, and it has to match exactly. The names are the ones **ES-DE** uses (`snes`, `psx`,
+`n64`, `genesis`, `gba`, `gc`), so a library already laid out for ES-DE drops straight in.
 Where ES-DE keeps more than one folder for a machine (`megadrive` beside `genesis`, say),
 RetroXR reads both.
 
 <Aside type="note" title="Upgrading from v0.7 or earlier">
-	Before v0.8 the folders had RetroXR's own names — `super_nes`, `playstation`,
-	`nintendo_64`, `mega_drive` and so on. The first launch of a newer version renames
+	Before v0.8 the folders had RetroXR's own names, such as `super_nes`, `playstation`,
+	`nintendo_64` and `mega_drive`. The first launch of a newer version renames
 	them for you, saves included. If a folder cannot be moved (one created over `adb` on a
 	Quest sometimes cannot be), it is left where it is and still read under its old name.
 </Aside>
@@ -66,7 +66,7 @@ does not appear in the menu, a folder named by hand is the first thing to check.
 ## On Quest: the web file manager
 
 A headset has no file manager, so RetroXR includes one. You copy files from any browser on
-the same network — phone, laptop, anything.
+the same network, whether that is a phone, a laptop or anything else.
 
 <Steps>
 
@@ -83,21 +83,21 @@ the same network — phone, laptop, anything.
 
 5. You land on a root with two folders.
 
-   <Image src={rootView} alt="The RetroXR Files root listing, showing two folders named libretro and media, above a drop zone reading 'Drop files or a folder here — choose files — choose folder'." />
+   <Image src={rootView} alt="The RetroXR Files root listing, showing two folders named libretro and media, above a drop zone reading 'Drop files or a folder here' with choose files and choose folder links." />
 
 6. **Your games go under `media/`.** Open it and you get `books`, `dvd`, `music`, `roms`
    and `videos`.
 
    <Image src={mediaView} alt="The media folder listing, showing books, dvd, music, roms and videos folders." />
 
-7. Drag files — or a whole folder — onto the drop zone at the top. There are also **choose
+7. Drag files, or a whole folder, onto the drop zone at the top. There are also **choose
    files** and **choose folder** links if you would rather browse.
 
 </Steps>
 
 <Aside type="tip" title="Two branches, not one">
 	That root is assembled by RetroXR rather than being a real folder. **`media/`** is the
-	`retroxr` tree above — your games and films. **`libretro/`** is where downloaded cores
+	`retroxr` tree above, with your games and films. **`libretro/`** is where downloaded cores
 	and their system files live, and you generally have no reason to touch it: the
 	[core downloader](/guide/cores/downloading/) fills it in for you.
 </Aside>
@@ -118,7 +118,7 @@ works too. The path is:
 
 <Aside type="danger" title="Do not overwrite files the app writes">
 	Copy **game files** this way by all means. Do not push over save files, config files or
-	the `.romm` folders — files pushed from a PC land with permissions the app cannot write
+	the `.romm` folders. Files pushed from a PC land with permissions the app cannot write
 	back to, and a config it can no longer update looks exactly like a config that was
 	wiped. Let RetroXR own everything it creates.
 </Aside>
@@ -127,7 +127,7 @@ works too. The path is:
 
 Copy files straight into the folder with your normal file manager.
 
-The web file manager is a **Quest-only** feature — it does not run on desktop, and there is
+The web file manager is a **Quest-only** feature. It does not run on desktop, and there is
 no toggle for it there. On a PC you have a file manager already.
 
 ## Box art and manuals
@@ -144,5 +144,5 @@ If you already run a [RomM](https://romm.app) server, you do not have to copy an
 hand. RetroXR connects to it directly, browses your whole collection from inside the
 headset, downloads only what you want to play, and syncs your saves back.
 
-Pairing is a QR code you scan with the headset's camera — see
+Pairing is a QR code you scan with the headset's camera. See
 [connecting RomM](/guide/connecting/romm/).

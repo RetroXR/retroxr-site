@@ -1,6 +1,6 @@
 ---
 title: Nintendo 64
-description: The Nintendo 64 in RetroXR — its cartridges, its controller and the three paks that go into the back of one, the Expansion Pak, the Voice Recognition Unit, and the 64DD underneath.
+description: "The Nintendo 64 in RetroXR: its cartridges, its controller and the three paks that go into the back of one, the Expansion Pak, the Voice Recognition Unit, and the 64DD underneath."
 ---
 
 import { Aside, Steps } from '@astrojs/starlight/components';
@@ -8,36 +8,36 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 The Nintendo 64 takes cartridges from your `roms/n64` folder and plays them like any
 other console here.
 
-Underneath it goes the **[64DD](/guide/platforms/nintendo-64dd/)** — the magnetic disk drive
-that only ever shipped in Japan, and the reason the hatch in the console's floor is there.
+Underneath it goes the **[64DD](/guide/platforms/nintendo-64dd/)**, the magnetic disk drive
+that only ever shipped in Japan and the reason the hatch in the console's floor is there.
 The drive is taller than the console it carries, so the N64 stands on top of it, and a
 cartridge can be in the console while a disk is in the drive.
 
 ## Cartridges
 
-Since v0.8.0 an N64 cartridge is a modelled shell rather than a grey block, and RetroXR
+Since v0.8.0 an N64 cartridge is a modeled shell rather than a gray block, and RetroXR
 dresses each one for the game in it:
 
 - **The shape follows the region.** Japan's cartridges had their own rear notches and
   latches; North America and Europe shared a shape. Which one you get comes from the
   game's scraped region, or the ROM header if it has not been scraped.
-- **The colour follows the game.** The coloured runs — gold Zelda, the Pokémon carts and
-  the rest — are looked up by the ROM header, so a game that came in colour comes out in
-  colour. Anything not in the table is grey.
+- **The color follows the game.** The colored runs, such as gold Zelda and the Pokémon
+  carts, are looked up by the ROM header, so a game that came in color comes out in
+  color. Anything not in the table is gray.
 - **The label is your box art scrape.** If the scraper found a label, it is printed onto
   the sticker. See [box art](/guide/connecting/box-art/).
 
 To choose for yourself, **hold the game's row in the spawn menu for a second** instead of
-tapping it. A sub-menu offers the body — Auto, USA/PAL or Japan — and the shell: Auto, any
-of the known colours, or **Custom**, a colour wheel with a metal-flake switch. The
+tapping it. A sub-menu offers the body (Auto, USA/PAL or Japan) and the shell: Auto, any
+of the known colors, or **Custom**, a color wheel with a metal-flake switch. The
 [cartridges page](/guide/playing/cartridges-and-discs/) covers the same picker on the other
 consoles.
 
 ## The controller, and the port in its back
 
-New in **v0.6.0**: a modelled N64 controller, with the **expansion port** in its underside
+New in **v0.6.0**: a modeled N64 controller, with the **expansion port** in its underside
 that the console's peripherals plug into. Spawn a pak, push it into the back of the pad, and
-the machine is told what is in there — RetroXR sets the running core's pak option for that
+the machine is told what is in there: RetroXR sets the running core's pak option for that
 port to match.
 
 Three paks go in it, and only one fits at a time, exactly as on the hardware.
@@ -50,12 +50,12 @@ Three paks go in it, and only one fits at a time, exactly as on the hardware.
 
 <Aside type="note" title="A pak works on a real gamepad too">
 	The expansion port is not only on the virtual controller. If you play on a physical pad,
-	the receiver it connects through has a port of its own — otherwise the paks would exist
+	the receiver it connects through has a port of its own. Otherwise the paks would exist
 	and the one socket that took them would be on a controller you were not holding.
 </Aside>
 
 <Aside type="note" title="The models are placeholders">
-	The controller is modelled; the three paks currently wear placeholder shapes. They seat,
+	The controller is modeled, but the three paks currently wear placeholder shapes. They seat,
 	work and save regardless.
 </Aside>
 
@@ -63,7 +63,7 @@ Three paks go in it, and only one fits at a time, exactly as on the hardware.
 
 A Controller Pak is a **memory card that lives in a controller**, and RetroXR treats it as
 one: point at a seated pak and open its panel and you get the notes written on it, counted
-in **pages** the way every N64 game counts them. A pak has 123 usable pages — the first
+in **pages** the way every N64 game counts them. A pak has 123 usable pages, because the first
 five hold the ID block, the index, its backup and the note table.
 
 Each pak keeps its own file, named for the pak rather than for a game or a slot, so a pak
@@ -80,8 +80,8 @@ a `.mpk` image.
 </Aside>
 
 Since v0.8.0 RetroXR also knows, from the N64 core's own game database, **which games save
-to a Controller Pak**. When it restores a cartridge save — from [RomM](/guide/connecting/romm/)
-or a backup — it uses that to tell you whether the save is likely to be holding pak notes.
+to a Controller Pak**. When it restores a cartridge save from [RomM](/guide/connecting/romm/)
+or a backup, it uses that to tell you whether the save is likely to be holding pak notes.
 The database only ever says yes, so a game it does not list is unknown rather than
 pak-free.
 
@@ -93,7 +93,7 @@ ROM, and its save.
 
 The important part is that **the save is the Game Boy cartridge's own**, kept exactly where
 that cartridge's save is always kept. Play the cart in a Game Boy, carry it to the Transfer
-Pak, and it is the same save — which is what the hardware did, and the whole point of the
+Pak, and it is the same save. That is what the hardware did, and the whole point of the
 accessory.
 
 ## The Expansion Pak
@@ -102,18 +102,18 @@ The N64's memory expansion goes in the console itself, under the lid on top, rep
 Jumper Pak that ships there. Both are in RetroXR as of v0.6.0.
 
 Fitting the Expansion Pak **sets the core option for you**, so a game that wants the extra
-memory gets it and one that does not is unaffected. There is nothing to configure — the
+memory gets it and one that does not is unaffected. There is nothing to configure, because the
 state of the console is the setting.
 
 ## The Voice Recognition Unit
 
 New in **v0.8.0**: the VRU, the add-on that let you talk to *Hey You, Pikachu!* and drive
-*Densha de GO! 64* by voice. It is a box that plugs into a **controller port** — socket 4,
-which is where both VRU games expect it — with an ordinary pad in socket 1, and a
+*Densha de GO! 64* by voice. It is a box that plugs into a **controller port**, socket 4,
+which is where both VRU games expect it, with an ordinary pad in socket 1, and a
 microphone on a cord that plugs into the box. It spawns with the microphone already in.
 
-The VRU was never a plain microphone: the hardware recognised words itself and handed the
-game the answer. RetroXR does the same with a speech recogniser, which needs a download:
+The VRU was never a plain microphone: the hardware recognized words itself and handed the
+game the answer. RetroXR does the same with a speech recognizer, which needs a download:
 
 <Steps>
 
@@ -127,7 +127,7 @@ game the answer. RetroXR does the same with a speech recogniser, which needs a d
 </Steps>
 
 You do not press anything to talk. The game decides when it is listening, as it did with
-the real unit — in Hey You, Pikachu! that is while you hold Z on your own controller. Your
+the real unit. In Hey You, Pikachu! that is while you hold Z on your own controller. Your
 voice is heard from where the microphone is, so keep it close: a microphone left on a
 table across the room hears you faintly or not at all. Without the speech pack the VRU
 still plugs in and the game still runs; it simply never understands you.
@@ -136,5 +136,5 @@ It runs on Mupen64Plus-Next, in RetroXR's own build. See also
 [microphones](/guide/playing/controllers/).
 
 <Aside type="note" title="The console wears a stand-in">
-	The Nintendo 64 has a new primitive model as of v0.6.0, but not a modelled shell.
+	The Nintendo 64 has a new primitive model as of v0.6.0, but not a modeled shell.
 </Aside>

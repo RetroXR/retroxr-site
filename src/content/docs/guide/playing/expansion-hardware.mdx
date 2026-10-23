@@ -1,6 +1,6 @@
 ---
 title: Expansion hardware
-description: The add-ons that bolt onto a console — a Sega CD under a Mega Drive, a 32X in its slot, a 64DD, a Super Game Boy — built as a stack you assemble by hand.
+description: The add-ons that bolt onto a console, such as a Sega CD under a Mega Drive, a 32X in its slot, a 64DD or a Super Game Boy, built as a stack you assemble by hand.
 sidebar:
   order: 9
 ---
@@ -13,7 +13,7 @@ took a Super Game Boy, a Sufami Turbo or the BS-X cartridge in the same slot an 
 game went into.
 
 Since **v0.5.0** those are real objects in the room. You spawn the expansion, you spawn the
-console, and you **stack them** — the same way you would on a shelf.
+console, and you **stack them**, the same way you would on a shelf.
 
 ## Assembling a stack
 
@@ -35,12 +35,12 @@ Which way round depends on the hardware, and it follows the real thing:
 | **32X** | Mega Drive | **Into** the cartridge slot, with its own slot on top |
 | **Jaguar CD** | Atari Jaguar | **Into** the cartridge slot, hanging over the back |
 | **Super Game Boy / SGB2** | Super Famicom | **Into** the cartridge slot, Game Boy cart on top |
-| **Sufami Turbo** | Super Famicom | **Into** the cartridge slot — and it takes **two** carts |
+| **Sufami Turbo** | Super Famicom | **Into** the cartridge slot, and it takes **two** carts |
 | **BS-X** | Super Famicom | **Into** the cartridge slot, 8M Memory Pack on top |
 
 A unit with a bay of its own takes its own media: a disc goes into the Sega CD's tray, a
 disk into the 64DD, a Game Boy cartridge into the roof of a Super Game Boy. Where the real
-hardware had no mouth — the Satellaview base station is a tuner and a modem — the media
+hardware had no mouth (the Satellaview base station is a tuner and a modem), the media
 goes into the **console's** slot instead, exactly as it did in 1995.
 
 The Sufami Turbo is the one with two wells, and that is not decoration: nine of its
@@ -54,14 +54,14 @@ Drive on its own is fine on one core; a Mega Drive with a 32X on it is a differe
 and wants another.
 
 You do not have to know which. When you build a stack, RetroXR resolves the combination
-and **switches to the core that supports it** — downloading it first if you do not have it
+and **switches to the core that supports it**, downloading it first if you do not have it
 yet. Take the stack apart and the console goes back to its usual core.
 
 See [about cores](/guide/cores/about-cores/) if you want to know which core is running.
 
 ## Units that need a BIOS
 
-Four of these are not consoles at all — they are **cartridges carrying a program**, and
+Four of these are not consoles at all. They are **cartridges carrying a program**, and
 that program is firmware you supply. Until the file is installed, the unit is not offered
 in the spawn menu at all, because without it the unit would be a prop.
 
@@ -73,12 +73,12 @@ in the spawn menu at all, because without it the unit would be a prop.
 | **BS-X** | `BS-X.bin` | `libretro/system/snes9x/` |
 
 The `BIOS / Extras` view in the `CORES` tab shows which of these you have and verifies
-them — see [BIOS and firmware](/guide/cores/bios/) for where those folders live on each
+them. See [BIOS and firmware](/guide/cores/bios/) for where those folders live on each
 platform.
 
 <Aside type="caution" title="SGB1 and SGB2 are told apart by the dump, not the filename">
-	The two Super Game Boys are genuinely different machines — the original runs the
-	handheld about 2.4% fast off the SNES clock, the 1998 revision carries its own crystal.
+	The two Super Game Boys are genuinely different machines. The original runs the
+	handheld about 2.4% fast off the SNES clock, while the 1998 revision carries its own crystal.
 	Which one you get is decided by the **header inside the ROM**, so an SGB1 dump installed
 	under the name `SGB2.sfc` quietly gives you two SGB1s. The BIOS view's checksum verdict
 	is where that shows up.
@@ -86,7 +86,7 @@ platform.
 
 ## Saves
 
-The battery is wherever the real hardware put it. A Super Game Boy has none — the save
+The battery is wherever the real hardware put it. A Super Game Boy has none, because the save
 belongs to the Game Boy cartridge seated in it. A Sufami Turbo has none either, and **both**
 of its cartridges keep their own save. The BS-X unit does have one, holding the town and
 your name.
@@ -97,17 +97,17 @@ Two of the CD machines had a cartridge slot as well, and both slots are here.
 
 **The Sega Saturn** takes, in its cartridge slot:
 
-- **Extended RAM Cartridge, 1 MB or 4 MB** — the RAM expansion some fighting games
+- **Extended RAM Cartridge, 1 MB or 4 MB**: the RAM expansion some fighting games
   required. Seating one sets the matching core option for you.
-- **MPEG Cartridge** — for Video CDs. It needs the MPEG card's own firmware installed,
+- **MPEG Cartridge**: for Video CDs. It needs the MPEG card's own firmware installed,
   like a BIOS, before it does anything.
-- **Backup RAM Cartridge** — extra save memory, and the way to move saves from one
+- **Backup RAM Cartridge**: extra save memory, and the way to move saves from one
   Saturn to another.
 
 **The Sega CD** has a **Backup RAM Cartridge** too, which goes into the Mega Drive's
 cartridge slot and carries saves the same way.
 
-Both consoles save to their own internal memory first, as the hardware did — see
+Both consoles save to their own internal memory first, as the hardware did. See
 [Sega Saturn](/guide/platforms/sega-saturn/) and
 [cartridges, discs and memory cards](/guide/playing/cartridges-and-discs/#consoles-that-save-to-themselves).
 
@@ -120,11 +120,11 @@ is a community client that streams a scheduled broadcast again, and v0.5.0 can r
   [Satellaview+](https://satellaview-plus.com) client writes into.
 - Spawn **8M Memory Packs** to save the transmissions you catch.
 
-The [Satellaview page](/guide/platforms/satellaview/) covers the whole stack — the base
+The [Satellaview page](/guide/platforms/satellaview/) covers the whole stack: the base
 station, the BS-X cartridge, the packs and the live broadcast.
 
 <Aside type="caution" title="PCVR only, for now">
 	This needs the Satellaview+ client running alongside RetroXR, and there is no in-app
-	client on Quest yet. On a standalone headset the Satellaview is still there — you just
+	client on Quest yet. On a standalone headset the Satellaview is still there, and you just
 	play the dumps you already have rather than a live broadcast.
 </Aside>

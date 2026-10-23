@@ -1,6 +1,6 @@
 ---
 title: Wii
-description: Set up a Wii in RetroXR — the sensor bar on your TV, the Wiimote synced by hand, and MotionPlus clipped on the end.
+description: Set up a Wii in RetroXR, with the sensor bar on your TV, the Wiimote synced by hand, and MotionPlus clipped on the end.
 sidebar:
   order: 1
 ---
@@ -20,7 +20,7 @@ import backPorts from '../../../../assets/wii/wii_back_ports.png';
 import playerLeds from '../../../../assets/wii/wii_player_leds.png';
 
 The Wii is the platform where RetroXR's whole idea pays off most obviously. A Wii is not
-a machine you plug in and play — it is a machine you *set up*. There is a bar to place on
+a machine you plug in and play. It is a machine you *set up*. There is a bar to place on
 the television, a remote to pair, and a dongle to clip on the end of it. RetroXR makes you
 do all of it.
 
@@ -38,7 +38,7 @@ do all of it.
 1. **Spawn a Wii** from `SPAWN` → Systems, and a **TV**.
 
 2. **Spawn a Wii composite adapter** from the Objects tab and use it for the console's A/V
-   out — the Wii does not carry a plain composite lead of its own. Run it to the TV, as on
+   out, because the Wii does not carry a plain composite lead of its own. Run it to the TV, as on
    [plugging things in](/guide/playing/plugging-in/).
 
 3. **Spawn a sensor bar** and stand it on top of the television. The Wiimote's pointing is
@@ -47,7 +47,7 @@ do all of it.
 4. **Spawn a Wiimote.**
 
 5. **Sync them.** Press **SYNC** on the **Wii first**. Then, on the remote, **swing the
-   battery cover open** and press the SYNC button underneath it — exactly where it was on
+   battery cover open** and press the SYNC button underneath it, exactly where it was on
    the real hardware.
 
 </Steps>
@@ -58,7 +58,7 @@ do all of it.
 	src="/video/wii/sync_cover.mp4"
 	poster={syncCoverPoster}
 	alt="The underside of the Wii Remote. The battery cover swings open on its hinge, and the SYNC button appears in the compartment beneath it once the cover is far enough open."
-	caption="The battery cover opening. SYNC does not exist until the cover passes about 45° — the button here is tinted green so it reads against the white shell."
+	caption="The battery cover opening. SYNC does not exist until the cover passes about 45°. The button here is tinted green so it reads against the white shell."
 />
 
 **The cover is the trigger. The button is your finger.**
@@ -66,34 +66,34 @@ do all of it.
 <Steps>
 
 1. **Open the cover.** Bring a controller tip near it and a floating open-hand icon
-   appears. **Pull the trigger** to latch onto it — the icon becomes a fist and the cover
+   appears. **Pull the trigger** to latch onto it. The icon becomes a fist and the cover
    swings with your hand. Once latched your hand can leave; the latch holds until you
    release the trigger.
 
 2. **Press SYNC.** Reach in and **push the button with your fingertip**. As of v0.4.0 this
-   is an ordinary poke — no arming, no trigger pull. The cover is what keeps it safe.
+   is an ordinary poke, with no arming and no trigger pull. The cover is what keeps it safe.
 
 </Steps>
 
 <Aside type="tip" title="Why the trigger and not the grip">
-	Grip is how you pick things up, and the remote *is* a pickable — a grip-latched cover
+	Grip is how you pick things up, and the remote *is* a pickable. A grip-latched cover
 	would mean one squeeze both swung the cover and lifted the whole remote off the table.
 	On the trigger the two never compete: **grip takes the remote, trigger works its cover.**
 
 	SYNC itself is now a plain poke. It was a two-stage trigger press to stop a drifting
 	fingertip unpairing your remote, but a button that only exists once you have swung a
-	battery cover open is already hard to hit by accident — the cover is the safety.
+	battery cover open is already hard to hit by accident, so the cover is the safety.
 </Aside>
 
 <Aside type="caution" title="The cover really covers it">
-	SYNC is not merely hidden while the cover is shut — it is switched off entirely, off
+	SYNC is not merely hidden while the cover is shut. It is switched off entirely, off
 	the pointable layer and not polling fingertips. Until the cover is far enough open,
 	there is nothing there to press.
 </Aside>
 
 ### The player LEDs
 
-The four blue LEDs along the remote's face say which slot it claimed — player one is the
+The four blue LEDs along the remote's face say which slot it claimed. Player one is the
 leftmost, exactly as on the real console.
 
 <Image src={playerLeds} alt="Four views of the Wii Remote's LED strip, one per player: the lit blue LED steps from the first position to the fourth." />
@@ -116,16 +116,16 @@ a walk back to the console.
 ## AV Multi Out
 
 The Wii does not have a phono row. Everything leaves through a single **AV Multi Out**
-connector on its back, which fans out to composite at the other end — which is why the Wii
+connector on its back, which fans out to composite at the other end. That is why the Wii
 needs its own composite adapter rather than the generic lead the other consoles use.
 
 Both of the console's sockets are on its back panel:
 
 <Image src={backPorts} alt="The Wii's rear panel with two sockets circled: a wide rectangular AV Multi Out connector marked 1, and a smaller sensor bar socket marked 2." />
 
-**① AV Multi Out** — everything the console outputs. The composite adapter plugs in here.
+**① AV Multi Out:** everything the console outputs. The composite adapter plugs in here.
 
-**② Sensor bar** — the bar you stand on the television plugs in here.
+**② Sensor bar:** the bar you stand on the television plugs in here.
 
 <div class="rxr-conn-pair-row">
 	<figure>
@@ -143,7 +143,7 @@ Both of the console's sockets are on its back panel:
 <Turntable
 	src="/video/wii/sensor_bar.mp4"
 	poster={sensorBarPoster}
-	alt="The Wii sensor bar model rotating — a long thin bar."
+	alt="The Wii sensor bar model rotating, a long thin bar."
 	caption="The sensor bar. It stands on the television and is what the remote points at."
 />
 
@@ -155,8 +155,8 @@ Controllers. It plugs into the Wii and stands on the set.
 <Turntable
 	src="/video/wii/wiimote.mp4"
 	poster={wiimotePoster}
-	alt="The remodelled Wii Remote rotating, showing the D-pad, A button, the 1 and 2 buttons, the player LEDs, the minus, Home and plus row, and the expansion port on its base."
-	caption="The Wii Remote, remodelled in v0.4.0. The expansion port on its base is what MotionPlus and the Nunchuk plug into."
+	alt="The remodeled Wii Remote rotating, showing the D-pad, A button, the 1 and 2 buttons, the player LEDs, the minus, Home and plus row, and the expansion port on its base."
+	caption="The Wii Remote, remodeled in v0.4.0. The expansion port on its base is what MotionPlus and the Nunchuk plug into."
 />
 
 Pick it up and swing it. Pointing works off the sensor bar you placed, so if the pointer is
@@ -200,7 +200,7 @@ and your *other* hand poking the shell.
 
 | Your VR controller | Wii Remote |
 | --- | --- |
-| **Trigger** | **B** — the real B is under the remote, right where your index finger is |
+| **Trigger** | **B**, since the real B is under the remote, right where your index finger is |
 | **A / X button** | **A** |
 | **Grip** | **1** |
 | **B / Y button** | **2** |
@@ -227,7 +227,7 @@ The hand bindings above are defaults, not fixed. Change them globally or per sys
 ### On desktop
 
 The remote can be held in desktop mode too. Those keys only take effect while **Scroll
-Lock** capture is on — otherwise they still belong to you, walking around the room.
+Lock** capture is on. Otherwise they still belong to you, walking around the room.
 
 | Key | Wii Remote |
 | --- | --- |
@@ -247,20 +247,20 @@ Worth knowing, because it explains why the sensor bar's placement matters so muc
 
 RetroXR does **not** raycast at the television. There is a camera in the nose of the
 remote, and every lit sensor bar LED in the room is projected into it; the resulting pixel
-coordinates go straight to the core. That is the whole of the aim — no cursor, no screen
+coordinates go straight to the core. That is the whole of the aim, with no cursor and no screen
 intersection.
 
 Three channels reach the emulator every frame:
 
-- **IR** — the sensor bar's lights, seen by the remote's own camera.
-- **Buttons** — everything in the tables above, plus the Nunchuk's stick when one is
+- **IR**: the sensor bar's lights, seen by the remote's own camera.
+- **Buttons**: everything in the tables above, plus the Nunchuk's stick when one is
   seated.
-- **Motion** — a real accelerometer in g derived from the barrel's movement, which is what
+- **Motion**: a real accelerometer in g derived from the barrel's movement, which is what
   makes tilt and shake games work, plus a gyroscope in rad/s, which is what MotionPlus
   reports.
 
-Because the remote sees actual lights, it carries roll and distance as well as direction —
-things a point on a plane cannot express.
+Because the remote sees actual lights, it carries roll and distance as well as direction,
+which a point on a plane cannot express.
 
 ## Wii MotionPlus
 
@@ -276,7 +276,7 @@ bottom of the Wiimote. Games that need it will then see it.
 
 The Dolphin build RetroXR downloads is a custom fork carrying MotionPlus gyro fixes, along
 with IR passthrough for the sensor bar and an Android race-condition fix. The core manager
-fetches it for you — you do not need to build anything.
+fetches it for you, so you do not need to build anything.
 
 ## The Wii Menu
 
@@ -288,7 +288,7 @@ a while and needs the network.
 
 With the menu installed, a Wii switched on with an empty drive boots to the Wii Menu, and
 one switched on with a disc starts at the menu too, with the game waiting in the Disc
-Channel — as on the hardware. Without it, a disc boots straight into the game and an empty
+Channel, as on the hardware. Without it, a disc boots straight into the game and an empty
 Wii has nothing to show. A menu from a different region will not list a disc from another.
 See [BIOS files](/guide/cores/bios/).
 
@@ -297,8 +297,8 @@ See [BIOS files](/guide/cores/bios/).
 <Turntable
 	src="/video/wii/nunchuk.mp4"
 	poster={nunchukPoster}
-	alt="The remodelled Nunchuk rotating, showing its analogue stick, the C and Z buttons on its underside, and the cable coming out of its base."
-	caption="The Nunchuk, remodelled in v0.4.0 from a laser scan of the real accessory — everything but the stick. Thanks to Wesk of the BitBuilt forums for the scan."
+	alt="The remodeled Nunchuk rotating, showing its analog stick, the C and Z buttons on its underside, and the cable coming out of its base."
+	caption="The Nunchuk, remodeled in v0.4.0 from a laser scan of the real accessory, all of it except the stick. Thanks to Wesk of the BitBuilt forums for the scan."
 />
 
 Plug it into the **expansion port** on the base of the remote. Its stick and buttons work:
@@ -321,7 +321,7 @@ you to jerk the Nunchuk read that motion rather than ignoring it.
 
 <Aside type="note" title="MotionPlus and the Nunchuk together">
 	The MotionPlus dongle passes the expansion port through, so the Nunchuk still plugs in
-	behind it and both work at once — which is what the real accessory did.
+	behind it and both work at once, which is what the real accessory did.
 </Aside>
 
 ## Known issue: Dolphin, Vulkan and passthrough
@@ -335,8 +335,8 @@ cores](/guide/cores/downloading/).
 
 ## Still to come
 
-The Wii arrived in [v0.3.0](/blog/) and got most of its second pass in v0.4.0 — a
-remodelled remote and Nunchuk, a working power button, the sideways grip and Nunchuk
+The Wii arrived in [v0.3.0](/blog/) and got most of its second pass in v0.4.0: a
+remodeled remote and Nunchuk, a working power button, the sideways grip and Nunchuk
 motion, which had been the big missing piece.
 
 :::note

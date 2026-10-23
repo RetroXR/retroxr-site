@@ -13,7 +13,7 @@ export default defineConfig({
 		starlight({
 			title: 'RetroXR',
 			description:
-				'A VR retro-gaming room where the hardware is real — pick up a console, ' +
+				'A VR retro-gaming room where the hardware is real. Pick up a console, ' +
 				'run a cable to the TV, push the cartridge in and hit power. Powered by libretro.',
 			logo: {
 				// Two files, not one: the wordmark's "Retro" is near-white and vanished

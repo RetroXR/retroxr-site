@@ -6,7 +6,7 @@ sidebar:
 ---
 
 With no VR headset detected, RetroXR falls back to a desktop mode driven by mouse and
-keyboard. Everything in the room still works — you are just reaching into it with a cursor
+keyboard. Everything in the room still works. You are just reaching into it with a cursor
 instead of your hands.
 
 ## Moving and looking
@@ -16,7 +16,7 @@ instead of your hands.
 | `W` `A` `S` `D` | Move |
 | Mouse | Look |
 | `Ctrl` *(hold)* | Crouch |
-| `Caps Lock` *(hold)* | Walk — slower, for fine positioning |
+| `Caps Lock` *(hold)* | Walk (slower, for fine positioning) |
 
 ## Handling things
 
@@ -25,11 +25,11 @@ instead of your hands.
 | Left-click | Grab or pick up whatever is under the cursor |
 | `Ctrl` + Left-click | Drop the held object |
 | Scroll wheel | Push or pull the held object along the view ray |
-| `F11`, looking at a TV or handheld | Full screen — its picture fills the window; press again to put it back in the room |
+| `F11`, looking at a TV or handheld | Full screen. Its picture fills the window, and pressing again puts it back in the room |
 | Middle-mouse drag | Rotate the held object in place |
 | `Tab` | Toggle the spawn menu |
 
-Two objects — the **ray gun** and the **TV remote** — snap to a fixed position on screen
+Two objects, the **ray gun** and the **TV remote**, snap to a fixed position on screen
 while held, the way an FPS weapon does. Those need `Ctrl` + Left-click to drop; a plain
 click will not do it, and the scroll wheel does nothing while they are snapped. Everything
 else drops on a plain click too.
@@ -37,7 +37,7 @@ else drops on a plain click too.
 If you are holding the ray gun, left-click fires it rather than grabbing.
 
 Pull a held object **all the way in** with the scroll wheel and it settles somewhere
-useful rather than in your face: a handheld turns to put its screen front and centre, and
+useful rather than in your face: a handheld turns to put its screen front and center, and
 anything else drops to just below the middle of the view.
 
 ## Full screen
@@ -52,7 +52,7 @@ sound moves in front of you, so a game can be played like any desktop emulator. 
 A few settings only matter without a headset:
 
 - **Mouse Sensitivity**, under `OPTIONS`.
-- **Zoom**, under `OPTIONS`, beside the field of view — above 1.00× everything is drawn
+- **Zoom**, under `OPTIONS`, beside the field of view. Above 1.00× everything is drawn
   closer, and unlike the field of view it is saved between sessions.
 - **Resolution** of the window, under `GRAPHICS`.
 
@@ -61,7 +61,7 @@ A few settings only matter without a headset:
 When a running system has input focus, the keyboard acts as a retro joypad. The current
 mapping is always visible under the **`CONTROLS`** tab:
 
-![The CONTROLS tab, listing gamepad buttons against their bound keys — D-pad up/down/left/right on W/S/A/D, and face buttons on the numeric keypad.](../../../../assets/screenshots/menu_controls.png)
+![The CONTROLS tab, listing gamepad buttons against their bound keys: D-pad up/down/left/right on W/S/A/D, and face buttons on the numeric keypad.](../../../../assets/screenshots/menu_controls.png)
 
 | Control | Keys |
 | --- | --- |
@@ -71,10 +71,10 @@ mapping is always visible under the **`CONTROLS`** tab:
 | Triggers | `L2` = `Z` · `R2` = `X` |
 | Stick clicks | `L3` = `C` · `R3` = `V` |
 | Select / Start | `Shift` / `Enter` |
-| Left stick | `T` `G` `F` `H` — up, down, left, right |
-| Right stick | `I` `K` `J` `L` — up, down, left, right |
+| Left stick | `T` `G` `F` `H` for up, down, left, right |
+| Right stick | `I` `K` `J` `L` for up, down, left, right |
 
-A real gamepad plugged into the PC works too, and is a great deal more pleasant — see
+A real gamepad plugged into the PC works too, and is a great deal more pleasant. See
 [controllers and peripherals](/guide/playing/controllers/).
 
 ## Reading a book

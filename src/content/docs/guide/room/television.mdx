@@ -33,17 +33,17 @@ All of these are on the set itself, and all of them are also on the
 | **Power** | Turns the set on and off. A powered-off set shows nothing even if a console is running |
 | **Volume −** / **Volume +** | Volume for whatever input is currently showing |
 | **Mute** | Silence without changing the volume |
-| **Source** | Cycles the inputs — Composite 1 through 4, the antenna, and VGA |
+| **Source** | Cycles through the inputs: Composite 1 to 4, the antenna, and VGA |
 | **Channel −** / **Channel +** | Tunes up and down when the set is on the antenna input |
 | **Audio mode** | Stereo, then the left channel from both speakers, then the right from both |
 | **Audio output** | Where the sound goes: **TV speakers**, **stereo out** to speakers cabled to the back, or **surround** |
 | **Aspect** | Switches the picture between 16:9 and 4:3 |
-| **CRT** | Turns the CRT effect on and off — scanlines, curvature and phosphor glow |
+| **CRT** | Turns the CRT effect (scanlines, curvature and phosphor glow) on and off |
 | **3D** | For stereoscopic sources: both eyes, left eye only, or right eye only |
 
 <Aside type="tip" title="The 3D button">
-	Systems that produce a stereoscopic picture — the 3DS, the Virtual Boy — can be shown in
-	3D, or forced to a single eye if that is more comfortable. The cap shows an eye leaning
+	Systems that produce a stereoscopic picture, such as the 3DS and the Virtual Boy, can be
+	shown in 3D, or forced to a single eye if that is more comfortable. The cap shows an eye leaning
 	toward whichever side it is showing, so you can tell at a glance.
 </Aside>
 
@@ -51,9 +51,9 @@ All of these are on the set itself, and all of them are also on the
 
 <Image src={avPanel} alt="The back panel of a television: four blocks labeled Composite 1 to Composite 4, each with yellow video and white and red audio sockets marked AV IN, and a separate Antenna block with a single RF IN socket." />
 
-- **Composite 1–4** — four full phono rows, so four machines can stay wired up at once.
-- **Antenna (RF IN)** — for an RF switch, or for the [antenna](#live-tv-through-the-antenna).
-- **VGA** — on sets that have it, for a computer's DE-15 output.
+- **Composite 1–4**: four full phono rows, so four machines can stay wired up at once.
+- **Antenna (RF IN)**: for an RF switch, or for the [antenna](#live-tv-through-the-antenna).
+- **VGA**: on sets that have it, for a computer's DE-15 output.
 
 Which one you see is whatever **Source** last landed on. A machine on an input you are not
 watching keeps running.
@@ -62,18 +62,18 @@ Wiring is covered in full on [plugging things in](/guide/playing/plugging-in/).
 
 ## The speaker outputs
 
-Above the inputs is a row of six phono **outputs** — **FL**, **FR**, **C**, **SUB**,
-**SL** and **SR** — for loudspeakers placed around the room. They do nothing until the
+Above the inputs is a row of six phono **outputs** for loudspeakers placed around the
+room: **FL**, **FR**, **C**, **SUB**, **SL** and **SR**. They do nothing until the
 **Audio output** key is moved off **TV speakers**:
 
-- **TV speakers** — the set's own pair. Anything cabled to the back is silent.
-- **Stereo out** — the front pair, FL and FR, as a line out. Cable them to a pair of
+- **TV speakers**: the set's own pair. Anything cabled to the back is silent.
+- **Stereo out**: the front pair, FL and FR, as a line out. Cable them to a pair of
   speakers, or to an amplifier.
-- **Surround** — the game's stereo is matrix-decoded to all six outputs, the way a Dolby
+- **Surround**: the game's stereo is matrix-decoded to all six outputs, the way a Dolby
   Pro Logic II receiver did it.
 
 On either external position with nothing plugged into the back, the set goes quiet and
-says **NO SPEAKERS CONNECTED** — that is the reason you hear nothing, not a fault. Setting
+says **NO SPEAKERS CONNECTED**. That is the reason you hear nothing, not a fault. Setting
 up a full surround rig is covered in
 [speakers and surround](/guide/playing/plugging-in/#speakers-and-surround).
 
@@ -82,8 +82,8 @@ up a full surround rig is covered in
 If you own a [SiliconDust HDHomeRun](https://www.silicondust.com/) tuner with an antenna
 attached, RetroXR can watch actual broadcast television on it.
 
-The set no longer has a tuner built in. Spawn the **antenna** — rabbit ears on a weighted
-base — and push its coax lead into the set's **RF IN** socket, or into the **ANT** socket
+The set no longer has a tuner built in. Spawn the **antenna**, a set of rabbit ears on a
+weighted base, and push its coax lead into the set's **RF IN** socket, or into the **ANT** socket
 of an RF switch that is itself plugged into the set. Set the source to the antenna input
 and the channel buttons tune through your real local channels, on the same dial as an RF
 switch's channels 3 and 4. Pull the lead and those channels are gone.
@@ -97,7 +97,7 @@ Discovery is layered, cheapest and most reliable first:
 
 1. An explicit host, if you have named one in `channels.json`.
 2. The last address that worked, cached between sessions.
-3. A UDP broadcast on port 65001 — SiliconDust's own discovery protocol.
+3. A UDP broadcast on port 65001, which is SiliconDust's own discovery protocol.
 4. `http://hdhomerun.local/discover.json` over mDNS.
 
 mDNS is last on purpose: it is the flakiest of the four. It has returned a link-local IPv6
@@ -105,7 +105,7 @@ address ahead of IPv4 and hung a resolver outright, and Android may not resolve 
 at all. Every other route yields a plain IPv4 address, which always works.
 
 Every URL the tuner hands back is rewritten onto the address that actually answered, for
-the same reason — the headset should never have to resolve a `.local` name while you are
+the same reason: the headset should never have to resolve a `.local` name while you are
 trying to watch something.
 
 <Aside type="note">
@@ -116,5 +116,5 @@ trying to watch something.
 ## Snow
 
 Tune the antenna input to a channel with nothing on it and you get **snow**. That is not a
-failure state — it is the set telling you it works and nothing is reaching it on that
+failure state. It is the set telling you it works and nothing is reaching it on that
 channel. The same picture appears if an RF switch is connected but its console is off.

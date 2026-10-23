@@ -1,6 +1,6 @@
 ---
 title: Setting up your controls
-description: Rebind the VR controllers, the keyboard, and any real gamepad — globally or per system.
+description: Rebind the VR controllers, the keyboard, and any real gamepad, either globally or per system.
 sidebar:
   order: 0
 ---
@@ -13,7 +13,7 @@ import controllersTab from '../../../../assets/screenshots/menu_spawn_controller
 Everything that presses a button in RetroXR is rebindable, and it all lives under the
 **`CONTROLS`** tab.
 
-<Image src={controlsTab} alt="The CONTROLS tab, listing gamepad buttons against their bound keys — D-pad up, down, left and right on W, S, A and D, and the face buttons on the numeric keypad." />
+<Image src={controlsTab} alt="The CONTROLS tab, listing gamepad buttons against their bound keys: D-pad up, down, left and right on W, S, A and D, and the face buttons on the numeric keypad." />
 
 Each row is one control on the emulated machine, with whatever currently drives it beside
 it. Change a row and it takes effect immediately.
@@ -27,26 +27,26 @@ it. Change a row and it takes effect immediately.
 | **A real gamepad** | Anything connected over Bluetooth or USB |
 
 They are not exclusive. A control can have a VR binding and a key at the same time, and
-whichever you press wins — pressing one never cancels the other.
+whichever you press wins. Pressing one never cancels the other.
 
 ## Global, or per system
 
 Bindings resolve in layers:
 
-1. **Defaults** — what RetroXR ships with.
-2. **Your global bindings** — applied everywhere.
-3. **Per-system bindings** — applied only to that machine.
+1. **Defaults**: what RetroXR ships with.
+2. **Your global bindings**: applied everywhere.
+3. **Per-system bindings**: applied only to that machine.
 
 The most specific one wins. So you can set a layout you like everywhere, and still give
 one console its own arrangement without disturbing the rest.
 
-As of v0.4.0 this applies to **both** the XR controllers and any external gamepad — each
+As of v0.4.0 this applies to **both** the XR controllers and any external gamepad, so each
 platform can carry its own map for either, set from the `CONTROLS` menu.
 
 <Aside type="note" title="A per-system map is a whole map">
 	Giving a platform its own layout takes a complete copy of your bindings at that moment,
 	not a patch over the global ones. Change a global binding afterwards and that platform
-	keeps what it had — which is the point, but it does mean a platform you have customised
+	keeps what it had. That is the point, but it does mean a platform you have customized
 	will not pick up later global edits. Clear its map and it goes back to following global.
 </Aside>
 
@@ -61,7 +61,7 @@ platform can carry its own map for either, set from the `CONTROLS` menu.
 
 A per-system map is drawn on a picture of **that console's own pad**, with a line from
 each of its buttons to the row that says what drives it. It only offers the controls the
-hardware actually has — an NES page has no L3 to bind — and it reads the question the
+hardware actually has (an NES page has no L3 to bind), and it reads the question the
 right way round for a platform override: not "what does this input do?" but "what presses
 this button?". The **NES**, the **Nintendo 64** (C-buttons and all) and the **Wii
 Remote** have diagrams of their own; other consoles use a generic pad.
@@ -70,16 +70,16 @@ Remote** have diagrams of their own; other consoles use a generic pad.
 
 Some hardware has bindings of its own, because it is not shaped like a joypad:
 
-- **Wii Remote** — its own map, since it has seven buttons, a d-pad and motion. See
+- **Wii Remote**: its own map, since it has seven buttons, a d-pad and motion. See
   [the Wii page](/guide/platforms/wii/#controls).
-- **Nunchuk** — a small map of its own, chained behind the remote, motion included.
-- **Light gun** — its own trigger and buttons.
+- **Nunchuk**: a small map of its own, chained behind the remote, motion included.
+- **Light gun**: its own trigger and buttons.
 
 These read from the same file and follow the same global-then-per-system rule.
 
 ## Using real hardware
 
-A real gamepad, keyboard or mouse reaches a machine through a **receiver** — a small box
+A real gamepad, keyboard or mouse reaches a machine through a **receiver**. That is a small box
 you plug into a controller port, rather than anything you configure in a menu.
 
 <Image src={controllersTab} alt="The Controllers tab of the spawn menu, listing a primitive controller, ray gun, mouse and keyboard." />
@@ -102,12 +102,12 @@ Lock** capture is on. Off, the keys still belong to you.
 
 ## Comfort settings are elsewhere
 
-Turning style, snap angle, the movement vignette, height and world scale are not bindings
-— they are under `OPTIONS`, and covered on [graphics and
+Turning style, snap angle, the movement vignette, height and world scale are not bindings.
+They are under `OPTIONS`, and covered on [graphics and
 comfort](/guide/reference/graphics-and-comfort/).
 
 :::caution[Needs an in-headset pass]
 The layering model and the per-device maps are read from the bindings source and are
-accurate. The exact controls on the `CONTROLS` tab — how a row is rebound, and whether
-per-system is a toggle or a separate page — have not been checked against a running build.
+accurate. The exact controls on the `CONTROLS` tab, such as how a row is rebound and whether
+per-system is a toggle or a separate page, have not been checked against a running build.
 :::

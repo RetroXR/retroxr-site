@@ -14,14 +14,14 @@ Bugs go on [GitHub issues](https://github.com/RetroXR/RetroXR/issues), or ask in
 
 A report is far easier to act on with these:
 
-- **What you did**, in enough detail to repeat it — which system, which core, which object.
+- **What you did**, in enough detail to repeat it: which system, which core, which object.
 - **What you expected**, and what happened instead.
 - **The RetroXR version**, from `OPTIONS` → ABOUT.
-- **Your device** — Quest 3, Quest 2, Quest Pro, Windows (desktop or PCVR), Linux, macOS.
+- **Your device**: Quest 3, Quest 2, Quest Pro, Windows (desktop or PCVR), Linux, macOS.
 - **The core and its version**, if it involves a game running.
 - **A log**, if you can get one. This is the part that turns a guess into a fix.
 
-<Aside type="tip" title="A crash is worth a log; a wrong colour is not">
+<Aside type="tip" title="A crash is worth a log; a wrong color is not">
 	If the app closed, froze, or a game refused to boot, capture a log. For visual or
 	layout problems a screenshot or a short video is more use.
 </Aside>
@@ -35,7 +35,7 @@ seat** in a socket, which is worth a look before reporting "it will not plug in"
 ### The easy way: the web file manager
 
 Since v0.9.0 RetroXR writes its log to a file on the headset, and the
-[web file manager](/guide/adding-games/) can show it — no cable, no `adb`.
+[web file manager](/guide/adding-games/) can show it without a cable or `adb`.
 
 <Steps>
 
@@ -50,13 +50,13 @@ Since v0.9.0 RetroXR writes its log to a file on the headset, and the
 </Steps>
 
 The file covers the current run of the app. If RetroXR crashed outright, restart it and
-save the log *before* doing anything else, or use `adb` below — a crash in the middle of
+save the log *before* doing anything else, or use `adb` below. A crash in the middle of
 something is exactly what the next run's log will not contain.
 
 ### With adb
 
 An `adb` log needs **Developer Mode** and USB debugging, which you already turned on if
-you sideloaded — see [download and install](/download/). It catches what the file cannot:
+you sideloaded (see [download and install](/download/)). It catches what the file cannot:
 the moment of a hard crash, and the headset's own messages around it.
 
 You will need `adb`, which ships with SideQuest. On Windows it is easiest to open
@@ -95,14 +95,14 @@ SideQuest's own terminal, or install the Android platform tools.
 
 <Aside type="note" title="If nothing appears in the file">
 	`-s godot:*` keeps only RetroXR's lines. If the file is empty, drop the filter and use
-	plain `adb logcat > retroxr.log` — you will get a much noisier file, but nothing will
+	plain `adb logcat > retroxr.log`. You will get a much noisier file, but nothing will
 	be missed.
 </Aside>
 
 #### A full bug report
 
 For a crash that takes the whole app down, or anything involving the headset's own
-behaviour, a full system report carries more:
+behavior, a full system report carries more:
 
 ```bash
 adb bugreport retroxr-bugreport.zip
@@ -114,8 +114,8 @@ issue.
 
 #### Two devices connected?
 
-If `adb` complains about more than one device — for instance a headset on both USB and
-Wi-Fi — name the one you want:
+If `adb` complains about more than one device, for instance a headset on both USB and
+Wi-Fi, name the one you want:
 
 ```bash
 adb devices -l          # list them, with serials
@@ -135,12 +135,12 @@ attach the most recent log file from:
 
 <Tabs>
 <TabItem label="A crash">
-Include the log, and say whether the window vanished or froze first — those are different
-failures.
+Include the log, and say whether the window vanished or froze first, because those are
+different failures.
 </TabItem>
 <TabItem label="A game that will not start">
 Include the system, the core, and whether `CORES` → BIOS / Extras reports anything
-missing. That accounts for most of them — see [BIOS files](/guide/cores/bios/).
+missing. That accounts for most of them (see [BIOS files](/guide/cores/bios/)).
 </TabItem>
 </Tabs>
 
@@ -148,7 +148,7 @@ missing. That accounts for most of them — see [BIOS files](/guide/cores/bios/)
 
 Two things account for a large share of reports, and both are quick to rule out:
 
-- **A missing BIOS** — check `CORES` → BIOS / Extras for that system.
-- **A core that does not suit the game** — try another from `CORES` → Manager.
+- **A missing BIOS.** Check `CORES` → BIOS / Extras for that system.
+- **A core that does not suit the game.** Try another from `CORES` → Manager.
 
 Neither is a bug, and checking takes a minute. If it survives both, it is worth reporting.

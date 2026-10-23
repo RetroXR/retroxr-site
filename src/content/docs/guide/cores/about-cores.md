@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-RetroXR is not itself an emulator. It is a room that runs **libretro cores** — and a core
+RetroXR is not itself an emulator. It is a room that runs **libretro cores**, and a core
 is an emulator for one system, packaged so a program like this one can load it.
 
 That is why the app arrives with none of them. You download the cores for the systems you
@@ -15,7 +15,7 @@ actually care about, from inside the headset, and RetroXR runs them.
 
 Anything libretro supports, RetroXR can play: NES, SNES, Mega Drive, Nintendo 64,
 PlayStation, Saturn, Dreamcast, GameCube, Game Boy through to the DS and 3DS, PSP, plus
-the long tail — Neo Geo Pocket, WonderSwan, Virtual Boy, Amiga, C64, MSX, DOS, ScummVM,
+the long tail: Neo Geo Pocket, WonderSwan, Virtual Boy, Amiga, C64, MSX, DOS, ScummVM,
 arcade boards, and fantasy consoles like PICO-8.
 
 RetroXR knows about **76 systems**. How many of them you can play comes down to which
@@ -26,7 +26,7 @@ cores you install and which BIOS files you own.
 Most systems have more than one core, and they are not interchangeable. One may be more
 accurate; another faster; another may support something specific.
 
-Where one core is clearly the right default, it is marked **recommended** — take that one
+Where one core is clearly the right default, it is marked **recommended**. Take that one
 unless you have a reason not to. The Nintendo 3DS is the example worth knowing: its
 recommended core renders in **stereoscopic 3D**, which in a headset is the entire point,
 and the alternatives do not.
@@ -39,7 +39,7 @@ unusual.
 
 A handful come from RetroXR's own forks instead, published as releases in the
 [RetroXR organization on GitHub](https://github.com/RetroXR). Those are cores that needed
-something upstream does not do — mostly carrying a [link cable](/guide/playing/link-cables/)
+something upstream does not do, mostly carrying a [link cable](/guide/playing/link-cables/)
 between two cores in one room, but also the Dreamcast's VMU screen, the N64's Voice
 Recognition Unit, and microphones. The downloader picks the right source for you; the
 fork is simply what you get when you choose that core.

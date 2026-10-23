@@ -9,13 +9,13 @@ sidebar:
 
 | Control | Does |
 | --- | --- |
-| **Grip** | Grab whatever your hand is near — an object, a plug, a cartridge |
+| **Grip** | Grab whatever your hand is near, such as an object, a plug or a cartridge |
 | **Trigger** | Click the menu, grab at a distance, drag a page |
-| **Thumbstick click** *(left)* | Open and close the spawn menu — or, pointed at an object, open its panel |
-| **Thumbstick click** *(right)*, pointed at a TV or handheld | [Focus Mode](#focus-mode) — the game alone, in front of you |
+| **Thumbstick click** *(left)* | Open and close the spawn menu, or, pointed at an object, open its panel |
+| **Thumbstick click** *(right)*, pointed at a TV or handheld | [Focus Mode](#focus-mode): the game alone, in front of you |
 | **Thumbstick** | Move, and turn |
 
-Let go of grip and the thing in your hand drops. Objects have weight — they fall, roll and
+Let go of grip and the thing in your hand drops. Objects have weight, so they fall, roll and
 knock each other over.
 
 ## Pointing at things
@@ -23,7 +23,7 @@ knock each other over.
 Point at an object across the room and use the trigger to grab it from where you stand,
 rather than walking over. The same ray clicks the menu panel.
 
-Pointing at certain objects — a book, the DVD player, a machine with settings — and
+Pointing at certain objects, such as a book, the DVD player or a machine with settings, and
 **clicking the left thumbstick** opens a small panel of options for that specific thing.
 It is the same press that opens the spawn menu: what you are pointing at decides which
 you get.
@@ -36,18 +36,18 @@ front of you and the room stops being drawn, so the headset's whole effort goes 
 game.
 
 Nothing is put away. Whatever you are holding stays in your hands, and the pads and link
-leads plugged into that machine stay where they are — so you can still walk over and pick
+leads plugged into that machine stay where they are, so you can still walk over and pick
 up the controller.
 
-- **Move the screen** — point at it and hold **grip** to carry it. While gripping, push the
+- **Move the screen**: point at it and hold **grip** to carry it. While gripping, push the
   stick **up or down** for distance and **left or right** for size. Or trigger-drag its
   corner handle.
-- **Background** — black by default. Turn on **Passthrough in Focus Mode** in `OPTIONS`
+- **Background**: black by default. Turn on **Passthrough in Focus Mode** in `OPTIONS`
   to see your real surroundings around the screen instead.
-- **Leave** — point at the screen and click the right thumbstick again, and the room comes
+- **Leave**: point at the screen and click the right thumbstick again, and the room comes
   back.
 
-On desktop the same thing is `F11` — see [desktop controls](/guide/reference/desktop-controls/).
+On desktop the same thing is `F11`. See [desktop controls](/guide/reference/desktop-controls/).
 
 ## Moving
 
@@ -62,7 +62,7 @@ Locomotion is configurable in **`OPTIONS`**:
 ## Hands
 
 You can play with controller models shown, or with hands. The finger poses follow what you
-are doing — a pointing finger when you point, a fist on grip.
+are doing: a pointing finger when you point, a fist on grip.
 
 On **Meta Quest Touch controllers**, v0.4.0 reads the controllers' **capacitive sensors**,
 so your fingers sit where they actually are on the controller rather than snapping between
@@ -75,8 +75,8 @@ ones. Standalone on the headset is unaffected.
 :::
 
 **Poking now happens at your index fingertip**, not from a cone off the front of the
-controller. Everything you press with a finger — the NES flap, the Wii Remote's SYNC
-button, the DualShock's ANALOG button — is reached from where the finger really is.
+controller. Everything you press with a finger, such as the NES flap, the Wii Remote's SYNC
+button or the DualShock's ANALOG button, is reached from where the finger really is.
 
 Haptics fire on the things you would expect: seating a plug, pressing a button on a deck,
 completing a page turn.
@@ -90,5 +90,5 @@ the source if you spot something wrong.
 
 ## Not wearing a headset?
 
-There is a full mouse-and-keyboard fallback — see [desktop
+There is a full mouse-and-keyboard fallback, covered in [desktop
 controls](/guide/reference/desktop-controls/).

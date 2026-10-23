@@ -1,6 +1,6 @@
 ---
 title: Netplay
-description: Play together over the network — an early prototype, not a finished feature.
+description: Play together over the network. It is an early prototype, not a finished feature.
 sidebar:
   order: 4
 ---
@@ -21,7 +21,7 @@ each other as avatars, and objects stay in sync. The core and the ROM can be tra
 to whoever does not have them.
 
 v0.4.0 reworked the netcode strategy under the hood and fixed a long list of object-sync
-bugs, so the shared room holds together better than it did — but the warning above still
+bugs, so the shared room holds together better than it did, but the warning above still
 stands unchanged.
 
 ## Using it
@@ -62,8 +62,8 @@ placeholder rather than netplay.
 ## Link cables over netplay
 
 A [link cable](/guide/playing/link-cables/) between two machines still carries its data
-when the machines belong to different players in a session — two Game Boys, two
-PlayStations, a Game Boy and a [printer](/guide/platforms/game-boy-printer/).
+when the machines belong to different players in a session, whether that is two Game Boys, two
+PlayStations, or a Game Boy and a [printer](/guide/platforms/game-boy-printer/).
 
 :::caution[Everyone on v0.11.1 or later]
 v0.11.1 renamed the protocols the link cables speak (`gb-sio`, `psx-sio`, `ethernet` and
@@ -74,9 +74,9 @@ on every machine in the session.
 
 ## Known limits
 
-- Very lightly tested — expect desyncs.
+- Very lightly tested, so expect desyncs.
 - Both ends need the same core and the same ROM.
-- Most cores cannot share a session between different kinds of machine — a Quest and a
-  Windows PC — because their save states do not carry across.
+- Most cores cannot share a session between different kinds of machine, such as a Quest and a
+  Windows PC, because their save states do not carry across.
 - There is no matchmaking, no lobby list and no NAT traversal. It is an IP address.
 

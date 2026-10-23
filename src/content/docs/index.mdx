@@ -1,12 +1,12 @@
 ---
 title: RetroXR
-description: A VR retro-gaming room where the hardware is real — pick up a console, run a cable to the TV, push the cartridge in and hit power. Powered by libretro.
+description: A VR retro-gaming room where the hardware is real. Pick up a console, run a cable to the TV, push the cartridge in and hit power. Powered by libretro.
 template: splash
 hero:
   title: The hardware is real
   tagline: A VR retro-gaming room where you pick up a console, run a cable to the TV, push the cartridge in and hit power. Powered by libretro.
   image:
-    alt: The RetroXR mark — a headset with two green phosphor lenses
+    alt: The RetroXR mark, a headset with two green phosphor lenses
     file: ../../assets/retroxr-mark.svg
   actions:
     - text: Download
@@ -43,10 +43,10 @@ import objVcr from '../../assets/screenshots/obj_vcr.png';
 import objRemote from '../../assets/screenshots/obj_remote.png';
 import bookPoster from '../../assets/screenshots/book_flip_poster.png';
 
-<Aside type="caution" title="Very early days — this is a hobby project">
+<Aside type="caution" title="Very early days: this is a hobby project">
 	RetroXR is built in spare time and is **in very early development**. Expect bugs, rough
 	edges, and things that break outright. If you hit one, [tell
-	me](/guide/reference/reporting-bugs/) — a report with a log is the single most useful
+	me](/guide/reference/reporting-bugs/). A report with a log is the single most useful
 	thing you can send.
 </Aside>
 
@@ -56,7 +56,7 @@ RetroXR turns emulation into something you handle. Instead of a menu, you get a 
 console on the floor, a CRT on the stand, cartridges on the shelf.
 
 Spawn a system and a TV, run the A/V cable between them, push a cartridge into the slot
-and hit power. The picture comes up on the TV. Everything is physical — cables hang and
+and hit power. The picture comes up on the TV. Everything is physical: cables hang and
 swing, lids hinge open, discs sit in trays, and a cartridge has to go in the right way up.
 
 </div>
@@ -66,14 +66,14 @@ swing, lids hinge open, discs sit in trays, and a cartridge has to go in the rig
 	poster={spawnAndPlayPoster}
 	sound
 	alt="The spawn menu open on the ScummVM library, then a beige computer, monitor, keyboard, mouse and speakers standing on a desk. The monitor lights up with the LucasFilm Games logo, the Monkey Island title screen follows, and the game is played from the desk."
-	caption="Picking The Secret of Monkey Island out of the library, standing the computer on the desk, and playing it — about a minute, with sound. Recorded in-headset on a Quest 3."
+	caption="Picking The Secret of Monkey Island out of the library, standing the computer on the desk, and playing it. It runs about a minute, with sound. Recorded in-headset on a Quest 3."
 />
 
 <Clip
 	src="/video/lightgun/duck_hunt.mp4"
 	poster={duckHuntPoster}
 	alt="A first-person view in the headset: a CRT on a desk running Duck Hunt, with the ray gun held in view, aimed at the screen and fired at the ducks. The NES sits on the desk beside the set, cabled to it."
-	caption="Duck Hunt, played with a light gun you point at the television — recorded in-headset on a Quest 3. More on how that works in the guide to light guns."
+	caption="Duck Hunt, played with a light gun you point at the television, recorded in-headset on a Quest 3. More on how that works in the guide to light guns."
 />
 
 <Clip
@@ -81,50 +81,50 @@ swing, lids hinge open, discs sit in trays, and a cartridge has to go in the rig
 	poster={gcGbaLinkPoster}
 	sound
 	alt="A GameCube game running on the television while two Game Boy Advance handhelds lie on the desk in front of it, each cabled to the console and showing its own separate screen. A GameCube pad is picked up and played."
-	caption="A GameCube and two Game Boy Advances on one link cable — the console on the TV, each handheld running its own screen, all four machines emulated at once in the same room. Recorded on PCVR: several cores at once is more than a standalone headset comfortably carries."
+	caption="A GameCube and two Game Boy Advances on one link cable, with the console on the TV, each handheld running its own screen, all four machines emulated at once in the same room. Recorded on PCVR: several cores at once is more than a standalone headset comfortably carries."
 />
 
 ## What's in the room
 
 <FeatureGrid>
 	<Feature title="Consoles you plug in" img={objConsoleCart} alt="A console stand-in: a gray box with a RESET button, a green START button, four numbered controller ports, and a cartridge seated in the top slot.">
-		Spawn a system, seat a cartridge, run the A/V lead to a TV and hit power. Wire it wrong and you get a blank input — because that is what would happen.
+		Spawn a system, seat a cartridge, run the A/V lead to a TV and hit power. Wire it wrong and you get a blank input, because that is what would happen.
 	</Feature>
 	<Feature title="Cores, downloaded in-headset" img={coresScrolled} alt="The core downloader: a scrollable grid of systems, each showing how many cores are available.">
-		Powered by libretro, so it plays what libretro plays — NES, SNES, Mega Drive, PlayStation, Saturn, Dreamcast, GameCube, Game Boy, DS, 3DS, PSP and plenty more. No setting anything up on a PC first.
+		Powered by libretro, so it plays what libretro plays: NES, SNES, Mega Drive, PlayStation, Saturn, Dreamcast, GameCube, Game Boy, DS, 3DS, PSP and plenty more. No setting anything up on a PC first.
 	</Feature>
 	<Feature title="A default core per system" img={coresManager} alt="The core manager: a grid of systems, each labeled with its currently selected core.">
 		Some systems have several cores with different strengths. Pick the one each platform launches with, and set its options, without leaving the headset.
 	</Feature>
 	<Feature title="BIOS files, tracked" img={coresBiosPsx} alt="The BIOS view for PlayStation, listing the PS1 BIOS files with their required or optional status and per-file download buttons.">
-		The systems that need a BIOS say so, file by file, and mark which are required and which are optional — instead of failing to boot with no explanation.
+		The systems that need a BIOS say so, file by file, and mark which are required and which are optional, instead of failing to boot with no explanation.
 	</Feature>
 	<Feature title="A DVD player that plays discs" img={objDvd} alt="The DVD player stand-in: a black deck with a disc slot, transport buttons, and a menu navigation cluster.">
 		Real disc menus and chapter navigation, driven by libVLC. Drop an ISO or a VIDEO_TS folder in, spawn a player and a TV, and wire them together.
 	</Feature>
 	<Feature title="A VCR for your own tapes" img={objVcr} alt="The VCR stand-in: a black deck with a tape slot, a glowing counter display, and transport buttons.">
-		Your video files become VHS tapes you push into a deck. Play, pause, rewind, fast-forward — and it renders onto whichever TV it is plugged into.
+		Your video files become VHS tapes you push into a deck. Play, pause, rewind and fast-forward, and it renders onto whichever TV it is plugged into.
 	</Feature>
 	<Feature title="Books you actually turn" video="/video/book_flip.mp4" poster={bookPoster} alt="A hand grabs the outer edge of a page and drags it across, folding it over to reveal the next spread." wide>
 		PDFs and CBZs are physical books. Grab a page by its outer edge and drag it across; release past halfway and the turn completes, short of it and it springs back.
 	</Feature>
 	<Feature title="Link cables that carry real data" img={gcGbaLinkPoster} alt="A GameCube game on the television with two Game Boy Advance handhelds cabled to it on the desk, each showing its own screen." wide>
-		Run a lead between two machines and they talk — Game Boys, PlayStations, Saturns, Game Gears, Lynxes, Jaguars, Neo Geo Pockets, WonderSwans and Virtual Boys, up to six PlayStation 2s on i.LINK, a GameCube to four Game Boy Advances, even a Game Boy to its printer. Every machine its own core, one wire between them.
+		Run a lead between two machines and they talk. That covers Game Boys, PlayStations, Saturns, Game Gears, Lynxes, Jaguars, Neo Geo Pockets, WonderSwans and Virtual Boys, up to six PlayStation 2s on i.LINK, a GameCube to four Game Boy Advances, even a Game Boy to its printer. Every machine its own core, one wire between them.
 	</Feature>
 	<Feature title="Mods, downloaded in-headset">
-		Browse mods hosted on mod.io from inside RetroXR and install them with one button — models and scenes for the room, never games. See <a href="/guide/room/mods/">mods</a>.
+		Browse mods hosted on mod.io from inside RetroXR and install them with one button. Mods are models and scenes for the room, never games. See <a href="/guide/room/mods/">mods</a>.
 	</Feature>
 	<Feature title="Add-ons you stack by hand">
 		A Sega CD under a Mega Drive, a 32X in its slot, a 64DD, a Jaguar CD, a Super Game Boy, a Sufami Turbo taking two cartridges at once. Build the stack and the right core is chosen for you.
 	</Feature>
 	<Feature title="One remote for all of it" img={objRemote} alt="The TV remote, held in a hand, with a floating command menu above it: eject, a D-pad with a center OK, transport buttons, and audio and subtitle cells.">
-		Point it at a TV, VCR, DVD player or tape deck and the right controls appear above it — including the disc's own menus.
+		Point it at a TV, VCR, DVD player or tape deck and the right controls appear above it, including the disc's own menus.
 	</Feature>
 </FeatureGrid>
 
 ## Running on a Quest 3
 
-All of these were recorded in the headset, standalone — no PC, no streaming. Each one is a
+All of these were recorded in the headset, standalone, with no PC and no streaming. Each one is a
 machine spawned into the room, cabled up and played.
 
 <Clip
@@ -140,7 +140,7 @@ machine spawned into the room, cabled up and played.
 	poster={wiiQuestPoster}
 	sound
 	alt="A Wii console beside a television with a sensor bar above it, running Wii Sports Resort. A Wii Remote is held in front of the screen, and the game's MotionPlus connection prompt is showing."
-	caption="Wii Sports Resort, pointer and all — including the game's own “connect the Wii MotionPlus” prompt, which it will not get past unless the remote really is reporting motion."
+	caption="Wii Sports Resort, pointer and all, including the game's own “connect the Wii MotionPlus” prompt, which it will not get past unless the remote really is reporting motion."
 />
 
 <Clip
@@ -148,14 +148,14 @@ machine spawned into the room, cabled up and played.
 	poster={virtualBoyPoster}
 	sound
 	alt="The Virtual Boy on its stand, its display showing a side-scrolling game in red on black, with the red Virtual Boy controller on the desk below."
-	caption="The Virtual Boy on its bipod, red on black exactly as the hardware was. Flat in this recording only — see the note below."
+	caption="The Virtual Boy on its bipod, red on black exactly as the hardware was. It is flat in this recording only, as the note below explains."
 />
 
 <Clip
 	src="/video/n3ds_quest.mp4"
 	poster={n3dsQuestPoster}
 	sound
-	alt="A blue 3DS clamshell standing open on a desk, running Ocarina of Time 3D — the top screen showing the game, the bottom screen showing its touch interface."
+	alt="A blue 3DS clamshell standing open on a desk, running Ocarina of Time 3D, with the top screen showing the game and the bottom screen showing its touch interface."
 	caption="Ocarina of Time 3D on a 3DS, from picking it out of the library to playing it, touch screen included. The top screen is flat here for the same reason."
 />
 
@@ -176,12 +176,12 @@ ready to spawn into your room, with box art and scanned manuals if you have them
 
 Already running [RomM](https://romm.app)? RetroXR connects straight to your server. Browse
 your whole collection from inside the headset, pull down just the games you want to play,
-and let your saves sync back — no cable, no shuffling files by hand.
+and let your saves sync back, with no cable and no shuffling files by hand.
 
 The room does more than games, too. A working VCR and DVD player take your own video
-files, a CD player, tape deck and turntable handle music — through a pair of speakers or a
-full 5.1 surround setup you wire up yourself — and PDF manuals are books you can hold and
-page through.
+files, a CD player, tape deck and turntable handle music
+through a pair of speakers or a full 5.1 surround setup you wire up yourself. PDF manuals
+are books you can hold and page through.
 
 <div class="rxr-caveats">
 
@@ -189,12 +189,12 @@ page through.
 
 RetroXR is **in active development**, and it is honest to say so up front:
 
-- **Not every machine has a detailed model yet.** A growing number wear a real shell — the
+- **Not every machine has a detailed model yet.** A growing number wear a real shell: the
   NES, the Atari 2600, the PlayStation and its pads, the Wii Remote and Nunchuk, the
   Dreamcast, the Genesis 2 and 32X, the Game Boy Advance and e-Reader, the 64DD and the N64
   controller, and most cartridges. The rest are clean **procedural stand-ins**: fully
   playable, deliberately minimalist. Models carry no trademarked logos or text.
-- **The rooms are early** — somewhere to put your hardware, not finished spaces.
+- **The rooms are early.** They are somewhere to put your hardware, not finished spaces.
 - Runs on **Quest 2, 3 and Pro** and on **Windows**, as PCVR or in a desktop mode with mouse
   and keyboard. **Linux** and **macOS** builds are experimental.
 - **Netplay is in, but it is very early.** Treat it as a prototype rather than a feature.
@@ -202,14 +202,14 @@ RetroXR is **in active development**, and it is honest to say so up front:
 
 </div>
 
-Want to help? See **[contributing](/contributing/)** — or come and say hello on
+Want to help? See **[contributing](/contributing/)**, or come and say hello on
 **[Discord](https://discord.gg/pgUkRhafca)**.
 
 ## Get started
 
-- **[Download and install](/download/)** — including a full walkthrough if you have never
+- **[Download and install](/download/)**: including a full walkthrough if you have never
   sideloaded onto a Quest before.
-- **[Your first session](/guide/first-run/)** — spawn a console, wire it up, and get a
+- **[Your first session](/guide/first-run/)**: spawn a console, wire it up, and get a
   picture on the TV.
-- **[Devlog](/blog/)** — what is being built, and what just shipped.
+- **[Devlog](/blog/)**: what is being built, and what just shipped.
 

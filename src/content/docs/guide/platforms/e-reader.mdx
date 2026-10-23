@@ -1,13 +1,13 @@
 ---
 title: Card e-Reader
-description: The GBA cartridge with a slit in its roof that you physically swipe printed dotcode cards through — the three region-locked revisions, and the No-Intro card names the strip pairing depends on.
+description: The GBA cartridge with a slit in its roof that you physically swipe printed dotcode cards through, covering the three region-locked revisions and the No-Intro card names the strip pairing depends on.
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
 The e-Reader is a Game Boy Advance cartridge with a scanner in it. Nintendo printed
-**dotcodes** along the edges of trading cards — whole little games, Animal Crossing NES
-titles, extra levels for Super Mario Advance 4 — and you swiped the card through the slot
+**dotcodes** along the edges of trading cards (whole little games, Animal Crossing NES
+titles, extra levels for Super Mario Advance 4), and you swiped the card through the slot
 to load one.
 
 In RetroXR you do exactly that, as of **v0.6.0**. Push the reader into the handheld, then
@@ -16,13 +16,13 @@ nothing to seat: the card is never held, because a card that could be seated wou
 captured half way through a swipe.
 
 <Aside type="note" title="Three readers, and they are not interchangeable">
-	RetroXR carries all three revisions — **Card e-Reader** (Japan), **Card e-Reader+**
-	(Japan) and **e-Reader (USA)**. A reader *is* its dump, and cards are region-locked: a
+	RetroXR carries all three revisions: **Card e-Reader** (Japan), **Card e-Reader+**
+	(Japan) and **e-Reader (USA)**. A reader *is* its dump, and cards are region-locked. A
 	Japanese reader answers an American card with its own Region Error screen, exactly as
 	the hardware did. Spawn the one that matches your cards.
 </Aside>
 
-Since v0.9.0 the reader is a modelled shell rather than a stand-in, without the trademarked
+Since v0.9.0 the reader is a modeled shell rather than a stand-in, without the trademarked
 text the real one carried.
 
 <Aside type="caution" title="Known issue: no link cable into the reader">
@@ -36,10 +36,10 @@ The e-Reader's cartridge dump is an **ordinary GBA ROM**, so RetroXR does not tr
 firmware or ask you to install a second copy under a name of its choosing. Put it where you
 would keep it anyway:
 
-- `roms/gba/` — the shelf it belongs on, or
-- `roms/ereader/` — beside the cards it reads, which is also reasonable.
+- `roms/gba/`, the shelf it belongs on, or
+- `roms/ereader/`, beside the cards it reads, which is also reasonable.
 
-It is recognised by the **ROM's own header** — the GBA game code — not by its filename, so
+It is recognized by the **ROM's own header** (the GBA game code), not by its filename, so
 renaming your dump does not hide it. The library then stops offering that file as a game,
 since it is hardware rather than something you play.
 
@@ -58,26 +58,26 @@ Both No-Intro conventions are understood:
 ```
 
 <Aside type="caution" title="Why the name matters and the file cannot tell us">
-	Which **edge** a strip is printed on is not recorded anywhere — not in the dotcode
+	Which **edge** a strip is printed on is not recorded anywhere. It is not in the dotcode
 	itself (a card's per-block headers are byte-identical between its strips), not in the
 	core, and not reliably in a scan. Only the strip's **size** is certain: 2912 bytes is a
 	long strip and 1872 a short one.
 
-	So the pairing has to come from the name. A card whose two strips are not recognised as
+	So the pairing has to come from the name. A card whose two strips are not recognized as
 	a pair presents the wrong edge, and swiping it reads nothing.
 </Aside>
 
 Cards go in `roms/ereader/`. A `.gba` dump sitting in that folder is ignored by the card
-grouping, which only ever looks at `.raw` — so keeping the reader beside its cards is safe.
+grouping, which only ever looks at `.raw`, so keeping the reader beside its cards is safe.
 
 ## Which edge you present
 
 Every e-Reader card is the same portrait trading card, so there is no card shape to work
-out — only which of its edges carry a dotcode. A long strip goes on a **long (side)** edge
+out, only which of its edges carry a dotcode. A long strip goes on a **long (side)** edge
 and a short strip on a **short (bottom)** edge, because a 2912-byte dotcode does not fit
 across 63 mm of card.
 
-Present an uncoded edge and nothing is read, which is what should happen — that is a card
+Present an uncoded edge and nothing is read, which is what should happen. That is a card
 offered the wrong way round, not a failure.
 
 ## Scanning, and what a good scan looks like
@@ -86,7 +86,7 @@ The scanner has to be **powered and waiting** for a card. In practice: start the
 software, choose its scan option, and swipe once it is asking for a card. A card offered to
 an unpowered scanner is simply dropped.
 
-A two-strip card is swiped twice — one strip, then the other — and the software tells you
+A two-strip card is swiped twice, one strip and then the other, and the software tells you
 when it is satisfied:
 
 > Scanning of Dot Code(s) complete.
@@ -98,7 +98,7 @@ when it is satisfied:
 </Aside>
 
 <Aside type="caution" title="One power-up is one card">
-	The card leaves the scanner when it powers down. A scan session is short — power up, a
-	few sweeps, give up, power down — so swipe within that window rather than lining a card
+	The card leaves the scanner when it powers down. A scan session is short (power up, a
+	few sweeps, give up, power down), so swipe within that window rather than lining a card
 	up in advance.
 </Aside>

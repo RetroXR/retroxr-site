@@ -9,7 +9,7 @@ import { Steps, Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import savesPanel from '../../../../assets/saves/saves_panel.png';
 
-[RetroAchievements](https://retroachievements.org) adds achievements to retro games — a
+[RetroAchievements](https://retroachievements.org) adds achievements to retro games: a
 community-built set for thousands of titles, checked as you play. RetroXR signs in to your
 account and unlocks them in the headset.
 
@@ -29,7 +29,7 @@ Accounts are free at [retroachievements.org](https://retroachievements.org).
 
 :::caution[Two different keys, and the wrong one fails silently]
 Your RetroAchievements profile also shows a **Web API key**. That is **not** the one that
-unlocks achievements — it is a longer value for reading data.
+unlocks achievements. It is a longer value for reading data.
 
 Signing in with it appears to work and then never unlocks anything, which is a
 frustrating way to spend an evening. Use your account password.
@@ -38,7 +38,7 @@ frustrating way to spend an evening. Use your account password.
 ## What you get
 
 - **Unlocks as you play**, with a toast and the achievement's badge.
-- **Rich presence** — your profile shows what you are playing.
+- **Rich presence**: your profile shows what you are playing.
 - **Browse a game's achievements without launching it**, from the game's own page in the
   menu.
 
@@ -50,7 +50,7 @@ page has two tabs:
 <Image src={savesPanel} alt="The page for a game, with two tabs circled: Saves marked 1 and Achievements marked 2." />
 
 **②** is the achievements list. You can read what a game asks of you before deciding to
-start it — which is the point of having it here rather than only in a toast mid-game.
+start it, which is the point of having it here rather than only in a toast mid-game.
 
 **①** is that game's [saves](/guide/connecting/saves/).
 
@@ -66,7 +66,7 @@ other RetroAchievements-capable frontend. A system whose core does not support i
 never report anything, and that is not a RetroXR fault.
 
 If a game you expect to have achievements is not unlocking any, check that the core you
-have set as default for that system supports them — see
+have set as default for that system supports them. See
 [downloading and managing cores](/guide/cores/downloading/).
 
 :::caution[Needs an in-headset pass]

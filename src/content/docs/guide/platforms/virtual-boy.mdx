@@ -1,6 +1,6 @@
 ---
 title: Virtual Boy
-description: The 1995 stereoscopic tabletop, in the headset it always wanted to be — real per-eye depth, and no sweet spot to hold your head in.
+description: The 1995 stereoscopic tabletop, in the headset it always wanted to be, with real per-eye depth and no sweet spot to hold your head in.
 sidebar:
   order: 6
 ---
@@ -15,19 +15,19 @@ did in 1995.
 <Turntable
 	src="/video/vb/virtual_boy.mp4"
 	poster={vbPoster}
-	alt="The Virtual Boy model rotating: a red visor on a grey bipod stand."
+	alt="The Virtual Boy model rotating: a red visor on a gray bipod stand."
 	caption="The Virtual Boy on its bipod. Lean in and look through the eyepiece."
 />
 
 ## The stereo actually works now
 
 The original was a tabletop visor you pressed your face into. It genuinely rendered a
-separate image per eye — real stereoscopy, not a trick — but you had to hold your head in
+separate image per eye, which was real stereoscopy and not a trick, but you had to hold your head in
 one exact position to see it, which is a large part of why nobody remembers it fondly.
 
 RetroXR runs the core in **side-by-side mode**, so it outputs both eyes in one frame, then
 feeds the left half to your left eye and the right half to your right. You get the depth
-the hardware was aiming at, with **no sweet spot** — lean in, move your head, it stays
+the hardware was aiming at, with **no sweet spot**. Lean in or move your head and it stays
 correct.
 
 <Aside type="tip" title="This is the same mechanism as the 3DS top screen">
@@ -39,13 +39,13 @@ correct.
 
 Despite the visor, RetroXR treats it as a console:
 
-- **One controller port** — spawn a pad and plug it in.
+- **One controller port**: spawn a pad and plug it in.
 - **A video-out cable that works**, so you can put it on a television as well.
 
 ## On a television, still in stereo
 
-This is the detail worth knowing. A television does **not** get the raw side-by-side frame
-— that would read as two squashed copies side by side, which is useless.
+This is the detail worth knowing. A television does **not** get the raw side-by-side frame,
+because that would read as two squashed copies side by side, which is useless.
 
 Instead the TV is handed the **left half**, plus the offset that makes your right eye
 sample the right half. So a connected television comes out **in stereo too**. The machine
@@ -58,12 +58,12 @@ image flat. Everything else works normally.
 
 ## Red on black
 
-The Virtual Boy's display was red LEDs on black — no other colors existed. That is the
+The Virtual Boy's display was red LEDs on black, and no other colors existed. That is the
 hardware, not a filter, and it is what you will see.
 
 <Aside type="caution" title="Two shells, neither a fallback">
 	There are two models: a detailed shell and the bipod stand-in authored in the scene
-	itself. The shipping build uses the stand-in. Neither substitutes for the other — they
+	itself. The shipping build uses the stand-in. Neither substitutes for the other, because they
 	are separate models.
 </Aside>
 
@@ -72,13 +72,13 @@ hardware, not a filter, and it is what you will see.
 Nintendo designed a cable to join two Virtual Boys by their **EXT.** sockets and never sold
 it, and no retail game shipped with a link mode. Since v0.10.0 the cable is here anyway:
 spawn it from the Virtual Boy's card and plug one end into each unit. What it is for is a
-handful of homebrew titles and Mario's Tennis with its two-player code patched back in —
-a small library, but the ones that use it work. It needs Beetle VB in RetroXR's own build;
+handful of homebrew titles and Mario's Tennis with its two-player code patched back in.
+It is a small library, but the ones that use it work. It needs Beetle VB in RetroXR's own build;
 see [link cables](/guide/playing/link-cables/).
 
 ## Cores
 
-Set the default in `CORES` → **Manager** — see [downloading and managing
+Set the default in `CORES` → **Manager**, as described in [downloading and managing
 cores](/guide/cores/downloading/). The side-by-side output mode is forced for you, so
 there is nothing to configure to get the 3D working.
 

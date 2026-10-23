@@ -19,23 +19,23 @@ player.
 
 Put video files into the `videos/` folder:
 
-- **Windows** — `%USERPROFILE%\retroxr\videos`
-- **Linux / macOS** — `~/retroxr/videos`
-- **Quest** — `/sdcard/Android/data/com.xenu.retroxr/files/videos`
+- **Windows**: `%USERPROFILE%\retroxr\videos`
+- **Linux / macOS**: `~/retroxr/videos`
+- **Quest**: `/sdcard/Android/data/com.xenu.retroxr/files/videos`
 
-Recognized: `.mp4`, `.mkv`, `.avi`, `.webm`, `.mov` — and a playlist (`.m3u` or `.m3u8`)
+Recognized: `.mp4`, `.mkv`, `.avi`, `.webm` and `.mov`, plus a playlist (`.m3u` or `.m3u8`)
 of several, which becomes one tape that plays them one after another.
 
 ### Label art
 
-A tape wears a label if there is a picture beside its file: `Home Movies.mp4` is labelled
+A tape wears a label if there is a picture beside its file: `Home Movies.mp4` is labeled
 by `Home Movies.png` (or `.jpg`, `.jpeg`, `.webp`) in the same folder, and
 `Home Movies spine.png` dresses the spine. A label downloaded from elsewhere drops in as it
 is.
 
 ## Watching something
 
-1. Open **`SPAWN`** → **Videos** and click a file. A **VHS tape** spawns carrying it — the
+1. Open **`SPAWN`** → **Videos** and click a file. A **VHS tape** spawns carrying it, the
    same way a cartridge carries a ROM.
 2. From **Objects**, spawn a **VCR** and a **TV**.
 3. Run the VCR's A/V lead into the TV. See [plugging things
@@ -60,5 +60,5 @@ You can also drive it from across the room with the [TV remote](/guide/room/tv-r
 ## Sound and picture
 
 The video renders onto whichever TV the VCR is plugged into, and the **television's** own
-volume and power buttons control it — exactly as they do for a console. Picture but no
+volume and power buttons control it, exactly as they do for a console. Picture but no
 sound is usually the set's volume, not the deck's.

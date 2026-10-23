@@ -1,6 +1,6 @@
 ---
 title: Atari 2600
-description: The six-switch VCS — slide switches that latch, a spring-return reset, and carts that pull straight out.
+description: The six-switch VCS, with slide switches that latch, a spring-return reset, and carts that pull straight out.
 sidebar:
   order: 4
 ---
@@ -11,7 +11,7 @@ import consolePoster from '../../../../assets/atari/atari_console_poster.png';
 import stickPoster from '../../../../assets/atari/atari_cx40_poster.png';
 import cartPoster from '../../../../assets/atari/atari_cart_poster.png';
 
-The Atari 2600 in RetroXR is the **six-switch VCS** — the "heavy sixer", wood veneer and
+The Atari 2600 in RetroXR is the **six-switch VCS**: the "heavy sixer", wood veneer and
 all. It was one of the first machines to wear a detailed shell rather than a procedural
 stand-in, alongside the NES.
 
@@ -25,7 +25,7 @@ stand-in, alongside the NES.
 ## The switches
 
 This is the detail the 2600 is worth spawning for. They are **slide switches**, not
-buttons — thin levers that travel up and down the sloped control panel — and the two that
+buttons. They are thin levers that travel up and down the sloped control panel, and the two that
 are wired behave differently from each other, as they did on the real thing.
 
 | Switch | Behavior |
@@ -34,8 +34,8 @@ are wired behave differently from each other, as they did on the real thing.
 | **GAME RESET** | **Momentary.** Push it and it springs back the instant you let go |
 
 <Aside type="note" title="Modeled but not yet wired">
-	The other four switches — **TV Type**, **Left Difficulty**, **Right Difficulty** and
-	**Game Select** — are modeled and individually pivoted in the shell, but they do not do
+	The other four switches (**TV Type**, **Left Difficulty**, **Right Difficulty** and
+	**Game Select**) are modeled and individually pivoted in the shell, but they do not do
 	anything yet.
 </Aside>
 
@@ -60,7 +60,7 @@ their own slider behavior instead.
 
 </Steps>
 
-There is **no eject** on this machine — 2600 carts pull straight out of the top slot, so
+There is **no eject** on this machine. 2600 carts pull straight out of the top slot, so
 that is how you take them out here too.
 
 ## The CX40 joystick
@@ -69,25 +69,25 @@ that is how you take them out here too.
 	src="/video/atari/atari_cx40.mp4"
 	poster={stickPoster}
 	alt="The Atari CX40 joystick rotating: a square black base with a single stick and one orange button in the corner."
-	caption="The CX40. One stick, one button — and the button is in the corner, where your thumb is not."
+	caption="The CX40. One stick, one button, and the button is in the corner, where your thumb is not."
 />
 
 Spawn one from `SPAWN` → **Controllers** and plug it into a controller port. Two ports,
 so two sticks.
 
-For a real gamepad instead, spawn a **Controller Receiver** and plug that into the port —
-see [using a real gamepad, keyboard or mouse](/guide/playing/external-devices/).
+For a real gamepad instead, spawn a **Controller Receiver** and plug that into the port.
+See [using a real gamepad, keyboard or mouse](/guide/playing/external-devices/).
 
 ## Getting a picture
 
 The 2600 predates composite sockets, so like the NES it reaches a television through an
-**RF switch** — see [plugging things in](/guide/playing/plugging-in/) and the
+**RF switch**. See [plugging things in](/guide/playing/plugging-in/) and the
 [NES page](/guide/platforms/nes/), which covers the same RF chain in detail.
 
 ## Cores
 
 The 2600 has more than one libretro core available. Pick the default in `CORES` →
-**Manager** — see [downloading and managing cores](/guide/cores/downloading/).
+**Manager**, as described in [downloading and managing cores](/guide/cores/downloading/).
 
 :::caution[Needs an in-headset pass]
 The switch behavior above is read from the model's source and is accurate. Which cores are

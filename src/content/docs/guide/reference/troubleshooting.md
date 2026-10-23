@@ -7,12 +7,12 @@ sidebar:
 
 ## The TV shows nothing
 
-A blank input paints blank, deliberately — the television behaves like a television, so
+A blank input paints blank, deliberately. The television behaves like a television, so
 what you see reflects the state of your wiring. In rough order of likelihood:
 
 1. **The A/V plug is not seated**, or is in the socket next to the one you meant.
 2. **The TV is on a different input.**
-3. **The TV is switched off** — its own power button, not the console's.
+3. **The TV is switched off**: its own power button, not the console's.
 4. **The machine is off**, or has no cartridge or disc in it.
 5. **The channel is untuned**, if you went through an RF switch. Snow means the set works
    and nothing is reaching it on that channel.
@@ -20,9 +20,9 @@ what you see reflects the state of your wiring. In rough order of likelihood:
 
 ## A game does not appear in the menu
 
-- The file is in the wrong folder, or the **system folder is misspelled** — the folder
+- The file is in the wrong folder, or the **system folder is misspelled**. The folder
   name under `roms/` is what assigns a game to a console. Since v0.8.0 the folders use the
-  short names ES-DE uses — `snes`, `n64`, `psx`, `gb`, `genesis` — rather than libretro's
+  short names ES-DE uses (`snes`, `n64`, `psx`, `gb`, `genesis`) rather than libretro's
   longer ones. Old folders such as `super_nes` or `playstation` are still read, so a
   library from an older version keeps working.
 - The file extension is not one that system recognizes.
@@ -31,8 +31,8 @@ what you see reflects the state of your wiring. In rough order of likelihood:
 
 ## A game appears but will not start
 
-- The system needs a **BIOS** you have not supplied. Check `CORES` → BIOS / Extras —
-  see [BIOS files](/guide/cores/bios/).
+- The system needs a **BIOS** you have not supplied. Check `CORES` → BIOS / Extras,
+  and see [BIOS files](/guide/cores/bios/).
 - The core installed for that system cannot run that particular title. Try another core
   from the Manager.
 
@@ -61,7 +61,7 @@ not noticed. Pick it up and drop it again. This is a known bug.
 ## The web file manager will not load
 
 - It is switched off. Turn on **Web File Manager** in `OPTIONS`.
-- The computer is on a different network from the headset — a guest network or a VPN will
+- The computer is on a different network from the headset. A guest network or a VPN will
   do this.
 - The address changed. It is tied to the headset's local IP, which can move between
   sessions; re-read it from the options screen.
@@ -73,7 +73,7 @@ there is a performance HUD you can mount in view or on your wrist to see what is
 costing you.
 
 Some cores are simply heavier than others. A system with several cores may have a faster
-one — see [downloading and managing cores](/guide/cores/downloading/).
+one, so see [downloading and managing cores](/guide/cores/downloading/).
 
 ## Netplay does not work
 

@@ -1,6 +1,6 @@
 ---
 title: DS and 3DS
-description: Two screens, a touch screen you actually touch, a lid that folds — and on the 3DS, real stereoscopic depth instead of a parallax trick.
+description: Two screens, a touch screen you actually touch, a lid that folds, and on the 3DS, real stereoscopic depth instead of a parallax trick.
 sidebar:
   order: 5
 ---
@@ -31,27 +31,27 @@ stereo rather than the parallax barrier the hardware faked.
 **① Volume slider** · **② Power light**
 
 The default model is the original **"Phat"**. The later **DS Lite** is a variant that
-swaps only the shell — every dual-screen behavior below is shared.
+swaps only the shell, so every dual-screen behavior below is shared.
 
 ## Touching the touch screen
 
 This is the part that is simply better in VR: you reach out and touch it.
 
 Taps arrive as a libretro pointer, and RetroXR forces both DS cores into **touch mode** to
-receive them. That is not cosmetic — melonDS defaults to a "Mouse" pointer mode and
+receive them. That is not cosmetic. melonDS defaults to a "Mouse" pointer mode and
 DeSmuME to `pointer_type = "mouse"`, and both of those *ignore* a pointer. Left alone,
 tapping the screen would do nothing at all.
 
 <Aside type="tip" title="You can also tap it on a television">
-	The handheld puts out **two video cables**, TOP and BOTTOM, each with its own labelled
+	The handheld puts out **two video cables**, TOP and BOTTOM, each with its own labeled
 	port on the back edge. Connect the BOTTOM cable to a TV and **tapping that TV feeds the
-	touch screen** — the big screen becomes the touch surface.
+	touch screen**, so the big screen becomes the touch surface.
 </Aside>
 
 ## Two screens, one framebuffer
 
-Both DS cores render the two screens into a single stacked 256×384 image — top half is
-the top screen, bottom half is the touch screen. RetroXR slices that one picture into the
+Both DS cores render the two screens into a single stacked 256×384 image, with the top
+screen in the top half and the touch screen in the bottom half. RetroXR slices that one picture into the
 two screen panels on the shell, so what you see is one core output shown twice through
 different windows.
 
@@ -60,7 +60,7 @@ slicing lands where the shell expects it.
 
 ## Buttons the DS never had
 
-The DS has **L and R and nothing else** on its shoulders — no triggers, no stick clicks.
+The DS has **L and R and nothing else** on its shoulders. It has no triggers and no stick clicks.
 Both cores bind hotkeys to the four buttons it lacks, and neither lets you turn them off:
 
 | Core | Hotkey | On |
@@ -79,7 +79,7 @@ can accidentally close the lid or swap your screens mid-game.
 	src="/video/handheld/n3ds.mp4"
 	poster={n3dsPoster}
 	alt="The Nintendo 3DS model rotating, open, showing its two screens of different sizes."
-	caption="The 3DS. Asymmetric screens — a wide top and a smaller touch screen below."
+	caption="The 3DS. Asymmetric screens: a wide top and a smaller touch screen below."
 />
 
 Everything above applies, plus the thing worth putting a headset on for.
@@ -90,7 +90,7 @@ The 3DS's own 3D worked by a parallax barrier over the top screen: one display, 
 each eye saw different columns, with a narrow sweet spot you had to hold your head inside.
 
 RetroXR does not reproduce the barrier. It has the **Azahar** core render the whole
-layout **twice — once per eye** — into a side-by-side frame, and hands the left half to
+layout **twice, once per eye,** into a side-by-side frame, and hands the left half to
 your left eye and the right half to your right. That is genuine stereoscopic depth, with
 no sweet spot to sit in and no head-in-a-vice.
 
@@ -99,8 +99,8 @@ no sweet spot to sit in and no head-in-a-vice.
 	into Azahar upstream in **2126.1**, so since v0.7.0 RetroXR downloads the ordinary
 	libretro buildbot build rather than a fork of its own. An **older Azahar, or another
 	Citra-family core, ignores the setting** and outputs a mono frame, which would show
-	through the stereo windows misaligned. Take the recommended core from `CORES` → Download
-	— see [downloading and managing cores](/guide/cores/downloading/).
+	through the stereo windows misaligned. Take the recommended core from `CORES` → Download,
+	as described in [downloading and managing cores](/guide/cores/downloading/).
 </Aside>
 
 ### The depth slider
@@ -108,35 +108,35 @@ no sweet spot to sit in and no head-in-a-vice.
 The real 3DS had a physical slider on the right edge of its lid for 3D strength, and so
 does this one. It drives the core's depth factor from 0 to 100%:
 
-- **Slider down** — flat. Both eyes see the same thing.
-- **Slider up** — full depth.
+- **Slider down**: flat. Both eyes see the same thing.
+- **Slider up**: full depth.
 
-It works **live, while a game is running** — the core re-reads the setting mid-run — and
-the position is remembered for the next time you boot.
+It works **live, while a game is running**, because the core re-reads the setting mid-run,
+and the position is remembered for the next time you boot.
 
 <Image src={n3dsControls} alt="The 3DS with three system controls circled: the 3D depth slider on the lid's right edge marked 1, the volume slider on the left edge marked 2, and the power button marked 3." />
 
-**① 3D depth slider** — on the lid's right edge, printed `3D` beside it, exactly where the
-hardware put it. **② Volume slider**. **③ Power**.
+**① 3D depth slider**, on the lid's right edge with `3D` printed beside it, exactly where
+the hardware put it. **② Volume slider**. **③ Power**.
 
 ## Folding the lid
 
 Both machines are clamshells with a **grabbable hinge**. Grip the lid and swing it: closed
 sits flat against the base, open lies back at the angle you would hold it.
 
-Folding is cosmetic — closing the lid does not sleep the machine, because the "close lid"
+Folding is cosmetic. Closing the lid does not sleep the machine, because the "close lid"
 hotkeys the cores bind are exactly the ones RetroXR masks out.
 
 ## Cartridges
 
-Spawn a game from `SPAWN` → **Games** and push it into the slot. Same as any other
-machine — see [cartridges, discs and memory cards](/guide/playing/cartridges-and-discs/).
-DS and 3DS games spawn as modelled cartridges of the right shape for each system.
+Spawn a game from `SPAWN` → **Games** and push it into the slot. It works the same as on any
+other machine, which [cartridges, discs and memory cards](/guide/playing/cartridges-and-discs/)
+covers. DS and 3DS games spawn as modeled cartridges of the right shape for each system.
 
 ## Booting to the home menu
 
-With the DS firmware in place — `firmware.bin`, `bios7.bin` and `bios9.bin`, under the
-core's folder — a DS switched on with no game in it boots to its own **home menu**, the
+With the DS firmware (`firmware.bin`, `bios7.bin` and `bios9.bin`) in place under the
+core's folder, a DS switched on with no game in it boots to its own **home menu**, the
 way the real one did. On melonDS DS, setting the core to DSi mode gives the **DSi Menu**
 instead. Without the firmware an empty DS has nothing to show. See
 [BIOS files](/guide/cores/bios/#booting-to-the-bios).

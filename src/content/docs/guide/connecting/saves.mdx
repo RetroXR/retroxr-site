@@ -13,21 +13,21 @@ import RommMark from '../../../../components/RommMark.astro';
 RetroXR keeps three different kinds of save, and it is worth knowing which one you are
 looking at.
 
-- **Battery saves** — the in-game saves a cartridge kept on its own chip. These belong to
+- **Battery saves**: the in-game saves a cartridge kept on its own chip. These belong to
   the game.
-- **Memory cards** — an object you slot into the console, for the systems that used them:
+- **Memory cards**: an object you slot into the console, for the systems that used them:
   the [PlayStation](/guide/platforms/playstation/), the
   [PlayStation 2](/guide/platforms/playstation-2/), the GameCube, and the Dreamcast's
   [VMU](/guide/platforms/dreamcast/).
-- **The console's own memory** — some machines saved inside themselves, and RetroXR keeps
+- **The console's own memory**: some machines saved inside themselves, and RetroXR keeps
   that with the console rather than the disc (see below).
-- **Save states** — a snapshot of the whole machine, taken and restored at any moment.
+- **Save states**: a snapshot of the whole machine, taken and restored at any moment.
   New in v0.4.0.
 
 ## Save states
 
-A save state freezes the console exactly as it is — mid-jump, mid-cutscene, mid-anything —
-and puts it back later. It is not something the hardware could do, and it does not touch
+A save state freezes the console exactly as it is, whether mid-jump, mid-cutscene or
+mid-anything, and puts it back later. It is not something the hardware could do, and it does not touch
 the game's own save.
 
 **Each state is stored with a screenshot** of what was on screen when you took it, so the
@@ -48,16 +48,16 @@ Open `SPAWN` → **Games**, find the game, and press the **list** icon on its ro
 
 <Image src={savesPanel} alt="The saves page for a game, with two tabs circled: Saves marked 1 and Achievements marked 2. Below them, a hint reading 'Spawn this cartridge to choose which save it uses' and the line 'No saves for this game yet'." />
 
-**① Saves** — every save that exists for this game.
+**① Saves**: every save that exists for this game.
 
-**② Achievements** — its [RetroAchievements](/guide/connecting/retroachievements/), which
+**② Achievements**: its [RetroAchievements](/guide/connecting/retroachievements/), which
 you can browse here without launching the game.
 
 If you have not played it yet, this page says so rather than showing an empty list.
 
-A **disc** game shows no saves here. A disc never held its own save — it wrote to a memory
-card, or to the console — so since v0.8.0 the page just notes whether the game uses memory
-cards, and the saves themselves are on the card or the console.
+A **disc** game shows no saves here. A disc never held its own save: the game wrote to a
+memory card or to the console. Since v0.8.0 the page just notes whether the game uses memory
+cards, and you will find the saves themselves on the card or the console.
 
 ## Saves inside the console
 
@@ -67,7 +67,7 @@ RetroXR does the same: the memory belongs to *that* console in your room, and is
 it when the room is saved. Manage it from the console's own System Settings, on its
 **Saves** tab.
 
-To move saves between consoles, use what the real owners used — a **Backup RAM Cartridge**
+To move saves between consoles, use what the real owners used: a **Backup RAM Cartridge**
 for the Sega CD, seated in the Mega Drive's slot, or a **Backup Memory cartridge** in the
 Saturn's slot. See [the Sega Saturn](/guide/platforms/sega-saturn/) and
 [expansion hardware](/guide/playing/expansion-hardware/).
@@ -81,8 +81,8 @@ Point at a spawned cartridge and **click the left thumbstick** to get its own pa
 there you can pick an existing save, or start a fresh one.
 
 <Aside type="tip" title="Two saves, one game">
-	This is how you keep a second playthrough without losing the first — a new blank save
-	rather than overwriting. The cartridge remembers which one it is bound to.
+	This is how you keep a second playthrough without losing the first. You start a new blank
+	save rather than overwriting. The cartridge remembers which one it is bound to.
 </Aside>
 
 ## Deleting a save
@@ -98,7 +98,7 @@ a playthrough.
 ## Where saves live on disk
 
 Battery saves are written into the `libretro/save/` folder, filed by **system** rather
-than by core since v0.8.0 — so switching a system to a different core keeps your saves.
+than by core since v0.8.0, so switching a system to a different core keeps your saves.
 The Nintendo 64, 64DD and Famicom Disk System are the exceptions, still kept per core. See
 [the libretro folder](/guide/cores/libretro-folder/#save).
 
@@ -109,8 +109,8 @@ save that was wiped.
 
 ## <RommMark />Backing up to RomM
 
-If you run a [RomM](https://romm.app) server, it can hold your saves as well as your games
-— which is the answer to the paragraph above, because it does not involve copying files
+If you run a [RomM](https://romm.app) server, it can hold your saves as well as your games.
+That is the answer to the paragraph above, because it does not involve copying files
 onto the headset by hand at all.
 
 <Steps>
@@ -124,7 +124,7 @@ onto the headset by hand at all.
 
 </Steps>
 
-Memory cards are included — a card can be backed up to the server the same way, so a card
+Memory cards are included. A card can be backed up to the server the same way, so a card
 is not something you can only lose once.
 
 <Aside type="note" title="This is the backup route worth setting up">
@@ -134,8 +134,8 @@ is not something you can only lose once.
 </Aside>
 
 :::caution[Needs an in-headset pass]
-The save model above — per-game saves, cartridge binding, two-press delete, the
-powered-on rule — is read from the source and is accurate. The exact layout of the
+The save model above (per-game saves, cartridge binding, two-press delete, the
+powered-on rule) is read from the source and is accurate. The exact layout of the
 cartridge's own panel, and how sync progress is surfaced, have not been checked against a
 running build.
 :::
