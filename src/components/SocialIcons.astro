@@ -1,10 +1,22 @@
 ---
 import Default from '@astrojs/starlight/components/SocialIcons.astro';
+import { latestRelease } from '../lib/release';
 
 const KOFI_URL = 'https://ko-fi.com/ryanmcclelland';
+// Read at build time, so no script ships; see src/lib/release.ts.
+const release = await latestRelease;
 ---
 
 <Default><slot /></Default>
+
+{
+	release && (
+		<a href={release.url} rel="noopener" target="_blank" class="release">
+			<span class="sr-only">Latest release: </span>
+			{release.tag}
+		</a>
+	)
+}
 
 <a href={KOFI_URL} rel="me noopener" target="_blank" class="kofi sl-flex">
 	<span class="sr-only">Support RetroXR on Ko-fi</span>
@@ -32,5 +44,22 @@ const KOFI_URL = 'https://ko-fi.com/ryanmcclelland';
 	.kofi:hover,
 	.kofi:focus-visible {
 		color: var(--rxr-kofi);
+	}
+	/* The release tag, tucked against the GitHub mark the config lists last. */
+	.release {
+		margin-inline-start: -0.5rem;
+		padding: 0.1em 0.45em;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 999px;
+		color: var(--sl-color-text-accent);
+		font-size: var(--sl-text-xs);
+		font-variant-numeric: tabular-nums;
+		line-height: 1.4;
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	.release:hover,
+	.release:focus-visible {
+		border-color: var(--sl-color-text-accent);
 	}
 </style>

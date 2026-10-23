@@ -33,9 +33,10 @@ export default defineConfig({
 				// extended rather than replaced.
 				SocialIcons: './src/components/SocialIcons.astro',
 			},
+			// GitHub last, so the release tag SocialIcons.astro appends sits beside it.
 			social: [
-				{ icon: 'github', label: 'GitHub', href: GAME_REPO },
 				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/pgUkRhafca' },
+				{ icon: 'github', label: 'GitHub', href: GAME_REPO },
 			],
 			editLink: {
 				baseUrl: 'https://github.com/RetroXR/retroxr-site/edit/main/',

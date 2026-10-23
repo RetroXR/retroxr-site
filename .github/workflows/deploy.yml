@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # The header shows the game's latest release tag, read at build time; rebuild
+  # every six hours so a new release shows up without a commit here.
+  schedule:
+    - cron: '17 */6 * * *'
 
 # Least privilege: read the repo, publish Pages, and mint the OIDC token
 # actions/deploy-pages authenticates with.
@@ -28,6 +32,10 @@ jobs:
         with:
           lfs: true
       - uses: withastro/action@v6
+        env:
+          # read by SocialIcons.astro for the release tag; the anonymous API
+          # limit is shared by every job on the runner's IP
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     needs: build
