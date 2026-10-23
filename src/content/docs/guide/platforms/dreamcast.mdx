@@ -1,0 +1,102 @@
+---
+title: Dreamcast
+description: The Dreamcast and its Visual Memory Unit — saves on a VMU you plug into the pad, its little screen showing live, VMU minigames played on the unit itself, the Jump Pack and the microphone.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+The Dreamcast plays discs from `roms/dreamcast/` — `.chd`, `.cdi`, `.gdi` or `.cue`, or an
+`.m3u` for a multi-disc game — on **Flycast**. As of **v0.9.0** it wears a modelled shell.
+
+Its spawn card offers the console's own accessories: the **Visual Memory Unit**, the **Jump
+Pack**, the **Microphone**, and Sega's **Stereo AV Cable**, which is the only lead that fits
+the Dreamcast's AV OUT.
+
+## The BIOS is optional
+
+Flycast boots games without a Dreamcast BIOS. With one — `dc/dc_boot.bin` in the system
+folder — you get the console's own startup swirl and its system menu. See
+[BIOS files](/guide/cores/bios/).
+
+## The VMU
+
+The Dreamcast saved to a **Visual Memory Unit**: a memory card with a screen and buttons,
+plugged into the top of the controller. RetroXR has had it since **v0.7.0**, and it is a
+real object, the same as a [PlayStation memory card](/guide/platforms/playstation/).
+
+<Steps>
+
+1. Spawn a **Visual Memory Unit** from the Dreamcast's spawn card.
+
+2. Push it into one of the **two expansion slots** on a Dreamcast pad. Only the front slot
+   has a window for the screen, as on the real pad.
+
+3. Power the console on and play. The game saves to that VMU.
+
+</Steps>
+
+**The VMU's screen works.** What the game draws on it — Sonic Adventure's Chao, Power
+Stone's character portraits, the health bars some games put there — shows on the unit in
+your controller, and its beeps come from the unit too, rather than being burned into a
+corner of the television.
+
+<Aside type="caution" title="Plug it in before you switch on">
+	The Dreamcast reads which VMUs are in which pads as the game starts. A VMU moved while the
+	console is on is noticed at the next power-on, not straight away.
+</Aside>
+
+Each VMU is its own card, kept at:
+
+```
+libretro/save/memcards/vmu/<card name>.vmu
+```
+
+It is managed like any other card — rename it, see what is on it, delete saves, back it up
+to RomM. See [game saves and backups](/guide/connecting/saves/).
+
+### Playing a VMU on its own
+
+The VMU was also a tiny handheld: some Dreamcast games downloaded a minigame onto it to play
+away from the console. That works here — **take the VMU out of the controller**, open its
+menu, and choose a game to play on the unit itself, then press its **Play** button to start
+it.
+
+- Minigames a Dreamcast game put on the card are there to choose.
+- Minigames you have as files go in **`roms/vmu/`** — `.vms`, `.dci` or `.bin` — and show up
+  in the same menu, with their own icons.
+
+A standalone VMU runs on the **VeMUlator** core; install it from `CORES` if the menu says
+it is missing. Whatever progress you make is carried back onto the card when you stop.
+
+As of **v0.9.0** VeMUlator also takes a **VMU BIOS** — `en1005-19991026-315-6208-05.bin`
+(US) or `jp1004-19980930-315-6208-01.bin` (Japan) — and with one the unit shows its own
+icons along the bottom of the screen. It is optional. Standalone VMUs also support save
+states and rollback [netplay](/guide/connecting/netplay/). RetroXR's VeMUlator build can
+link two VMUs, but there is no connector in the room to join them with yet.
+
+## The Jump Pack
+
+Sega's rumble pack goes into a pad's expansion slot exactly as a VMU does, and competes for
+the same two slots. **No Jump Pack, no rumble** — the console only sends vibration to a pad
+that has one. A VMU in slot 1 and the Jump Pack in slot 2 is what most players had.
+
+## The microphone
+
+As of **v0.8.0** the **Dreamcast Microphone** works, fed by your headset's (or PC's)
+microphone. It fits either expansion slot on the pad, and has no button of its own — each
+game talks on a pad button, A in Seaman and Y in Alien Front Online.
+
+<Aside type="tip" title="Seaman is fussy">
+	Seaman will not start unless the pad is in **port A**, with a **VMU in slot 1** and the
+	**microphone in slot 2**.
+</Aside>
+
+See [controllers](/guide/playing/controllers/) for how microphones work across the
+consoles that have one.
+
+## Naomi and Atomiswave
+
+Sega's arcade boards run on the same core, and as of **v0.9.0** each has a tile of its own
+in the spawn menu — **Naomi**, **Naomi 2** and **Atomiswave** — rather than being lumped
+in with the Dreamcast. Their BIOS files (`dc/naomi.zip`, `dc/naomi2.zip`, `dc/awbios.zip`
+and a few per-game ones) are listed on the [BIOS](/guide/cores/bios/) page.

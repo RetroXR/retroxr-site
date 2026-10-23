@@ -27,6 +27,7 @@ Across the top are the sections of the menu:
 | `GRAPHICS` | Quality, resolution, refresh rate, performance HUD |
 | `SCENE` | Rooms, and saving or restoring a layout |
 | `NET` | Netplay |
+| `MODS` | Browsing and installing [mods](/guide/room/mods/) |
 | `ABOUT` | Credits, licenses and the donate link |
 
 ![The SPAWN tab's Systems grid: one tile per console, each showing how many items it has, with a filter box and a compact toggle.](../../../../assets/screenshots/menu_spawn_systems.png)
@@ -38,7 +39,17 @@ Tapes, Objects and Controllers:
 
 **Games** — your ROMs. Clicking one spawns a cartridge carrying that game, straight
 into the hand that clicked. If a game has been scraped, its row also has a 📖 button that
-spawns the scanned manual as a book.
+spawns the scanned manual as a book, a **flag** for the game's region, and a **number** for
+the disc it is in a multi-disc set.
+
+With a [RomM server](/guide/connecting/romm/) connected, a source filter narrows the list
+to **All**, **Downloaded**, **Downloaded + local**, **Not downloaded** or **Local only** —
+*Downloaded + local* being everything you can spawn right now without waiting on the
+network.
+
+Some cartridges come in more than one shape or colour. **Hold the button for a second**
+instead of clicking it to choose — see
+[cartridges and discs](/guide/playing/cartridges-and-discs/#shells-colours-and-regions).
 
 **Books** — your PDFs and CBZs, as physical books.
 
@@ -47,8 +58,9 @@ spawns the scanned manual as a book.
 **DVDs** — your disc images, as DVDs.
 
 **Objects** — the hardware itself: the VCR, the DVD player, the CD player and cassette
-deck, speakers, the TV remote, every kind of A/V cable, the RF switch, the Wii sensor bar,
-a table to stand things on, and the room's own props like the storage box.
+deck, speakers, surround cabinets, a subwoofer, stands and an amplifier, the antenna, the
+TV remote, every kind of A/V cable, the RF switch, the Wii sensor bar, a table to stand
+things on, and the room's own props like the storage box.
 
 :::note[New in v0.5.0]
 The **table** is spawnable, and is no longer part of the arcade room by default — the room
@@ -59,6 +71,10 @@ are animated away rather than simply disappearing.
 ![The Objects tab, listing spawnable hardware: trash can, VCR, DVD player, CD player, cassette player and more.](../../../../assets/screenshots/menu_spawn_objects.png)
 
 **Controllers** — pads, peripherals and the receivers they plug into.
+
+Colour variants that are their own machine get their own tile in the Systems grid: the
+**Game Boy Color**, **WonderSwan Color** and **Neo Geo Pocket Color** sit beside the
+originals rather than inside them, and so do **Naomi**, **Naomi 2** and **Atomiswave**.
 
 Consoles that grew add-ons — a Sega CD, a 32X, a 64DD, a Super Game Boy — spawn their
 expansion from the **Systems** grid, filed under the system whose media it takes. See

@@ -6,22 +6,25 @@ description: The Genesis and Mega Drive in RetroXR, the 32X in its cartridge slo
 import { Aside } from '@astrojs/starlight/components';
 
 The Genesis — the Mega Drive outside North America — takes cartridges from your
-`roms/mega_drive` folder. It is also the console Sega bolted the most hardware onto, and
+`roms/genesis` folder. It is also the console Sega bolted the most hardware onto, and
 both of its add-ons are real objects here.
 
 They stack in **opposite directions**, which is what makes the full tower possible:
 
 | Unit | Where it goes | Its media |
 | --- | --- | --- |
-| **32X** | **Into** the cartridge slot, with its own slot on top | `roms/sega_32x` |
-| **Sega CD** | **Underneath** — the console stands on it | `roms/sega_cd` |
+| **32X** | **Into** the cartridge slot, with its own slot on top | `roms/sega32x` |
+| **Sega CD** | **Underneath** — the console stands on it | `roms/segacd` |
 
 See [expansion hardware](/guide/playing/expansion-hardware/) for how a stack goes together.
 
-<Aside type="note" title="The console wears a stand-in">
-	The Genesis has no modelled shell yet, so it spawns as the procedural box. The add-ons,
-	their slots and the CD tray are all real.
-</Aside>
+Since v0.9.0 the console is a modelled **Genesis 2** — the smaller second model — and the
+32X and both kinds of cartridge are modelled too, from photographs and caliper
+measurements. Every trademark has been taken off them, which is a legal necessity rather
+than a style. The Sega CD is still a stand-in.
+
+Cartridges carry your scraped label art if the scraper found one — see [box
+art](/guide/connecting/box-art/).
 
 ## The 32X
 
@@ -31,6 +34,12 @@ past. Put a 32X cartridge in that upper slot.
 
 A Genesis with a 32X on it is a different machine, and RetroXR switches to **picodrive**,
 which is both halves at once. Take the 32X off and the console goes back to its usual core.
+
+<Aside type="caution" title="Known issue: keep the A/V cable in the Genesis">
+	On the real hardware the picture went through the 32X, with a short link cable from the
+	Genesis's A/V out into the 32X. Here the A/V cable still has to be plugged into the
+	**Genesis itself** for a picture.
+</Aside>
 
 ## The Sega CD
 
@@ -53,6 +62,15 @@ core is **genesis_plus_gx**.
 	which you have. Note the core declares all of them **optional**, which they are for a
 	plain cartridge and are not for a disc.
 </Aside>
+
+### Where Sega CD games save
+
+Since v0.8.0 a Sega CD game saves where it did on the hardware: to the **backup RAM inside
+the unit**, or to a **Backup RAM Cartridge** in the Genesis's slot if you have put one
+there. The cartridge is offered on the Sega CD's card, and it is the way to carry saves
+from one Sega CD to another — just as it was. Manage either from the console's **System
+Settings** → **Saves** tab. A disc game's saves no longer appear in the disc's own menu;
+it shows a note pointing you here instead. See also [saves](/guide/connecting/saves/).
 
 ## The Power Base Converter
 

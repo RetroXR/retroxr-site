@@ -50,6 +50,14 @@ Under **`OPTIONS`**:
 If VR movement bothers you, teleport plus snap turning plus the vignette is the
 combination to start from.
 
+### Focus Mode
+
+For a long session, or a game that is struggling for frame rate, point at the TV or
+handheld and click the right thumbstick. **Focus Mode** puts the game on a floating screen
+in front of you and stops drawing the room, so the headset's whole budget goes into the
+emulator — on a black background, or your real room with **Passthrough in Focus Mode**
+turned on. See [VR controls](/guide/reference/vr-controls/#focus-mode).
+
 ## Emulator picture
 
 Emulated screens are deliberately kept sharp rather than smoothed — a blurry CRT

@@ -22,13 +22,21 @@ captured half way through a swipe.
 	the hardware did. Spawn the one that matches your cards.
 </Aside>
 
+Since v0.9.0 the reader is a modelled shell rather than a stand-in, without the trademarked
+text the real one carried.
+
+<Aside type="caution" title="Known issue: no link cable into the reader">
+	The e-Reader+ has a link port of its own, but a GBA link cable will not seat in it yet.
+	Games that link through the reader cannot be played that way for now.
+</Aside>
+
 ## The reader's program comes from your library
 
 The e-Reader's cartridge dump is an **ordinary GBA ROM**, so RetroXR does not treat it as
 firmware or ask you to install a second copy under a name of its choosing. Put it where you
 would keep it anyway:
 
-- `roms/game_boy_advance/` — the shelf it belongs on, or
+- `roms/gba/` — the shelf it belongs on, or
 - `roms/ereader/` — beside the cards it reads, which is also reasonable.
 
 It is recognised by the **ROM's own header** — the GBA game code — not by its filename, so

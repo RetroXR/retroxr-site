@@ -1,0 +1,79 @@
+---
+title: Game Boy Camera
+description: The Game Boy Camera as a cartridge with a lens you swivel by hand — it photographs the room you are standing in, keeps the photos on the cartridge, and prints them.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+The Game Boy Camera was a cartridge with a ball on top: a lens that swivelled round to
+face you or the world. As of **v0.10.0** it is a camera in RetroXR too — **what it
+photographs is the room you are standing in**, from wherever the lens is pointing.
+
+## What you need
+
+- The **Game Boy Camera** ROM — or Japan's **Pocket Camera** — in `roms/gb/`. It is
+  recognised by the cartridge type in its header, so the filename does not matter.
+- The **mGBA** core. Gambatte refuses the camera cartridge outright, so whatever core the
+  Game Boy normally runs on, a machine with the camera in it runs mGBA. Install mGBA from
+  `CORES` if you have not already.
+
+## Taking a picture
+
+<Steps>
+
+1. Spawn a Game Boy (or a Game Boy Color — the camera works in either) and the Game Boy
+   Camera from your library. It spawns as the camera body, not as a flat cartridge.
+
+2. Push it into the slot like any cartridge. The head and ball stand out of the top.
+
+3. Switch the Game Boy on. The camera's viewfinder now shows the room, live.
+
+4. **Turn the ball** to aim. In VR, take the ball with the **trigger** and swivel it
+   (grip takes the whole cartridge). On desktop, point at the ball, hold the button and
+   roll the **mouse wheel**. The ball turns about its upright axle, from facing the way the
+   label does — out of the back of the console, at the world — round to facing whoever is
+   looking at the screen.
+
+5. Take the picture with the game's own shutter button, as on the real thing.
+
+</Steps>
+
+The picture is the room as it really is at that moment: the TV, the furniture, other
+players, the hardware on the table. It is drawn from a point just outside the lens, so the
+camera never photographs itself.
+
+<Aside type="note" title="It is a 128 × 112 picture, in four shades">
+	The game gets the room at the camera's own resolution and does its own processing on it,
+	exactly as it did with the real sensor. Do not expect a sharp photo — expect a Game Boy
+	Camera photo.
+</Aside>
+
+## Where the photos go
+
+Where they did on the hardware: **on the cartridge**, in its battery save. The camera's
+album, its editing tools, the stamps and the minigames all work on what is saved there, and
+it follows the same rules as any other cartridge save — see
+[game saves and backups](/guide/connecting/saves/).
+
+To get a photo **out of the room** as an image file, print it: connect a
+[Game Boy Printer](/guide/platforms/game-boy-printer/), open a photo, press **SELECT** and
+choose print. The torn-off print is saved as a PNG.
+
+## Colours and the Pocket Camera
+
+The camera was sold in several colours from one ROM, so the header cannot say which yours
+was; it spawns **blue**. The gold *Legend of Zelda* edition had a ROM of its own and spawns
+gold. Japan's **Pocket Camera** has its own ROM too, and spawns red.
+
+To pick another colour, **hold the game for a second** in the spawn menu. The cartridge
+options open with the camera's own colours — red, yellow, green, clear purple, gold and the
+rest — and a custom colour picker. The **Body** row there can also force the camera body
+onto a game, or a plain cartridge body onto the camera's ROM.
+
+## Performance
+
+While a Game Boy Camera is switched on, RetroXR draws the room a second time from the lens
+— for the viewfinder as well as the album, because the core keeps its camera on for as long
+as the game runs. It is rationed to a modest rate (a dozen pictures a second on a Quest),
+but if a standalone headset is struggling, switch the Game Boy off when you are not using
+the camera.

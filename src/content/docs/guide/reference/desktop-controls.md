@@ -25,6 +25,7 @@ instead of your hands.
 | Left-click | Grab or pick up whatever is under the cursor |
 | `Ctrl` + Left-click | Drop the held object |
 | Scroll wheel | Push or pull the held object along the view ray |
+| `F11`, looking at a TV or handheld | Full screen — its picture fills the window; press again to put it back in the room |
 | Middle-mouse drag | Rotate the held object in place |
 | `Tab` | Toggle the spawn menu |
 
@@ -34,6 +35,26 @@ click will not do it, and the scroll wheel does nothing while they are snapped. 
 else drops on a plain click too.
 
 If you are holding the ray gun, left-click fires it rather than grabbing.
+
+Pull a held object **all the way in** with the scroll wheel and it settles somewhere
+useful rather than in your face: a handheld turns to put its screen front and centre, and
+anything else drops to just below the middle of the view.
+
+## Full screen
+
+Look at a television or a handheld and press `F11`. Its picture fills the window and its
+sound moves in front of you, so a game can be played like any desktop emulator. Press
+`F11` again to put it back in the room. This is the desktop's version of the headset's
+[Focus Mode](/guide/reference/vr-controls/#focus-mode).
+
+## Settings for desktop mode
+
+A few settings only matter without a headset:
+
+- **Mouse Sensitivity**, under `OPTIONS`.
+- **Zoom**, under `OPTIONS`, beside the field of view — above 1.00× everything is drawn
+  closer, and unlike the field of view it is saved between sessions.
+- **Resolution** of the window, under `GRAPHICS`.
 
 ## Playing a game
 
@@ -58,4 +79,6 @@ A real gamepad plugged into the PC works too, and is a great deal more pleasant 
 
 ## Reading a book
 
-With a book held: `E` turns to the next page, `Q` to the previous one.
+With a book held: `E` turns to the next page, `Q` to the previous one, with the same
+animated turn as a page dragged by hand. Tap either key quickly and several pages riffle
+over at once. See [books](/guide/room/books/).

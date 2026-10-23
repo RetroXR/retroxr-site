@@ -37,6 +37,16 @@ Cores are downloaded from the libretro build server, the same source every libre
 frontend uses. Nothing is bundled with RetroXR and nothing is scraped from anywhere
 unusual.
 
+A handful come from RetroXR's own forks instead, published as releases in the
+[RetroXR organization on GitHub](https://github.com/RetroXR). Those are cores that needed
+something upstream does not do — mostly carrying a [link cable](/guide/playing/link-cables/)
+between two cores in one room, but also the Dreamcast's VMU screen, the N64's Voice
+Recognition Unit, and microphones. The downloader picks the right source for you; the
+fork is simply what you get when you choose that core.
+
+One is not a fork at all. **xemu**, for the original **Xbox**, has no libretro core
+upstream, so RetroXR builds its own port of it. It runs on **Quest** and **Windows**.
+
 ## Next
 
 - [Downloading and managing cores](/guide/cores/downloading/)

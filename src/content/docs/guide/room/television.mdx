@@ -1,6 +1,6 @@
 ---
 title: The television
-description: The set's own buttons, its four inputs, the CRT effect, and live TV from an HDHomeRun tuner.
+description: The set's own buttons, its four inputs, the speaker outputs on the back, the CRT effect, and live TV through an antenna.
 sidebar:
   order: 0
 ---
@@ -35,7 +35,8 @@ All of these are on the set itself, and all of them are also on the
 | **Mute** | Silence without changing the volume |
 | **Source** | Cycles the inputs — Composite 1 through 4, the antenna, and VGA |
 | **Channel −** / **Channel +** | Tunes up and down when the set is on the antenna input |
-| **Audio mode** | Switches between stereo and mono output |
+| **Audio mode** | Stereo, then the left channel from both speakers, then the right from both |
+| **Audio output** | Where the sound goes: **TV speakers**, **stereo out** to speakers cabled to the back, or **surround** |
 | **Aspect** | Switches the picture between 16:9 and 4:3 |
 | **CRT** | Turns the CRT effect on and off — scanlines, curvature and phosphor glow |
 | **3D** | For stereoscopic sources: both eyes, left eye only, or right eye only |
@@ -51,7 +52,7 @@ All of these are on the set itself, and all of them are also on the
 <Image src={avPanel} alt="The back panel of a television: four blocks labeled Composite 1 to Composite 4, each with yellow video and white and red audio sockets marked AV IN, and a separate Antenna block with a single RF IN socket." />
 
 - **Composite 1–4** — four full phono rows, so four machines can stay wired up at once.
-- **Antenna (RF IN)** — for an RF switch, or for a real tuner.
+- **Antenna (RF IN)** — for an RF switch, or for the [antenna](#live-tv-through-the-antenna).
 - **VGA** — on sets that have it, for a computer's DE-15 output.
 
 Which one you see is whatever **Source** last landed on. A machine on an input you are not
@@ -59,11 +60,36 @@ watching keeps running.
 
 Wiring is covered in full on [plugging things in](/guide/playing/plugging-in/).
 
-## Live TV with an HDHomeRun
+## The speaker outputs
+
+Above the inputs is a row of six phono **outputs** — **FL**, **FR**, **C**, **SUB**,
+**SL** and **SR** — for loudspeakers placed around the room. They do nothing until the
+**Audio output** key is moved off **TV speakers**:
+
+- **TV speakers** — the set's own pair. Anything cabled to the back is silent.
+- **Stereo out** — the front pair, FL and FR, as a line out. Cable them to a pair of
+  speakers, or to an amplifier.
+- **Surround** — the game's stereo is matrix-decoded to all six outputs, the way a Dolby
+  Pro Logic II receiver did it.
+
+On either external position with nothing plugged into the back, the set goes quiet and
+says **NO SPEAKERS CONNECTED** — that is the reason you hear nothing, not a fault. Setting
+up a full surround rig is covered in
+[speakers and surround](/guide/playing/plugging-in/#speakers-and-surround).
+
+## Live TV through the antenna
 
 If you own a [SiliconDust HDHomeRun](https://www.silicondust.com/) tuner with an antenna
-attached, RetroXR can watch actual broadcast television on it. Set the source to the
-antenna input and the channel buttons tune through your real local channels.
+attached, RetroXR can watch actual broadcast television on it.
+
+The set no longer has a tuner built in. Spawn the **antenna** — rabbit ears on a weighted
+base — and push its coax lead into the set's **RF IN** socket, or into the **ANT** socket
+of an RF switch that is itself plugged into the set. Set the source to the antenna input
+and the channel buttons tune through your real local channels, on the same dial as an RF
+switch's channels 3 and 4. Pull the lead and those channels are gone.
+
+The tuner's settings live on **the antenna's own menu**, not the television's, because the
+antenna is what receives them.
 
 ### How it finds the box
 

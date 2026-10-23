@@ -12,6 +12,7 @@ sidebar:
 | **Grip** | Grab whatever your hand is near — an object, a plug, a cartridge |
 | **Trigger** | Click the menu, grab at a distance, drag a page |
 | **Thumbstick click** *(left)* | Open and close the spawn menu — or, pointed at an object, open its panel |
+| **Thumbstick click** *(right)*, pointed at a TV or handheld | [Focus Mode](#focus-mode) — the game alone, in front of you |
 | **Thumbstick** | Move, and turn |
 
 Let go of grip and the thing in your hand drops. Objects have weight — they fall, roll and
@@ -26,6 +27,27 @@ Pointing at certain objects — a book, the DVD player, a machine with settings 
 **clicking the left thumbstick** opens a small panel of options for that specific thing.
 It is the same press that opens the spawn menu: what you are pointing at decides which
 you get.
+
+## Focus Mode
+
+Sometimes you want the game, not the room. Point your **right** hand at a television or a
+handheld and **click the right thumbstick**: its picture moves to a floating screen in
+front of you and the room stops being drawn, so the headset's whole effort goes into the
+game.
+
+Nothing is put away. Whatever you are holding stays in your hands, and the pads and link
+leads plugged into that machine stay where they are — so you can still walk over and pick
+up the controller.
+
+- **Move the screen** — point at it and hold **grip** to carry it. While gripping, push the
+  stick **up or down** for distance and **left or right** for size. Or trigger-drag its
+  corner handle.
+- **Background** — black by default. Turn on **Passthrough in Focus Mode** in `OPTIONS`
+  to see your real surroundings around the screen instead.
+- **Leave** — point at the screen and click the right thumbstick again, and the room comes
+  back.
+
+On desktop the same thing is `F11` — see [desktop controls](/guide/reference/desktop-controls/).
 
 ## Moving
 

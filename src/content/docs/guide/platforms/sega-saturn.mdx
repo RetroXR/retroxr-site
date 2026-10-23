@@ -1,0 +1,82 @@
+---
+title: Sega Saturn
+description: The Sega Saturn — which core runs where, its BIOS, saves kept inside the console as the real one did, the cartridges that go behind the lid, the Video CD Card, and the link cable.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+The Saturn plays discs from `roms/saturn/`. Two cores run it, and which one you get depends
+on where you are playing:
+
+| | Core | Notes |
+| --- | --- | --- |
+| PC | **Beetle Saturn** | The accurate one, and the one with everything on this page. RetroXR downloads its own build. |
+| Quest | **YabaSanshiro** | Light enough for a headset. It has no ROM cartridges and no link cable. |
+
+You can change the default under `CORES` — see [about cores](/guide/cores/about-cores/).
+The Saturn is still a procedural stand-in.
+
+## The BIOS
+
+Beetle Saturn needs a real Saturn BIOS: `sega_101.bin` (Japan) or `mpr-17933.bin`
+(US/Europe), in the system folder. See [BIOS files](/guide/cores/bios/).
+
+## Saves live in the console
+
+A Saturn saved to memory **inside the console**, not to a file per game. As of **v0.8.0**
+RetroXR does the same: every game saves to that console's own **System Memory**, which
+travels with the console when you save the room. Open the console's menu and its **Saves**
+tab to see what is in it, and to delete saves.
+
+### The Backup RAM Cartridge
+
+To carry saves between consoles — or just to have more room — the Saturn had a **Backup RAM
+Cartridge**. Spawn one and push it into the **cartridge slot behind the lid**. Copy saves
+between it and the console with the Saturn's own **Memory Manager**: start the console with
+no disc, choose System Settings, then Memory Manager.
+
+See [game saves and backups](/guide/connecting/saves/) for where these live on disk and how
+they are backed up.
+
+## Cartridges behind the lid
+
+As of **v0.10.0** that slot takes the Saturn's other cartridges too — one at a time, as on
+the hardware:
+
+| Cartridge | What it is for |
+| --- | --- |
+| **Backup RAM Cartridge** | Saves (above) |
+| **Extended RAM Cartridge, 1 MB** | The twenty-odd games that want 1 MB of extra memory |
+| **Extended RAM Cartridge, 4 MB** | The handful that want 4 MB — X-Men vs. Street Fighter among them |
+| **The King of Fighters '95 ROM cartridge** | Half of that game; needs `mpr-18811-mx.ic1` |
+| **Ultraman: Hikari no Kyojin Densetsu ROM cartridge** | Same again; needs `mpr-19367-mx.ic1` |
+
+Seating one sets the core up for it, so you never set a core option by hand. A game that
+wants a cartridge that is not there shows whatever the real game showed without it.
+
+<Aside type="note" title="RAM cartridges and saving">
+	A RAM cartridge holds no saves, and because it takes the slot, a game played with one saves
+	to the console's System Memory.
+</Aside>
+
+The two ROM cartridges are offered only once their dumps are in the system folder, and they
+run on Beetle Saturn only.
+
+## The Video CD Card
+
+The **Video CD Card** goes into a slot of its own at the **back** of the console, so it
+stays in while cartridges come and go. With it the Saturn plays Video CDs. It needs a dump of
+the card, `mpeg_card.bin`; seating the card switches it on in the core.
+
+## The link cable
+
+As of **v0.9.0** two Saturns link through the **Communication Connector** on the back with
+the Saturn link cable — the Japan-only "Taisen" cable. Six games use it: Daytona USA Circuit
+Edition (the Japanese disc), Doom, GunGriffon II, Gebockers, Hyper Reverthion and Steeldom.
+
+It needs Beetle Saturn on both consoles — which in practice means a PC — and a BIOS. The
+Saturn's lead does not fit a PlayStation, and the PlayStation's does not fit a Saturn. See
+[link cables](/guide/playing/link-cables/).
+
+Beetle Saturn also supports rollback [netplay](/guide/connecting/netplay/), including a
+cabled pair.

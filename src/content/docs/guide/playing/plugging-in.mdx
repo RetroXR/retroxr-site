@@ -1,6 +1,6 @@
 ---
 title: Plugging things in
-description: A/V leads, RF switches, antennas and VGA — how a machine actually reaches a screen in RetroXR.
+description: A/V leads, RF switches, antennas, VGA and surround speakers — how a machine actually reaches a screen, and your ears, in RetroXR.
 sidebar:
   order: 2
 ---
@@ -152,11 +152,56 @@ that to a speaker pair or to the set, or you will have a picture and silence.
 The television's own volume and mute controls act on whatever input it is currently
 showing — so a source you cannot hear may simply not be the selected input.
 
+## Speakers and surround
+
+The set's own speakers are fine, but the back of the television also has a row of six
+phono **speaker outputs** — **FL**, **FR**, **C**, **SUB**, **SL** and **SR** — and the
+`objects` tab of the spawn menu has the hardware to fill them:
+
+- **Loudspeakers** — one cone each, carried anywhere. A speaker carries whichever channel
+  its lead is plugged into on the back of the set, so the same cabinet can be a front, a
+  centre or a rear.
+- A **subwoofer**. Cable it to the **SUB** output specifically — it handles spatial audio
+  differently from the satellites, and a sub on a satellite's output will not sound right.
+- **Speaker stands** at 1 m and 1.2 m, measured to the plate the cabinet stands on.
+- **RCA speaker wire**. Hold the spawn button for a second to pick the jack colour, so the
+  six leads can be told apart behind the set.
+- A **surround amplifier**, if you would rather the decoding happened in a box of its own.
+
+Then press **Audio output** on the set (or the remote) until it reads **SURROUND**. The
+game's stereo is matrix-decoded to the six outputs — exactly what a Dolby Pro Logic II
+receiver did with a surround-encoded game in the living room.
+
+<Aside type="caution" title="Surround needs two things switched on">
+	**Spatial Audio** must be on in `OPTIONS`; without it every machine plays plain stereo,
+	and the set says **SURROUND NEEDS SPATIAL AUDIO**. And the game has to be producing a
+	surround-encoded mix in the first place — many from the era put it behind an option,
+	such as **SURROUND** in Donkey Kong 64's audio settings.
+</Aside>
+
+Position the speakers where you actually play, the way you would in a real room: fronts
+either side of the set, centre on or under it, surrounds beside or behind you. A channel
+with no speaker cabled to it is not lost — it folds onto the nearest speakers that are.
+
+### Through an amplifier
+
+The amplifier takes a stereo line in and has the same six outputs. Feed it either way:
+
+- **A machine's own white and red leads** into its **AUDIO IN**. The picture still goes to
+  the television as usual; the sound goes to the amplifier.
+- **The set's FL and FR** into its **AUDIO IN**, with the set on **STEREO OUT** — the set
+  is then only a line out, and the amplifier does the decoding.
+
+Its **SURROUND MODE** switch steps between the two decoders of the era: **Pro Logic II**,
+with two full-range rear channels, and the original **Dolby Surround**, with a single,
+band-limited rear channel shared by both surround speakers.
+
 ## Live television
 
-If you have an **HDHomeRun** tuner on your network with an antenna attached, RetroXR finds
-it automatically. Set the TV's source to the tuner and the channel up and down buttons
-cycle your actual local channels.
+The set has no tuner of its own. Spawn the **antenna**, push its coax lead into the TV's
+**RF IN** (or an RF switch's **ANT** socket), set the source to the antenna input, and the
+channel buttons cycle the channels it receives — your real local ones, if you have an
+**HDHomeRun** on the network. See [the television](/guide/room/television/#live-tv-through-the-antenna).
 
 ## When there is no picture
 
@@ -167,7 +212,9 @@ Work down this list — it is ordered by how often each one is the answer.
 3. **The TV is switched off.** Its own power button, not the console's.
 4. **The machine is off**, or has no cartridge or disc in it.
 5. **The channel is untuned**, if you went through an RF switch — snow means exactly this.
-6. **No core is installed** for that system, so there is nothing to produce a picture.
+6. **The set is on stereo out or surround with no speakers cabled**, if you have a picture
+   but no sound — the TV goes silent and says **NO SPEAKERS CONNECTED**.
+7. **No core is installed** for that system, so there is nothing to produce a picture.
 
 A blank input paints blank. That is deliberate: the television behaves like a television,
 so the state of your wiring is always readable from the screen.

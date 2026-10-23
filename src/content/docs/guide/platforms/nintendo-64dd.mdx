@@ -9,8 +9,24 @@ The 64DD is the magnetic disk drive that only ever shipped in Japan, and the rea
 a hatch in the Nintendo 64's floor. It is **taller than the console it carries**: the N64
 stands on top of it, and a cartridge can be in the console while a disk is in the drive.
 
-Put your disks in `roms/nintendo_64dd`. See
+Put your disks in `roms/n64dd`. See
 [expansion hardware](/guide/playing/expansion-hardware/) for how to stack the two.
+
+## The drive and its disks
+
+Since v0.7.0 the drive is a modelled shell, in the retail colours and in the development
+kit's, and the disks are modelled too. A disk is grey like a retail one unless its dump is
+one of the **blue development disks** — recognised by the system-area name those dumps
+carry (`DDDiskD-…`, `NUD-…`) or by "dev" in the filename — and then it comes out blue.
+
+The drive's **access lamp** lights when the disk is being read, driven by the core. The
+microcontroller behind it is barely documented, so the lamp may not always behave the way
+the real one did.
+
+<Aside type="note" title="Disk labels from the scraper">
+	Screenscraper does not tag 64DD label scans the way it does other media, so a disk may
+	come out without its label even when the site has one.
+</Aside>
 
 ## Two cores, two halves of the library
 

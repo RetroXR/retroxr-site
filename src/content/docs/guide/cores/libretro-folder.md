@@ -64,17 +64,27 @@ Manager rewrites the file for you — safer than editing it.
 Two different things, filed two different ways:
 
 ```
-save/<core>/<game>/<save>.srm      cartridge battery saves — per core, per game
-save/memcards/<systemid>/<name>.mcr  memory cards — per console family, no core
+save/carts/<systemid>/<game>/<save>.srm   cartridge battery saves — per system, per game
+save/memcards/<family>/<card>.<ext>       memory cards — per console family, no core
+save/<core>/...                           the core's own files, and N64 / 64DD / FDS saves
 ```
 
 A **cartridge** kept its save on its own chip, so the path is keyed by the game. A **memory
 card** is one image that every game on that console writes into — which is the entire point
 of a card — so it is keyed by the card instead.
 
-The card path carries no core name on purpose: the raw image is identical for every
-PlayStation core, so a card survives switching cores the way a real one survives switching
-consoles. Cartridge saves do not. See [the PlayStation](/guide/platforms/playstation/) and
+Neither path carries a core name. Since v0.8.0 a cartridge's battery is filed under the
+**system** it belongs to, so it survives switching cores the way a real cartridge survives
+being moved to another console — and a Transfer Pak reads the same file a Game Boy playing
+that cartridge does. A card was always like that.
+
+Three systems are the exception and still keep their saves per core: the **Nintendo 64**,
+the **64DD** and the **Famicom Disk System**. Their cores store saves in layouts that are
+not compatible with each other, so sharing one file would corrupt it. A cartridge's
+real-time clock is also kept per core, beside its battery, for the same reason.
+
+Upgrading from an older version moves the old per-core saves into the new layout once, on
+first launch. See [the PlayStation](/guide/platforms/playstation/) and
 [game saves and backups](/guide/connecting/saves/).
 
 ### temp

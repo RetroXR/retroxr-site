@@ -10,8 +10,9 @@ The DVD player is a deck you plug into a television, exactly like a console. It 
 subtitles — driven by libVLC and its `libdvdnav` / `libdvdread` plugins.
 
 :::caution[Not on macOS]
-The packaged libVLC backend ships on Windows, Linux and Quest. A macOS build from source
-has no DVD player and no VCR.
+The libVLC backend ships with the Quest and Windows builds; the Linux build uses your
+system's libVLC (`vlc-libs`). The macOS build has no libVLC, so it has no DVD player and
+no VCR.
 :::
 
 ## Getting a disc in

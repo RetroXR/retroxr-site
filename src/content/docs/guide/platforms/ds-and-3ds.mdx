@@ -89,16 +89,18 @@ Everything above applies, plus the thing worth putting a headset on for.
 The 3DS's own 3D worked by a parallax barrier over the top screen: one display, split so
 each eye saw different columns, with a narrow sweet spot you had to hold your head inside.
 
-RetroXR does not reproduce the barrier. It runs a **patched core** that renders the whole
+RetroXR does not reproduce the barrier. It has the **Azahar** core render the whole
 layout **twice — once per eye** — into a side-by-side frame, and hands the left half to
 your left eye and the right half to your right. That is genuine stereoscopic depth, with
 no sweet spot to sit in and no head-in-a-vice.
 
-<Aside type="caution" title="It needs the patched core">
-	This depends on the custom build RetroXR downloads for you. A **stock Citra-family core
-	ignores the setting** and outputs a mono frame, which would show through the stereo
-	windows misaligned. Take the recommended core from `CORES` → Download — see
-	[downloading and managing cores](/guide/cores/downloading/).
+<Aside type="caution" title="It needs a recent Azahar">
+	The core options that make this possible started life as a RetroXR patch and were merged
+	into Azahar upstream in **2126.1**, so since v0.7.0 RetroXR downloads the ordinary
+	libretro buildbot build rather than a fork of its own. An **older Azahar, or another
+	Citra-family core, ignores the setting** and outputs a mono frame, which would show
+	through the stereo windows misaligned. Take the recommended core from `CORES` → Download
+	— see [downloading and managing cores](/guide/cores/downloading/).
 </Aside>
 
 ### The depth slider
@@ -129,6 +131,15 @@ hotkeys the cores bind are exactly the ones RetroXR masks out.
 
 Spawn a game from `SPAWN` → **Games** and push it into the slot. Same as any other
 machine — see [cartridges, discs and memory cards](/guide/playing/cartridges-and-discs/).
+DS and 3DS games spawn as modelled cartridges of the right shape for each system.
+
+## Booting to the home menu
+
+With the DS firmware in place — `firmware.bin`, `bios7.bin` and `bios9.bin`, under the
+core's folder — a DS switched on with no game in it boots to its own **home menu**, the
+way the real one did. On melonDS DS, setting the core to DSi mode gives the **DSi Menu**
+instead. Without the firmware an empty DS has nothing to show. See
+[BIOS files](/guide/cores/bios/#booting-to-the-bios).
 
 :::caution[Needs an in-headset pass]
 The framebuffer slicing, the forced core options and the masked buttons are read from the

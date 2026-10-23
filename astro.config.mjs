@@ -81,6 +81,7 @@ export default defineConfig({
 						{ label: 'Download & install', slug: 'download' },
 						{ label: 'Your first session', slug: 'guide/first-run' },
 						{ label: 'Adding your games', slug: 'guide/adding-games' },
+						{ label: 'Contributing', slug: 'contributing' },
 					],
 				},
 				{ label: 'Playing', items: [{ autogenerate: { directory: 'guide/playing' } }] },
@@ -104,11 +105,24 @@ export default defineConfig({
 							],
 						},
 						'guide/platforms/sega-genesis',
+						'guide/platforms/sega-saturn',
+						'guide/platforms/dreamcast',
 						{
 							label: 'Nintendo 64',
 							items: [
 								'guide/platforms/nintendo-64',
 								'guide/platforms/nintendo-64dd',
+							],
+						},
+						// The Camera and the Printer sit under the Game Boy for the same
+						// reason the e-Reader sits under the Advance: each is an accessory
+						// for the handheld, not a machine of its own.
+						{
+							label: 'Game Boy',
+							items: [
+								'guide/platforms/game-boy',
+								'guide/platforms/game-boy-camera',
+								'guide/platforms/game-boy-printer',
 							],
 						},
 						{
@@ -119,6 +133,7 @@ export default defineConfig({
 							],
 						},
 						'guide/platforms/playstation',
+						'guide/platforms/playstation-2',
 						'guide/platforms/atari-2600',
 						'guide/platforms/ds-and-3ds',
 						'guide/platforms/virtual-boy',

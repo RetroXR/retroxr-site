@@ -28,7 +28,7 @@ do all of it.
 	src="/video/wii/console.mp4"
 	poster={consolePoster}
 	alt="The Wii console model rotating, showing the disc slot on the front."
-	caption="The Wii console. Like most hardware in RetroXR today, it is a clean procedural stand-in rather than a detailed replica."
+	caption="The Wii console. Unlike its remote and Nunchuk it is still a clean procedural stand-in rather than a detailed replica."
 />
 
 ## Setting one up
@@ -177,6 +177,19 @@ than tapped:
 A remote can be held **sideways in two hands**, the NES-pad grip a lot of Wii games were
 designed around. Grab it with both, turn it across you, and it plays as a horizontal pad.
 
+### The speaker
+
+The Wii Remote has a small speaker of its own, and since v0.7.0 what a game sends to it
+comes **out of the remote in your hand** rather than out of the television. Hold it close
+and it is louder; put it down across the room and it is faint, as it should be.
+
+### Wii Remote Plus
+
+The later remote with MotionPlus built in is known to RetroXR too: a remote marked as a
+Plus is announced to the game with MotionPlus fitted, whether or not a dongle is plugged
+in. The remote the Controllers tab spawns is the original; a Plus comes from something
+that declares one, such as a [mod](/guide/room/mods/)'s remote shell.
+
 ## Controls
 
 A Wii Remote has seven buttons and a d-pad. A VR controller has about five usable inputs
@@ -265,6 +278,20 @@ The Dolphin build RetroXR downloads is a custom fork carrying MotionPlus gyro fi
 with IR passthrough for the sensor bar and an Android race-condition fix. The core manager
 fetches it for you — you do not need to build anything.
 
+## The Wii Menu
+
+A Wii's equivalent of a BIOS is its **System Menu**, and since v0.9.0 RetroXR can install
+it for you. Open `OPTIONS` → **Cores** → **BIOS / Extras**, pick the **Nintendo Wii** tile,
+choose a region and install the **Wii System Menu** row. It needs the Dolphin core
+installed first, and it downloads through Dolphin's own online system update, so it takes
+a while and needs the network.
+
+With the menu installed, a Wii switched on with an empty drive boots to the Wii Menu, and
+one switched on with a disc starts at the menu too, with the game waiting in the Disc
+Channel — as on the hardware. Without it, a disc boots straight into the game and an empty
+Wii has nothing to show. A menu from a different region will not list a disc from another.
+See [BIOS files](/guide/cores/bios/).
+
 ## The Nunchuk
 
 <Turntable
@@ -312,8 +339,7 @@ The Wii arrived in [v0.3.0](/blog/) and got most of its second pass in v0.4.0 �
 remodelled remote and Nunchuk, a working power button, the sideways grip and Nunchuk
 motion, which had been the big missing piece.
 
-:::note[Help wanted]
-Every model above is a procedural stand-in. If you model, replacing them with something
-better is one of the most valuable things you could contribute — the only rule is that
-models must be free of any trademarked text or images.
+:::note
+The Wii Remote and the Nunchuk have real shells, but the console, the sensor bar and
+MotionPlus are still procedural stand-ins.
 :::

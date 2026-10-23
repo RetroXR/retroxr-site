@@ -21,7 +21,10 @@ what you see reflects the state of your wiring. In rough order of likelihood:
 ## A game does not appear in the menu
 
 - The file is in the wrong folder, or the **system folder is misspelled** — the folder
-  name under `roms/` is what assigns a game to a console.
+  name under `roms/` is what assigns a game to a console. Since v0.8.0 the folders use the
+  short names ES-DE uses — `snes`, `n64`, `psx`, `gb`, `genesis` — rather than libretro's
+  longer ones. Old folders such as `super_nes` or `playstation` are still read, so a
+  library from an older version keeps working.
 - The file extension is not one that system recognizes.
 - On Quest, the file went to internal storage rather than
   `/sdcard/Android/data/com.xenu.retroxr/files/`.
@@ -39,6 +42,21 @@ what you see reflects the state of your wiring. In rough order of likelihood:
   one, it needs its own lead.
 - The **television's** volume and mute act on the input it is currently showing, so check
   the set before the deck.
+- The TV's **audio output** button decides whether sound comes from the set's own speakers
+  or goes out to external ones. Set to external with no speakers wired up, the TV is
+  silent. See [the television](/guide/room/television/).
+
+## A plug or cartridge will not go in
+
+- Check the [log](/guide/reference/reporting-bugs/): since v0.11.1 it says **why** a held
+  object will not preview or seat in a socket.
+- On **v0.11.0** specifically, link cables, Ethernet, coax, TRS and VGA plugs refused every
+  socket. Update to v0.11.1 or later.
+
+## An object floats in mid-air
+
+Now and then something you drop stays hanging where you let go of it, as if gravity had
+not noticed. Pick it up and drop it again. This is a known bug.
 
 ## The web file manager will not load
 
@@ -61,6 +79,10 @@ one — see [downloading and managing cores](/guide/cores/downloading/).
 
 Netplay is an early prototype rather than a finished feature, and is known to be lightly
 tested. Treat problems there as expected rather than as something you have misconfigured.
+
+Two things are worth checking first: every player must be on the **same version**, and
+linking machines over netplay needs everyone on **v0.11.1 or later** with up-to-date
+cores. See [netplay](/guide/connecting/netplay/).
 
 ## Still stuck
 

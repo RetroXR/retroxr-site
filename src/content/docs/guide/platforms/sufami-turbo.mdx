@@ -36,7 +36,7 @@ See [expansion hardware](/guide/playing/expansion-hardware/) for how a stack is 
 - **`STBIOS.bin`** in `libretro/system/snes9x/` — the adapter's own shell program. Until it
   is installed, the Sufami Turbo is not offered in the spawn menu at all.
 - **snes9x**, which RetroXR selects for you when the adapter goes in.
-- Your cartridge dumps in the `sufami_turbo` folder of your ROM library.
+- Your cartridge dumps in the `sufami` folder of your ROM library.
 
 <Aside type="caution" title="Without the BIOS it does not quietly degrade — it refuses">
 	A missing `STBIOS.bin` does not fall back to loading the cartridge as an ordinary Super
@@ -54,7 +54,7 @@ bays would refuse them.
 <Aside type="tip" title="Keep them in their own folder">
 	Because the extension does not distinguish them, what separates a Sufami Turbo cartridge
 	from a Super Famicom game here is **which folder it is in**. Put the small cartridges in
-	`roms/sufami_turbo/`.
+	`roms/sufami/`.
 </Aside>
 
 ## Both cartridges keep their saves

@@ -70,20 +70,21 @@ And three files at the top level:
 
 ### The per-core rule
 
-`system/`, `core_assets/` and part of `save/` are all keyed **by core name**, not by system:
+`system/` and `core_assets/` are keyed **by core name**, not by system:
 
 ```
 libretro/system/mednafen_psx_hw/scph5500.bin
 libretro/core_assets/ppsspp/...
-libretro/save/pcsx_rearmed/<game>/<save>.srm
 ```
 
 So installing a second core for a machine gives you a second, empty firmware folder. That
 is the usual reason a game that ran fine yesterday boots to a black screen after you
 switched cores.
 
-Memory cards are the deliberate exception — see
-[the PlayStation](/guide/platforms/playstation/).
+Saves are the exception. Since v0.8.0, cartridge saves and memory cards are filed **by
+system**, so they follow the game to a different core — except on the Nintendo 64, 64DD
+and Famicom Disk System, whose cores cannot read each other's files. See
+[the libretro folder](/guide/cores/libretro-folder/#save).
 
 ## Updating and removing
 
@@ -97,7 +98,8 @@ The storage screen will also clear out **orphaned metadata** — box art and scr
 left behind by games that are no longer there.
 
 :::note
-Changing the default core for a system does not migrate saves between cores. Different
-cores can use different save formats, so a game saved under one may not be seen by
-another.
+Changing the default core for a system keeps your cartridge saves and memory cards — they
+belong to the system, not the core. **Savestates** do not move: a savestate is a dump of
+one core's internal state, and another core cannot read it. Nintendo 64, 64DD and Famicom
+Disk System saves are also still per core.
 :::

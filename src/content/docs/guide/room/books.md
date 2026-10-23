@@ -42,13 +42,21 @@ the page springs back.
 Holding the book one-handed, you can also poke the far edge with your other hand and
 squeeze **grip** to flip.
 
-**On desktop** — with the book held, `E` is the next page and `Q` the previous one.
+**On desktop** — with the book held, `E` is the next page and `Q` the previous one. The
+page turns over with the same animation as one dragged by hand, and tapping either key
+quickly **riffles** several pages over at once — the fastest way to the middle of a long
+manual.
+
+A soft-cover book is not a rigid board, either: it hangs, swings and fans in your hand as
+you move it, the way a magazine does.
 
 ## Book settings
 
 Point at the book and **click the left thumbstick** for a small panel with two controls:
 
-- **Size** — 0.5× to 2.5×, for everything from a pocket manual to a broadsheet.
+- **Size** — 0.1× to 2.5×, for everything from a pocket manual to a broadsheet. The row
+  shows the page's real size in centimetres beside the factor, and the spine scales with
+  the book.
 - **Half pages** — splits a scanned two-page spread down the middle, so a magazine scanned
   as spreads reads one page at a time.
 

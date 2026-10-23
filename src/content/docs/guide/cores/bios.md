@@ -165,15 +165,57 @@ required files missing — that is correct behavior, not a failed download.
 So a system can read "extras installed" and "required files missing" at the same time.
 :::
 
+### Downloads that are not libretro's
+
+A few rows on a system's page fetch something libretro does not host:
+
+| System | Row | What it does |
+| --- | --- | --- |
+| **Nintendo 64** | Voice Recognition Unit speech: English / Japanese | The speech recogniser and language model the [VRU](/guide/platforms/nintendo-64/) needs to hear you in *Hey You, Pikachu!* and *Densha de Go! 64*. Each language is its own download. Without it the VRU still plugs in; it just cannot understand anything. |
+| **Wii** | Wii System Menu | Installs the Wii's home screen into Dolphin, by running Dolphin's own online system update. Pick the region on the row. Needs Dolphin installed first. |
+| **Game Boy / Game Boy Color** | Game Boy Printer | The [printer's](/guide/platforms/game-boy-printer/) own core. Without it the printer cannot be spawned. |
+
+Downloads on this view show a progress bar while they run.
+
 ## Booting to the BIOS
 
 Since v0.4.0, if a system's BIOS is on the device, RetroXR turns on that core's **show the
 BIOS startup** option for you — so a console you power on with no game in it comes up on
 its own firmware screen, the way it did on the shelf, instead of straight into nothing.
 
+Some of the screens that unlocks:
+
+- **GameCube** — with an IPL dump in place, an empty GameCube boots to its own menu, the
+  spinning cube and the memory card manager included.
+- **Wii** — with the System Menu installed, an empty Wii boots to the Wii Menu, and a Wii
+  with a disc in it boots to the menu with the disc in the Disc Channel, as on the
+  hardware. With no System Menu the disc boots directly.
+- **Nintendo DS** — with `firmware.bin`, `bios7.bin` and `bios9.bin`, an empty DS boots to
+  its home menu (on melonDS DS, the DSi Menu if you set the core to DSi mode).
+- **Dreamcast VMU** — with a VMU BIOS the [VMU](/guide/platforms/dreamcast/) shows its status
+  icons along the bottom of its screen, as the real one did.
+- **PlayStation 2** — an empty PS2 boots to its browser.
+
+## Files worth knowing by name
+
+Most systems list their files clearly in the BIOS view. These are the ones added since
+v0.6.0, or the ones people ask about:
+
+| System | File | Folder | Required? |
+| --- | --- | --- | --- |
+| Dreamcast VMU | `en1005-19991026-315-6208-05.bin` (US) or `jp1004-19980930-315-6208-01.bin` (Japan) | `system/vemulator/` | Optional — VMU games run without it |
+| Game Boy / Game Boy Color | `gb_bios.bin`, `gbc_bios.bin` | `system/gambatte/` | Optional |
+| Sega Saturn | `sega_101.bin` (Japan) or `mpr-17933.bin` (US/Europe) | `system/mednafen_saturn/` | **Required** |
+| Saturn Video CD Card | `mpeg_card.bin` | `system/mednafen_saturn/` | Required for the card — see below |
+| PlayStation 2 | the PS2 BIOS dump | `system/pcsx2/bios/` — a **folder**, not a single file | **Required** |
+
+The link cables between two [Sega Saturns](/guide/platforms/sega-saturn/), two
+[PlayStation 2s](/guide/platforms/playstation-2/) and the other newer
+[serial links](/guide/playing/link-cables/) need the console's BIOS in place as well.
+
 ## Firmware that unlocks hardware
 
-Four of the [expansion units](/guide/playing/expansion-hardware/) are cartridges carrying a
+Five of the [expansion units](/guide/playing/expansion-hardware/) are cartridges carrying a
 program, and that program is firmware you supply. Until the file is present the unit is not
 offered in the spawn menu at all, because without it there would be nothing to run.
 
@@ -183,8 +225,10 @@ offered in the spawn menu at all, because without it there would be nothing to r
 | Super Game Boy 2 | `SGB2.sfc` | `system/bsnes/` |
 | Sufami Turbo | `STBIOS.bin` | `system/snes9x/` |
 | BS-X | `BS-X.bin` | `system/snes9x/` |
+| Saturn Video CD Card | `mpeg_card.bin` | `system/mednafen_saturn/` |
 
-New in v0.5.0.
+New in v0.5.0; the Video CD Card in v0.10.0. Seating the card in a Saturn turns the
+core's MPEG card option on for you.
 
 ## Optional files
 

@@ -10,8 +10,9 @@ console does. It runs on libVLC, so it handles a wide range of formats including
 x265/HEVC.
 
 :::caution[Not on macOS]
-The packaged libVLC backend ships on Windows, Linux and Quest. A macOS build from source
-has no VCR and no DVD player.
+The libVLC backend ships with the Quest and Windows builds; the Linux build uses your
+system's libVLC (`vlc-libs`). The macOS build has no libVLC, so it has no VCR and no DVD
+player.
 :::
 
 ## Getting a tape
@@ -22,7 +23,15 @@ Put video files into the `videos/` folder:
 - **Linux / macOS** — `~/retroxr/videos`
 - **Quest** — `/sdcard/Android/data/com.xenu.retroxr/files/videos`
 
-Recognized: `.mp4`, `.mkv`, `.avi`, `.webm`, `.mov`.
+Recognized: `.mp4`, `.mkv`, `.avi`, `.webm`, `.mov` — and a playlist (`.m3u` or `.m3u8`)
+of several, which becomes one tape that plays them one after another.
+
+### Label art
+
+A tape wears a label if there is a picture beside its file: `Home Movies.mp4` is labelled
+by `Home Movies.png` (or `.jpg`, `.jpeg`, `.webp`) in the same folder, and
+`Home Movies spine.png` dresses the spine. A label downloaded from elsewhere drops in as it
+is.
 
 ## Watching something
 

@@ -17,7 +17,7 @@ A report is far easier to act on with these:
 - **What you did**, in enough detail to repeat it — which system, which core, which object.
 - **What you expected**, and what happened instead.
 - **The RetroXR version**, from `OPTIONS` → ABOUT.
-- **Your device** — Quest 3, Quest 2, Windows.
+- **Your device** — Quest 3, Quest 2, Quest Pro, Windows (desktop or PCVR), Linux, macOS.
 - **The core and its version**, if it involves a game running.
 - **A log**, if you can get one. This is the part that turns a guess into a fix.
 
@@ -26,15 +26,43 @@ A report is far easier to act on with these:
 	layout problems a screenshot or a short video is more use.
 </Aside>
 
+Since v0.11.1 every log opens with the **version and platform** from the About plate, so a
+log on its own says which build it came from. It also says **why a held object will not
+seat** in a socket, which is worth a look before reporting "it will not plug in".
+
 ## Capturing a log on Quest
 
-Logs need **Developer Mode** and USB debugging, which you already turned on if you
-sideloaded — see [download and install](/download/).
+### The easy way: the web file manager
+
+Since v0.9.0 RetroXR writes its log to a file on the headset, and the
+[web file manager](/guide/adding-games/) can show it — no cable, no `adb`.
+
+<Steps>
+
+1. Turn on **Web File Manager** in `OPTIONS` and open the address it shows from a browser
+   on your network.
+
+2. Press **Show game log** to watch it live while you reproduce the problem, or
+   **Save game log** to download the whole file.
+
+3. Attach the saved file to your report.
+
+</Steps>
+
+The file covers the current run of the app. If RetroXR crashed outright, restart it and
+save the log *before* doing anything else, or use `adb` below — a crash in the middle of
+something is exactly what the next run's log will not contain.
+
+### With adb
+
+An `adb` log needs **Developer Mode** and USB debugging, which you already turned on if
+you sideloaded — see [download and install](/download/). It catches what the file cannot:
+the moment of a hard crash, and the headset's own messages around it.
 
 You will need `adb`, which ships with SideQuest. On Windows it is easiest to open
 SideQuest's own terminal, or install the Android platform tools.
 
-### The important part: start the log first
+#### The important part: start the log first
 
 <Aside type="danger" title="The Quest's log buffer rotates in under a minute">
 	The headset produces a constant stream of system chatter, and it will push your crash
@@ -71,7 +99,7 @@ SideQuest's own terminal, or install the Android platform tools.
 	be missed.
 </Aside>
 
-### A full bug report
+#### A full bug report
 
 For a crash that takes the whole app down, or anything involving the headset's own
 behaviour, a full system report carries more:
@@ -84,7 +112,7 @@ It takes a couple of minutes and produces a large zip. It contains a great deal 
 device, so consider whether you would rather send it privately than attach it to a public
 issue.
 
-### Two devices connected?
+#### Two devices connected?
 
 If `adb` complains about more than one device — for instance a headset on both USB and
 Wi-Fi — name the one you want:
@@ -94,14 +122,16 @@ adb devices -l          # list them, with serials
 adb -s <serial> logcat -s godot:*
 ```
 
-## Capturing a log on Windows
+## Capturing a log on desktop
 
-The desktop build writes its log alongside the app's data. Reproduce the problem, then
+The desktop builds write their log alongside the app's data. Reproduce the problem, then
 attach the most recent log file from:
 
-```
-%APPDATA%\Godot\app_userdata\RetroXR\logs\
-```
+| Platform | Folder |
+| --- | --- |
+| Windows | `%APPDATA%\Godot\app_userdata\RetroXR\logs\` |
+| Linux | `~/.local/share/godot/app_userdata/RetroXR/logs/` |
+| macOS | `~/Library/Application Support/Godot/app_userdata/RetroXR/logs/` |
 
 <Tabs>
 <TabItem label="A crash">

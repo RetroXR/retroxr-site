@@ -1,0 +1,88 @@
+---
+title: Game Boy Printer
+description: The Game Boy Printer on a real link lead — paper that feeds out of the slot as the game prints, and a print you tear off and keep as a PNG.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+The Game Boy Printer was a little thermal printer on the end of a link lead, and a
+surprising number of games could use it: the [Game Boy Camera](/guide/platforms/game-boy-camera/)
+above all, but also Pokémon's Pokédex, Link's Awakening DX's photo album, Super Mario Bros.
+Deluxe's calendars and cards, and more.
+
+As of **v0.11.0** it is in the room. The game sends the picture down the cable exactly as
+it did to the hardware, the **paper feeds out of the slot line by line** as it prints, and
+when you **tear it off** you are holding the print — and it is saved as an image file.
+
+## Setting it up
+
+<Steps>
+
+1. **Download the printer's core.** Open `CORES` → **BIOS / Extras**, pick **Game Boy** (or
+   Game Boy Color), and download the **Game Boy Printer** row. The printer runs a small
+   emulator of its own, so it needs this once.
+
+2. **Spawn the printer.** It is on the Game Boy's and the Game Boy Color's spawn cards, next
+   to their link leads.
+
+3. **Cable it to the Game Boy.** The printer's **EXT.IN** socket on the back is the *small*
+   one, so:
+   - from a **Game Boy Color**, use the **CGB-003** lead (small at both ends);
+   - from an **original Game Boy**, fit the **DMG-14 adapter** into the Game Boy's large
+     socket first, then run the CGB-003 from the adapter to the printer — which is how the
+     printer was sold outside Japan.
+
+4. **Switch the printer on** with its POWER switch, and the Game Boy too.
+
+5. **Print from the game.** In the Game Boy Camera: open a photo, press **SELECT**, and
+   choose print. Every game puts it somewhere different.
+
+</Steps>
+
+Either Game Boy core works on the other end of the lead — Gambatte or mGBA.
+
+## The paper
+
+The print comes out of the slot as it burns, and stays there, hanging out of the printer,
+until you take it. Print several times and the strip just gets longer, the way a roll does.
+
+- **FEED** advances blank paper.
+- **To tear a print off**, take the paper with the **trigger**. (Not the grip, and not a
+  brush of the hand: a print should never be thrown away by accident.) What you are holding
+  is the print, as a picture at the paper's real size, and you can put it down anywhere in
+  the room.
+- Switching the printer **off** tears off whatever is hanging out first.
+
+## Where prints are saved
+
+Every torn print is written as a PNG:
+
+| Platform | Folder |
+| --- | --- |
+| Windows | `%USERPROFILE%\retroxr\prints\` |
+| Linux / macOS | `~/retroxr/prints/` |
+| Quest | `prints/` in the [web file manager](/guide/adding-games/) |
+
+The image is the printer's 160 dots across, centred on the real paper's width.
+
+<Aside type="note" title="The sound is a best guess">
+	You will hear the stepper motor and the print head. Nothing published describes what the
+	real MGB-007 sounds like, and there was no unit to record, so the sound is synthesised
+	from how the mechanism works. A recording of a real one would be very welcome — see
+	[contributing](/contributing/).
+</Aside>
+
+## Over netplay
+
+A printer cabled to a Game Boy joins that Game Boy in a netplay session, and every player
+prints the same paper. To press FEED or tear the paper off, you need to be the player
+holding it. Everyone needs to be on **v0.11.1 or later**, with updated cores — see
+[netplay](/guide/connecting/netplay/).
+
+## Known limits
+
+- On **mGBA**, pulling the lead out **while a netplay session is running** can stall the
+  session. Plugging in and printing are fine; on Gambatte, so is pulling it.
+- Only a handful of printing games have been tried so far — the Game Boy Camera and Super
+  Mario Bros. Deluxe are known to work. If another game will not print, please
+  [report it](/guide/reference/reporting-bugs/).

@@ -1,6 +1,6 @@
 ---
 title: Link cables
-description: Run a cable between two machines and they talk — Game Boy to Game Boy, PlayStation to PlayStation, and a GameCube to up to four Game Boy Advances.
+description: Run a cable between two machines and they talk — handhelds, consoles, a PlayStation 2 i.LINK party, a LAN of GameCubes, infrared between Game Boy Colors and a Game Boy Printer.
 sidebar:
   order: 8
 ---
@@ -30,10 +30,26 @@ step, which cuts the contention three to fourfold and is felt as a smoother run 
 
 | Cable | Machines | What it needs |
 | --- | --- | --- |
-| **Game Boy link cable** | Two Game Boys or Game Boy Colors | Nothing extra |
+| **Link Cable** (Game Boy) | Two original Game Boys | Nothing extra |
+| **Link Cable** (Game Boy Color) | Two Game Boy Colors, or one and a [Game Boy Printer](/guide/platforms/game-boy-printer/) | Nothing extra |
+| **Link Cable Adapter** | A Color's small plug into an original Game Boy's large socket | — |
 | **GBA link cable** | Up to four Game Boy Advances | A GBA BIOS for single-pak play |
-| **GBA – GameCube cable** | A GameCube and up to four GBAs | A GBA BIOS |
-| **PlayStation serial cable** | Two PlayStations | Nothing extra |
+| **GC-GBA Cable** | A GameCube and up to four GBAs | A GBA BIOS |
+| **PlayStation Link Cable** | Two PlayStations | Nothing extra |
+| **i.LINK Cable** and **i.LINK Hub** | Up to six PlayStation 2s | A PS2 BIOS, as always |
+| **Ethernet Cable** and **Ethernet Hub** | Up to eight GameCubes and PlayStation 2s on one LAN | A network adapter in each console |
+| **Link Cable** (Saturn) | Two Sega Saturns | A Saturn BIOS, as always |
+| **Gear-to-Gear Cable** | Two Game Gears | Nothing extra |
+| **ComLynx Cable** | Up to eight Atari Lynxes | A Lynx BIOS |
+| **Link Cable** (Neo Geo Pocket) | Two Neo Geo Pockets, either model | Nothing extra |
+| **Communication Cable** | Two WonderSwans, either model | Nothing extra |
+| **JagLink Cable** | Two Atari Jaguars | Nothing extra |
+| **Link Cable** (Virtual Boy) | Two Virtual Boys | Nothing extra |
+| *No cable: infrared* | Two Game Boy Colors facing each other | Nothing extra |
+
+Most of these arrived in v0.9.0 and v0.10.0, the Ethernet LAN and the printer in v0.11.0.
+Several of these machines will not start at all without their BIOS, cable or no cable —
+see [BIOS files](/guide/cores/bios/).
 
 Each lead is offered on the **system's own card** in `SPAWN` → **Systems** — open the card
 for the machine you are cabling and the right cable is listed with its controllers. Push
@@ -41,11 +57,16 @@ each end into the matching socket:
 the link port on a handheld's edge, the SERIAL I/O socket on the back of a PlayStation, or,
 for the GBA-to-GameCube cable, a **controller port** on the console.
 
-The three handheld and console leads are three different cables, not one — a Game Boy lead
-is not a GBA lead and neither is a PlayStation serial cable, exactly as on the shelf. The
-GBA lead carries a junction in the middle, which is how a third and fourth handheld chain
-on; the Game Boy's is a plain two-machine cord. The GC-GBA cable is listed on **both** the
-GameCube's card and the Game Boy Advance's, so you can find it from either end.
+Every machine has its own lead rather than one cable for all — a Game Boy lead is not a GBA
+lead, and neither is a PlayStation's, exactly as on the shelf. Even the Game Boys have two:
+the original's lead is large at both ends, the Color's is small at both and also fits the
+Advance and the printer. The **Link Cable Adapter** takes a small plug in its back and goes
+into an original Game Boy's large socket, which is how a Color reaches an original.
+
+The GBA lead carries a junction in the middle, which is how a third and fourth handheld
+chain on; most of the others are a plain two-machine cord. The GC-GBA cable is listed on
+**both** the GameCube's card and the Game Boy Advance's, so you can find it from either
+end.
 
 ## Multiplayer on one cartridge
 
@@ -82,6 +103,40 @@ Two things worth knowing before you judge it:
 - The lead costs a few percent of the frame rate, not a slice of it. Expect one hitch
   around a second long while the program uploads, then nothing.
 
+## More than two: hubs and chains
+
+Three kinds of lead join more than a pair.
+
+- **i.LINK.** A PlayStation 2's i.LINK socket is on its back panel. One cable joins two
+  consoles; for more, run each console's cable into the **i.LINK Hub**, which has six
+  sockets. Gran Turismo 3's i.LINK Battle takes all six, and Time Crisis II links two.
+- **Ethernet.** The PlayStation 2's **Network Adapter** and the GameCube's **Broadband
+  Adapter** are expansion cards, and the network socket is on the card: seat it in the
+  console and the socket becomes the console's. Seating it is also what switches the
+  console's network hardware on, so put the card in **before** you power up. A cable
+  between two consoles is a LAN of two; the **Ethernet Hub** takes eight. Mario Kart:
+  Double Dash!! shows LAN MODE, and Gran Turismo 4's Multi-LAN Race takes up to six.
+  Each console is given an address of its own, so a game's "obtain automatically"
+  setting just works. A GameCube and a PS2 can share one hub — they ignore each other.
+- **ComLynx.** Every ComLynx plug has a socket on its back, so a third Lynx plugs in where
+  the last one did — up to eight on one wire, as on the real cable.
+
+## Infrared
+
+A Game Boy Color has an infrared window, and since v0.10.0 two of them can talk through it
+— Mystery Gift, and the games that swap items by beaming them. There is no cable: **point
+the two windows at each other**.
+
+They pair while both are switched on, within about 60 cm of each other, roughly facing,
+and with nothing solid in between. The window turns red while it is paired. Hands, and
+anything being held, do not block it. A Game Boy Color with a link cable to another machine
+is left out: it listens to the cable or to the window, not both.
+
+## The Game Boy Printer
+
+The printer is the far end of a Game Boy link lead, and has a page of its own:
+[Game Boy Printer](/guide/platforms/game-boy-printer/).
+
 ## Mixing cores
 
 A link is between **machines**, not between copies of one core. A Game Boy running
@@ -103,10 +158,25 @@ API [upstream to
 RetroArch](https://github.com/libretro/RetroArch/pull/19454), and the cores it runs are
 forks carrying the other half:
 [mGBA](https://github.com/RetroXR/mgba),
+[gambatte](https://github.com/RetroXR/gambatte-libretro),
 [Dolphin](https://github.com/RetroXR/dolphin),
-[pcsx_rearmed](https://github.com/RetroXR/pcsx_rearmed) and
-[gambatte](https://github.com/RetroXR/gambatte-libretro). The core manager downloads
-them for you; there is nothing to build.
+[pcsx_rearmed](https://github.com/RetroXR/pcsx_rearmed),
+[PCSX2](https://github.com/RetroXR/ps2),
+[Beetle Saturn](https://github.com/RetroXR/beetle-saturn-libretro),
+[Genesis Plus GX](https://github.com/RetroXR/Genesis-Plus-GX),
+[Beetle Lynx](https://github.com/RetroXR/beetle-lynx-libretro),
+[Beetle NeoPop](https://github.com/RetroXR/beetle-ngp-libretro),
+[Beetle WonderSwan](https://github.com/RetroXR/beetle-wswan-libretro),
+[Beetle VB](https://github.com/RetroXR/beetle-vb-libretro) and
+[Virtual Jaguar](https://github.com/RetroXR/virtualjaguar-libretro) — plus the
+[printer](https://github.com/RetroXR/gbprinter-libretro), a core of RetroXR's own. The
+core manager downloads them for you; there is nothing to build.
+
+A cable to a core that is **not** one of these joins nothing, because the stock build has
+no far end for the wire. If a link seems dead, check in the core manager that the machine
+is running the RetroXR build. Both ends also have to speak the same protocol, and v0.11.1
+renamed them, so linking across [netplay](/guide/connecting/netplay/) needs every player
+on v0.11.1 or later with updated cores.
 
 :::caution[Needs an in-headset pass]
 The cable rules above are read from the source and from probe runs against real cores. The

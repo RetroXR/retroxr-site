@@ -16,11 +16,33 @@ Put audio files into the `music/` folder:
 - **Linux / macOS** — `~/retroxr/music`
 - **Quest** — `/sdcard/Android/data/com.xenu.retroxr/files/music`
 
+Each **subfolder is an album**, and so is a loose audio file on its own. A **playlist**
+(`.m3u` or `.m3u8`) is an album too — of exactly the tracks it lists, in its order — so you
+can make a cassette or a record out of tracks that live anywhere, without copying them
+into a folder of their own. A folder that contains a playlist plays in the playlist's
+order rather than alphabetically.
+
+### Label art
+
+Cassettes and records wear a picture if one is sitting beside the album:
+
+| Album | Side A | Side B |
+| --- | --- | --- |
+| A folder | `cover`, `folder`, `front` or `album` inside it, or `Folder.png` beside it | `back` inside it, or `Folder B.png` beside it |
+| A single file or playlist | `Name.png` (or `Name A.png`) beside it | `Name B.png` beside it |
+
+`.png`, `.jpg`, `.jpeg` and `.webp` all work, and the name is matched regardless of case.
+An album with no side B picture shows side A on both sides, like a pressing with one
+design. On a record the picture is cropped to its middle square for the round label.
+
 ## Playing something
 
 Spawn a **CD player**, a **cassette deck** or a **record player** from **`SPAWN`** →
 **Objects**, along with a pair of **speakers**. Wire the deck to the speakers with a 3.5 mm lead, put a disc or a
 cassette in, and press play.
+
+A deck can feed a television's audio input too — and from there a full surround rig. See
+[speakers and surround](/guide/playing/plugging-in/#speakers-and-surround).
 
 Both decks have the transport buttons you would expect. The CD player can skip tracks; the
 cassette deck cannot, because a cassette could not — you rewind and fast-forward and

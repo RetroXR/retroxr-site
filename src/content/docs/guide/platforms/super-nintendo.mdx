@@ -6,7 +6,7 @@ description: The Super Nintendo and Super Famicom in RetroXR, and the two Super 
 import { Aside } from '@astrojs/starlight/components';
 
 The Super Nintendo — the Super Famicom in Japan — takes cartridges from your
-`roms/super_nes` folder and plays them like any other console here. What makes it worth a
+`roms/snes` folder and plays them like any other console here. What makes it worth a
 page of its own is what goes **into** its cartridge slot.
 
 Three of RetroXR's [expansion units](/guide/playing/expansion-hardware/) are Super Famicom
@@ -22,6 +22,24 @@ cartridges, and each turns the machine into something else:
 	The Super Nintendo has no modelled shell yet — it spawns as the procedural box. The
 	adapters, their slots and their cartridges are all real objects regardless.
 </Aside>
+
+## Cartridges
+
+Since v0.9.0 a cartridge is a modelled shell, and it is the right one for the game:
+
+- **North American** games get the grey SNES cartridge in one of its two shapes. **Type A**,
+  with the deep locking notch, for games first released before 1994; **Type B**, with the
+  sloped recess, from 1994 on. The date comes from the scraper.
+- **Japanese and European** games get the rounded Super Famicom / PAL cartridge. (The PAL
+  cartridge's rear sticker is still the Japanese one for now.)
+- **Coloured runs** come out in their colour — DOOM, Killer Instinct, Maximum Carnage.
+- The label is your scraped label art, if the scraper found one.
+
+Which shape to use is worked out from the game's **scraped region**, so a game that has
+never been scraped has nothing to go on and spawns as the procedural box. Scrape it — see
+[box art](/guide/connecting/box-art/) — or choose for yourself: **hold the game's row in
+the spawn menu for a second**, and pick the body and the colour. See [cartridges and
+discs](/guide/playing/cartridges-and-discs/).
 
 ## The Super Game Boy
 

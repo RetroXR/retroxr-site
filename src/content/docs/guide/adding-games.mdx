@@ -28,8 +28,8 @@ Everything lives under one folder:
 - retroxr/
   - roms/
     - nes/ one folder per system
-    - super_nes/
-    - playstation/
+    - snes/
+    - psx/
   - books/ .pdf and .cbz
   - videos/ .mp4 .mkv .avi .webm .mov
   - dvd/ a VIDEO_TS folder, or .iso / .img
@@ -47,8 +47,17 @@ Where that tree lives:
 | Quest | `/sdcard/Android/data/com.xenu.retroxr/files` |
 
 The **system folder name** under `roms/` is what tells RetroXR which console a game belongs
-to, and it has to match exactly. Several are not what you would guess — the SNES folder is
-`super_nes`, not `snes`, and the PlayStation one is `playstation`, not `psx`.
+to, and it has to match exactly. The names are the ones **ES-DE** uses — `snes`, `psx`,
+`n64`, `genesis`, `gba`, `gc` — so a library already laid out for ES-DE drops straight in.
+Where ES-DE keeps more than one folder for a machine (`megadrive` beside `genesis`, say),
+RetroXR reads both.
+
+<Aside type="note" title="Upgrading from v0.7 or earlier">
+	Before v0.8 the folders had RetroXR's own names — `super_nes`, `playstation`,
+	`nintendo_64`, `mega_drive` and so on. The first launch of a newer version renames
+	them for you, saves included. If a folder cannot be moved (one created over `adb` on a
+	Quest sometimes cannot be), it is left where it is and still read under its old name.
+</Aside>
 
 **Don't invent the name: use the folder that is already there.** RetroXR creates each
 system's folder itself, so copy into an existing one rather than making your own. If a game

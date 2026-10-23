@@ -15,8 +15,12 @@ looking at.
 
 - **Battery saves** — the in-game saves a cartridge kept on its own chip. These belong to
   the game.
-- **Memory cards** — an object you slot into the console, for the systems that used them.
-  See [the PlayStation page](/guide/platforms/playstation/).
+- **Memory cards** — an object you slot into the console, for the systems that used them:
+  the [PlayStation](/guide/platforms/playstation/), the
+  [PlayStation 2](/guide/platforms/playstation-2/), the GameCube, and the Dreamcast's
+  [VMU](/guide/platforms/dreamcast/).
+- **The console's own memory** — some machines saved inside themselves, and RetroXR keeps
+  that with the console rather than the disc (see below).
 - **Save states** — a snapshot of the whole machine, taken and restored at any moment.
   New in v0.4.0.
 
@@ -51,6 +55,23 @@ you can browse here without launching the game.
 
 If you have not played it yet, this page says so rather than showing an empty list.
 
+A **disc** game shows no saves here. A disc never held its own save — it wrote to a memory
+card, or to the console — so since v0.8.0 the page just notes whether the game uses memory
+cards, and the saves themselves are on the card or the console.
+
+## Saves inside the console
+
+The **Sega CD**, **Sega Saturn** and **3DO** each saved every game into a little
+battery-backed memory on the console itself, and since v0.8.0 (the 3DO since v0.10.0)
+RetroXR does the same: the memory belongs to *that* console in your room, and is kept with
+it when the room is saved. Manage it from the console's own System Settings, on its
+**Saves** tab.
+
+To move saves between consoles, use what the real owners used — a **Backup RAM Cartridge**
+for the Sega CD, seated in the Mega Drive's slot, or a **Backup Memory cartridge** in the
+Saturn's slot. See [the Sega Saturn](/guide/platforms/sega-saturn/) and
+[expansion hardware](/guide/playing/expansion-hardware/).
+
 ## Choosing which save a cartridge uses
 
 A game can have more than one save, and the **cartridge** decides which one it is using.
@@ -76,8 +97,10 @@ a playthrough.
 
 ## Where saves live on disk
 
-Battery saves are written into the `libretro/save/` folder — see
-[the libretro folder](/guide/cores/libretro-folder/).
+Battery saves are written into the `libretro/save/` folder, filed by **system** rather
+than by core since v0.8.0 — so switching a system to a different core keeps your saves.
+The Nintendo 64, 64DD and Famicom Disk System are the exceptions, still kept per core. See
+[the libretro folder](/guide/cores/libretro-folder/#save).
 
 You can copy them out for safekeeping, but on a Quest **do not copy them back in from a
 PC**: files pushed from a computer land owned by the shell rather than the app, and
@@ -101,8 +124,8 @@ onto the headset by hand at all.
 
 </Steps>
 
-PlayStation memory cards are included — a card can be backed up to the server the same
-way, so a card is not something you can only lose once.
+Memory cards are included — a card can be backed up to the server the same way, so a card
+is not something you can only lose once.
 
 <Aside type="note" title="This is the backup route worth setting up">
 	Everything else here is a file on one device. RomM is the only path that keeps your

@@ -32,13 +32,21 @@ rate-limited.
 
 <Image src={credentials} alt="The OPTIONS screen with the Scraper tab highlighted, and a box around the Username (ssid) and Password fields. Region Priority and Language Priority sit below them." />
 
-Below the credentials are two more settings worth knowing about:
+Signing in does more than lift the rate limit. ScreenScraper lets members run several
+lookups at once — how many depends on your account level — and RetroXR uses every one
+your account is allowed, so a big batch finishes several times faster than it would
+anonymously.
 
-- **Region Priority** — which region's cover you get when several exist. The default is
-  `us, eu, jp, ss`.
-- **Language Priority** — the same idea for language, defaulting to `en, fr`.
+Below the credentials are a few more settings worth knowing about:
 
-Reorder these if you would rather have European boxes than North American ones.
+- **Auto-scrape downloaded games** — scrape a game by itself the first time it lands on
+  the device, from RomM or anywhere else, without you pressing anything.
+- **Region Priority** — which region's cover you get when several exist.
+- **Language Priority** — the same idea for language.
+
+Both priorities are dropdowns with a flag beside each entry: tick the regions or
+languages you want, and order them with the arrows. The first match wins, so put Europe
+above USA if you would rather have European boxes than North American ones.
 
 ## Scraping a game
 
@@ -55,6 +63,22 @@ you can hold.
 
 The other two icons on the row are the gamepad, which spawns the cartridge and starts it,
 and the list, which reaches that game's saves.
+
+Since v0.7.0 a scrape's result is **accepted automatically** — it is written straight in,
+with no confirmation to dismiss for every game.
+
+### Scraping a whole system
+
+To do a whole system at once, use **Scrape all** on that system's game list. It queues
+every game that has not been scraped yet and skips the ones that have, so it is safe to
+press again after adding a few more games.
+
+### What the list shows once scraped
+
+A scraped game's row carries a **flag for its region**, and a numbered icon for **which
+disc** it is in a multi-disc set — useful when the filenames alone do not say. Both come
+from the scrape, from ScreenScraper or from [RomM](/guide/connecting/romm/), so an
+unscraped game shows neither.
 
 ## What you get
 

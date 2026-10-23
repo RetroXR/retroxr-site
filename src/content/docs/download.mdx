@@ -1,13 +1,23 @@
 ---
 title: Download & install
-description: Get RetroXR onto a Meta Quest or a Windows PC, including a full sideloading walkthrough if you have never done it before.
+description: Get RetroXR onto a Meta Quest, a Windows PC, Linux or a Mac, including a full sideloading walkthrough if you have never done it before.
 sidebar:
   order: 1
 ---
 
 import { Steps, Tabs, TabItem, Aside, LinkCard, CardGrid } from '@astrojs/starlight/components';
 
-RetroXR is free and open source. It runs on **Meta Quest** and on **Windows**.
+RetroXR is free and open source. It runs on **Meta Quest** and on **Windows** — as PCVR
+with a headset attached, or in a desktop mode with mouse and keyboard without one. Since
+v0.10.0 there are also **Linux** and **macOS** builds, which are experimental.
+
+| Platform | File | Status |
+| --- | --- | --- |
+| Meta Quest 2 / 3 / Pro | `RetroXR-v<version>.apk` | Supported |
+| Windows (desktop and PCVR) | `RetroXR-win-v<version>.zip` | Supported |
+| Linux x86_64 | `RetroXR-linux-x86_64-v<version>.AppImage` | Experimental |
+| Linux arm64 | `RetroXR-linux-arm64-v<version>.tar.gz` | Experimental |
+| macOS (Apple Silicon and Intel) | `RetroXR-macos-arm64-v<version>.zip` | Experimental |
 
 <CardGrid>
 	<LinkCard
@@ -17,7 +27,7 @@ RetroXR is free and open source. It runs on **Meta Quest** and on **Windows**.
 	/>
 	<LinkCard
 		title="Every download"
-		description="APK and Windows build for the latest release, on GitHub."
+		description="Quest, Windows, Linux and macOS builds for the latest release, on GitHub."
 		href="https://github.com/RetroXR/RetroXR/releases/latest"
 	/>
 </CardGrid>
@@ -33,7 +43,8 @@ RetroXR is not on the Horizon Store, so it has to be **sideloaded**. That sounds
 involved than it is: you turn on developer mode once, install a free tool on your PC, and
 after that it is a single click.
 
-Tested on **Quest 3**. Quest 2 and Quest Pro are the same install process.
+Quest 2, Quest 3 and Quest Pro are all supported, with the same install process. Most
+testing happens on a **Quest 3**.
 
 ### Step 1 — Turn on Developer Mode
 
@@ -88,7 +99,7 @@ Open the [RetroXR listing](https://sidequestvr.com/app/61366) and press
 </TabItem>
 <TabItem label="From the APK">
 
-Download `RetroXR-<version>.apk` from the
+Download `RetroXR-v<version>.apk` from the
 [latest release](https://github.com/RetroXR/RetroXR/releases/latest), then drag the
 file onto the SideQuest window — or use the *Install APK file from folder* button in
 SideQuest's top-right toolbar.
@@ -111,7 +122,7 @@ library list, which is the single most common "where did it go?" moment.
 
 <Steps>
 
-1. Download `RetroXR-win-<version>.zip` from the
+1. Download `RetroXR-win-v<version>.zip` from the
    [latest release](https://github.com/RetroXR/RetroXR/releases/latest).
 
 2. Unpack it somewhere sensible — not inside `Downloads`, since the app writes its data
@@ -121,23 +132,57 @@ library list, which is the single most common "where did it go?" moment.
 
 </Steps>
 
-With a headset connected over Link or Air Link it runs in VR. With no headset it falls
-back to a **desktop mode** with mouse and keyboard — see the
+If an **OpenXR runtime** is running with a headset attached — SteamVR, or the Meta Quest
+Link app with a Quest over Link or Air Link — RetroXR runs as **PCVR**. With no headset it
+falls back to a **desktop mode** with mouse and keyboard — see the
 [desktop controls](/guide/reference/desktop-controls/).
 
 ## Linux and macOS
 
-There is no packaged build for either yet, but both build from source. The
-[README in the repository](https://github.com/RetroXR/RetroXR#building) has the
-full recipe.
+Both have packaged builds on the
+[latest release](https://github.com/RetroXR/RetroXR/releases/latest) since v0.10.0. They
+are **experimental**: they are built with every release, but tested far less than the
+Quest and Windows builds.
 
-Two things worth knowing before you spend the time:
+<Tabs>
+<TabItem label="Linux">
 
-- **Linux** builds everything and all three render paths work. libVLC links against your
-  system library, so the DVD player and VCR need `vlc` installed.
-- **macOS** builds four of the six native extensions. There is no packaged libVLC and no
-  Meta spatial audio blob for it, so **the DVD player, the VCR and HRTF audio are absent**,
-  and emulator cores are limited to software rendering.
+Download the **AppImage** for x86_64, or the **tar.gz** for arm64. Mark the AppImage
+executable and run it; unpack the tarball and run the executable inside it.
+
+- The DVD player and the VCR use your system's libVLC, so install your distro's
+  **`vlc-libs`** package (on some distros just `vlc`). Without it the rest of the app works
+  and those two do not.
+- SDL3, for game controllers, ships beside the binary — there is nothing to install.
+
+</TabItem>
+<TabItem label="macOS">
+
+Download the **macOS** zip — one build for both Apple Silicon and Intel Macs — and unzip
+it.
+
+- The app is ad-hoc signed rather than notarized, so the first time, **right-click it and
+  choose Open** rather than double-clicking.
+- Emulator cores download **unsigned by design**; that is expected.
+- There is **no DVD player, no VCR and no HRTF spatial audio** on macOS: there is no
+  packaged libVLC for the Mac yet, and Meta publishes its spatial audio library only for
+  Windows and Android. Everything else is there, and cores that render with Vulkan run
+  through MoltenVK.
+
+</TabItem>
+</Tabs>
+
+If you would rather build either from source, the
+[README in the repository](https://github.com/RetroXR/RetroXR#building) has the full
+recipe.
+
+## Updating on desktop
+
+The Windows, Linux and macOS builds check GitHub for a newer release shortly after launch.
+When one is out, a banner appears on the menu: press **Update** and RetroXR downloads it,
+checks it against the release's checksum, swaps the files and restarts — with your room
+as you left it. Nothing is installed until you press the button, and the check can be
+switched off under `OPTIONS` → ABOUT → **Updates**.
 
 ## Where your files go
 
@@ -148,7 +193,7 @@ roms/      ROM files, one folder per system
 books/     .pdf and .cbz
 videos/    .mp4 .mkv .avi .webm .mov
 dvd/       a VIDEO_TS folder, or an .iso / .img
-music/     audio for the CD player and tape deck
+music/     audio for the CD player, tape deck and turntable
 ```
 
 Where that tree lives depends on the platform:

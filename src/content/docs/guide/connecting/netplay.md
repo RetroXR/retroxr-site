@@ -33,9 +33,50 @@ Open the **`NET`** tab. One person hosts; the others enter that machine's addres
 Both machines need to be able to reach each other on the network. Across the internet that
 means port forwarding, with all the usual difficulty that implies.
 
+## Which cores can do it
+
+Rollback only works on a core whose save states are exact enough to rewind to, and most
+cores' are not. RetroXR keeps a list of the ones it has checked, and v0.9.0 fixed the
+state saving in a run of its own core forks so they could join it:
+
+| Core | Systems | How it keeps in step |
+| --- | --- | --- |
+| FCEUmm | NES, Famicom | Rollback |
+| Snes9x | Super Nintendo, Sufami Turbo | Rollback |
+| Genesis Plus GX | Genesis / Mega Drive, Sega CD, Master System, Game Gear | Rollback |
+| Mupen64Plus-Next | Nintendo 64 | Rollback |
+| PCSX ReARMed | PlayStation | Rollback |
+| Beetle Saturn | Sega Saturn | Rollback |
+| gambatte, TGB Dual | Game Boy, Game Boy Color | Rollback |
+| mGBA | Game Boy Advance, Game Boy, Game Boy Color, e-Reader | Rollback |
+| gpSP | Game Boy Advance | Rollback |
+| Beetle Lynx | Atari Lynx | Rollback |
+| Beetle NeoPop | Neo Geo Pocket and Pocket Color | Rollback |
+| VeMUlator | Dreamcast VMU, played on its own | Rollback |
+| FinalBurn Neo | Neo Geo, arcade | Rollback |
+| Dolphin | GameCube, Wii | Lockstep, and unverified |
+
+A core that is not on the list falls back to running live on the host alone, which is a
+placeholder rather than netplay.
+
+## Link cables over netplay
+
+A [link cable](/guide/playing/link-cables/) between two machines still carries its data
+when the machines belong to different players in a session — two Game Boys, two
+PlayStations, a Game Boy and a [printer](/guide/platforms/game-boy-printer/).
+
+:::caution[Everyone on v0.11.1 or later]
+v0.11.1 renamed the protocols the link cables speak (`gb-sio`, `psx-sio`, `ethernet` and
+the rest). A player on an older build, or with cores that have not been updated, will not
+link with one on a newer build. Update the app, and let the core manager update the cores,
+on every machine in the session.
+:::
+
 ## Known limits
 
 - Very lightly tested — expect desyncs.
 - Both ends need the same core and the same ROM.
+- Most cores cannot share a session between different kinds of machine — a Quest and a
+  Windows PC — because their save states do not carry across.
 - There is no matchmaking, no lobby list and no NAT traversal. It is an IP address.
 

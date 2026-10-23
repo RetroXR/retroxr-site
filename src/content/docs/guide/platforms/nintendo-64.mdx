@@ -1,17 +1,37 @@
 ---
 title: Nintendo 64
-description: The Nintendo 64 in RetroXR — its controller and the three paks that go into the back of one, the Expansion Pak, and the 64DD underneath.
+description: The Nintendo 64 in RetroXR — its cartridges, its controller and the three paks that go into the back of one, the Expansion Pak, the Voice Recognition Unit, and the 64DD underneath.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Steps } from '@astrojs/starlight/components';
 
-The Nintendo 64 takes cartridges from your `roms/nintendo_64` folder and plays them like any
+The Nintendo 64 takes cartridges from your `roms/n64` folder and plays them like any
 other console here.
 
 Underneath it goes the **[64DD](/guide/platforms/nintendo-64dd/)** — the magnetic disk drive
 that only ever shipped in Japan, and the reason the hatch in the console's floor is there.
 The drive is taller than the console it carries, so the N64 stands on top of it, and a
 cartridge can be in the console while a disk is in the drive.
+
+## Cartridges
+
+Since v0.8.0 an N64 cartridge is a modelled shell rather than a grey block, and RetroXR
+dresses each one for the game in it:
+
+- **The shape follows the region.** Japan's cartridges had their own rear notches and
+  latches; North America and Europe shared a shape. Which one you get comes from the
+  game's scraped region, or the ROM header if it has not been scraped.
+- **The colour follows the game.** The coloured runs — gold Zelda, the Pokémon carts and
+  the rest — are looked up by the ROM header, so a game that came in colour comes out in
+  colour. Anything not in the table is grey.
+- **The label is your box art scrape.** If the scraper found a label, it is printed onto
+  the sticker. See [box art](/guide/connecting/box-art/).
+
+To choose for yourself, **hold the game's row in the spawn menu for a second** instead of
+tapping it. A sub-menu offers the body — Auto, USA/PAL or Japan — and the shell: Auto, any
+of the known colours, or **Custom**, a colour wheel with a metal-flake switch. The
+[cartridges page](/guide/playing/cartridges-and-discs/) covers the same picker on the other
+consoles.
 
 ## The controller, and the port in its back
 
@@ -59,6 +79,12 @@ a `.mpk` image.
 	and would become one the moment a game wrote to it.
 </Aside>
 
+Since v0.8.0 RetroXR also knows, from the N64 core's own game database, **which games save
+to a Controller Pak**. When it restores a cartridge save — from [RomM](/guide/connecting/romm/)
+or a backup — it uses that to tell you whether the save is likely to be holding pak notes.
+The database only ever says yes, so a game it does not list is unknown rather than
+pak-free.
+
 ## Transfer Pak saves
 
 The Transfer Pak takes a **Game Boy cartridge**, which is what Pokémon Stadium and friends
@@ -78,6 +104,36 @@ Jumper Pak that ships there. Both are in RetroXR as of v0.6.0.
 Fitting the Expansion Pak **sets the core option for you**, so a game that wants the extra
 memory gets it and one that does not is unaffected. There is nothing to configure — the
 state of the console is the setting.
+
+## The Voice Recognition Unit
+
+New in **v0.8.0**: the VRU, the add-on that let you talk to *Hey You, Pikachu!* and drive
+*Densha de GO! 64* by voice. It is a box that plugs into a **controller port** — socket 4,
+which is where both VRU games expect it — with an ordinary pad in socket 1, and a
+microphone on a cord that plugs into the box. It spawns with the microphone already in.
+
+The VRU was never a plain microphone: the hardware recognised words itself and handed the
+game the answer. RetroXR does the same with a speech recogniser, which needs a download:
+
+<Steps>
+
+1. Open `OPTIONS` → **Cores** → **BIOS / Extras** and pick the **Nintendo 64** page.
+
+2. Install **Voice Recognition Unit speech: English**, **…: Japanese**, or both. The
+   Japanese pack is for the Japanese releases; Densha de GO! 64 is played in English.
+
+3. Turn on **Microphone** in `OPTIONS` if it is off, and pick your input there.
+
+</Steps>
+
+You do not press anything to talk. The game decides when it is listening, as it did with
+the real unit — in Hey You, Pikachu! that is while you hold Z on your own controller. Your
+voice is heard from where the microphone is, so keep it close: a microphone left on a
+table across the room hears you faintly or not at all. Without the speech pack the VRU
+still plugs in and the game still runs; it simply never understands you.
+
+It runs on Mupen64Plus-Next, in RetroXR's own build. See also
+[microphones](/guide/playing/controllers/).
 
 <Aside type="note" title="The console wears a stand-in">
 	The Nintendo 64 has a new primitive model as of v0.6.0, but not a modelled shell.
