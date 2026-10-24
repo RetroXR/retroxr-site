@@ -4,6 +4,8 @@ description: The GBA cartridge with a slit in its roof that you physically swipe
 ---
 
 import { Aside } from '@astrojs/starlight/components';
+import Turntable from '../../../../components/Turntable.astro';
+import swipePoster from '../../../../assets/ereader/ereader_swipe_poster.png';
 
 The e-Reader is a Game Boy Advance cartridge with a scanner in it. Nintendo printed
 **dotcodes** along the edges of trading cards (whole little games, Animal Crossing NES
@@ -14,6 +16,13 @@ In RetroXR you do exactly that. Push the reader into the handheld, then
 **take a card and slide it through the slit**, dotcode edge first. There is no bay and
 nothing to seat: the card is never held, because a card that could be seated would be
 captured half way through a swipe.
+
+<Turntable
+	src="/video/ereader/ereader_swipe.mp4"
+	poster={swipePoster}
+	alt="An e-Reader seated in a Game Boy Advance's cartridge slot. A card is lowered long edge first into the groove behind the reader's hump, slid along its whole length, and lifted out the far end."
+	caption="A card swiped through the e-Reader on a Game Boy Advance, long strip down in the groove."
+/>
 
 <Aside type="note" title="Three readers, and they are not interchangeable">
 	RetroXR carries all three revisions: **Card e-Reader** (Japan), **Card e-Reader+**
