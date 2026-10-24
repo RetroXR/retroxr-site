@@ -10,7 +10,7 @@ The e-Reader is a Game Boy Advance cartridge with a scanner in it. Nintendo prin
 titles, extra levels for Super Mario Advance 4), and you swiped the card through the slot
 to load one.
 
-In RetroXR you do exactly that, as of **v0.6.0**. Push the reader into the handheld, then
+In RetroXR you do exactly that. Push the reader into the handheld, then
 **take a card and slide it through the slit**, dotcode edge first. There is no bay and
 nothing to seat: the card is never held, because a card that could be seated would be
 captured half way through a swipe.
@@ -22,8 +22,7 @@ captured half way through a swipe.
 	the hardware did. Spawn the one that matches your cards.
 </Aside>
 
-Since v0.9.0 the reader is a modeled shell rather than a stand-in, without the trademarked
-text the real one carried.
+The reader is modeled on the real shell, without the trademarked text the real one carried.
 
 <Aside type="caution" title="Known issue: no link cable into the reader">
 	The e-Reader+ has a link port of its own, but a GBA link cable will not seat in it yet.
@@ -42,6 +41,20 @@ would keep it anyway:
 It is recognized by the **ROM's own header** (the GBA game code), not by its filename, so
 renaming your dump does not hide it. The library then stops offering that file as a game,
 since it is hardware rather than something you play.
+
+### Where it shows up in the spawn menu
+
+So don't look for the reader in the **Game Boy Advance** tile's list of games: it is
+deliberately not there. Open the **e-Reader** tile in the Systems grid instead. Every
+reader whose dump is in your library is listed there by name (**Card e-Reader**,
+**Card e-Reader+** or **e-Reader (USA)**), above your cards. Spawn it and push it into a
+Game Boy Advance like any cartridge.
+
+A reader with no dump on disk is not offered at all. If the tile has no reader on it,
+check that the dump is in one of the two folders above.
+
+The cards on that tile come from `roms/ereader/` only. With that folder empty, the tile
+offers the reader and nothing to swipe through it.
 
 ## Card names must follow No-Intro
 
