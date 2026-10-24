@@ -32,11 +32,19 @@ The reader is modeled on the real shell, without the trademarked text the real o
 ## The reader's program comes from your library
 
 The e-Reader's cartridge dump is an **ordinary GBA ROM**, so RetroXR does not treat it as
-firmware or ask you to install a second copy under a name of its choosing. Put it where you
-would keep it anyway:
+firmware or ask you to install a second copy under a name of its choosing. Put the reader's
+`.gba` dump in either of these, inside your [RetroXR folder](/guide/adding-games/):
 
 - `roms/gba/`, the shelf it belongs on, or
-- `roms/ereader/`, beside the cards it reads, which is also reasonable.
+- `roms/ereader/`, beside the cards it reads.
+
+| Platform | Reader dump goes in |
+| --- | --- |
+| Windows | `%USERPROFILE%\retroxr\roms\gba\` |
+| Linux / macOS | `~/retroxr/roms/gba/` |
+| Quest | `/sdcard/Android/data/com.xenu.retroxr/files/roms/gba/` |
+
+Your cards (the `.raw` dotcode strips) go in `roms/ereader/` in the same folder.
 
 It is recognized by the **ROM's own header** (the GBA game code), not by its filename, so
 renaming your dump does not hide it. The library then stops offering that file as a game,
@@ -47,11 +55,11 @@ since it is hardware rather than something you play.
 So don't look for the reader in the **Game Boy Advance** tile's list of games: it is
 deliberately not there. Open the **e-Reader** tile in the Systems grid instead. Every
 reader whose dump is in your library is listed there by name (**Card e-Reader**,
-**Card e-Reader+** or **e-Reader (USA)**), above your cards. Spawn it and push it into a
+**Card e-Reader+** or **e-Reader (USA)**). Spawn it and push it into a
 Game Boy Advance like any cartridge.
 
 A reader with no dump on disk is not offered at all. If the tile has no reader on it,
-check that the dump is in one of the two folders above.
+check that the `.gba` dump is in `roms/gba/` or `roms/ereader/`, as above.
 
 The cards on that tile come from `roms/ereader/` only. With that folder empty, the tile
 offers the reader and nothing to swipe through it.
