@@ -1,9 +1,9 @@
 ---
 title: Satellaview
-description: Nintendo's satellite modem for the Super Famicom, the 8M Memory Packs its broadcasts were downloaded onto, and the community service that is still transmitting.
+description: Nintendo's satellite modem for the Super Famicom, the BS-X cartridge, and the 8M Memory Packs its broadcasts were downloaded onto.
 ---
 
-import { Aside, Steps } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
 import Turntable from '../../../../components/Turntable.astro';
 import stackPoster from '../../../../assets/satellaview/stack_poster.png';
 import memoryPackPoster from '../../../../assets/satellaview/memory_pack_poster.png';
@@ -151,51 +151,4 @@ handed to the core untouched, with no copy made at all.
 	A second `.bs` there would show up as a second entry on your shelf. Worse, snes9x
 	resolves its broadcast directory from the loaded file's own folder, so it matters which
 	copy is the one being run.
-</Aside>
-
-## Satellaview+: the broadcast came back
-
-[**Satellaview+**](https://satellaview-plus.com) is a community project that puts a
-scheduled Satellaview broadcast back on the air, with a real timetable running now in the
-same shape the original service had. Its client keeps a folder of the current
-transmissions on your PC.
-
-That folder is all RetroXR needs, because a broadcast really is a file appearing where the
-emulated tuner looks for it.
-
-<Steps>
-
-1. Run the **Satellaview+ client** on the same PC, and let it fill its `roms/satellaview`
-   folder.
-
-2. **Point RetroXR's sat folder at it**, so the two are looking at the same place. The
-   emulated tuner reads a broadcast straight out of that directory.
-
-3. Build the stack (Satellaview, Super Famicom, BS-X cartridge) and put an **8M Memory
-   Pack** in the cartridge. A translated BS-X `.sfc` sitting in that same folder works here
-   exactly as the firmware copy does, and is the easier one to navigate.
-
-4. Power on, walk into the town, and use the satellite terminal to download whatever is
-   being transmitted in this hour's slot. The ACCESS lamp will tell you it is working.
-
-</Steps>
-
-<Aside type="caution" title="The broadcast files go in the root of the folder, flat">
-	snes9x looks for `BSX<hhhh>-<d>.bin` **directly beside the ROM it loaded**. It joins the
-	name onto that one directory and nothing else. So the transmission files have to sit in
-	the root of `roms/satellaview/`, alongside your BS-X `.sfc` and your `.bs` packs.
-
-	Leave them in the dated and hourly subfolders the service publishes them under and the
-	BS-X finds nothing, boots the town and reports **no signal**, which looks exactly like a
-	slot with nothing being broadcast in it.
-</Aside>
-
-Whatever you catch is written to the pack, and the pack is yours. Miss the slot and it is
-gone, which is the point.
-
-<Aside type="caution" title="PCVR only, for now">
-	This needs the Satellaview+ client running alongside RetroXR, and there is **no in-app
-	client on Quest yet**, because a standalone headset has nowhere to run one. On Quest the
-	Satellaview still works; you play the dumps you already have rather than a live
-	broadcast.
 </Aside>
