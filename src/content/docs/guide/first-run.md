@@ -8,6 +8,10 @@ sidebar:
 This walks you from a freshly installed RetroXR to a game running on a TV you plugged in
 yourself. It takes about ten minutes, most of which is waiting for a core to download.
 
+RetroXR opens on a **welcome page**, with a short clip of hooking a console up and a guide
+to uploading games on Quest. It is worth a look the first time, and it can be turned off
+once you no longer need it.
+
 ## Opening the menu
 
 Everything starts from the spawn menu.

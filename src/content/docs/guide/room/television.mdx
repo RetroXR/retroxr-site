@@ -23,6 +23,11 @@ nothing is reaching it.
 	caption="The set. Controls along the front, inputs across the back."
 />
 
+The spawn menu's TV is the **RETRO XR** model, with a push-push door over
+its keys and buttons you can press with a fingertip, the laser or the mouse. Turning the
+volume shows a 90s-style on-screen volume bar, and a **headphone jack** takes a pair of
+RETRO XR headphones.
+
 ## The buttons on the set
 
 All of these are on the set itself, and all of them are also on the
@@ -111,6 +116,30 @@ trying to watch something.
 <Aside type="note">
 	The tuner and the headset have to be on the same network. A guest network or a VPN on
 	either end will stop discovery finding anything.
+</Aside>
+
+## IPTV channels
+
+The antenna also tunes **internet TV streams from M3U playlists**. There are
+two ways to add one:
+
+- Put a `.m3u` file in the **`tv`** folder of your data root.
+- Add an M3U URL on the **antenna's menu**.
+
+The streams join the channels on the dial. A playlist can carry groups and headers too.
+
+<Aside type="caution" title="Stream entries in channels.json no longer work">
+	Older releases took streams typed into `channels.json` by hand as `{"name", "link"}`
+	entries. Those are no longer read. An old entry is ignored (and logged) but left in the file
+	as you wrote it. A two-line M3U playlist does the same job:
+
+	```
+	#EXTINF:-1,My channel
+	https://example.com/stream.m3u8
+	```
+
+	`channels.json` still takes HDHomeRun and M3U sources. A fresh install no longer comes
+	with the placeholder "Channel 42".
 </Aside>
 
 ## Snow

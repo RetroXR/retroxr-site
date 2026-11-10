@@ -19,7 +19,7 @@ Under **`GRAPHICS`**:
 
 ### Foveation, on Quest
 
-As of v0.5.0, **foveated rendering works**. The headset spends its pixels where you are
+**Foveated rendering works.** The headset spends its pixels where you are
 looking and saves them at the edges of the lens, which is free frame time. Getting there
 meant rewriting fragment shaders that the mobile GPU would not accept under variable-rate
 shading.
@@ -44,8 +44,7 @@ Under **`OPTIONS`**:
 - **Slide or teleport** movement.
 - **Snap or smooth** turning, with an adjustable snap angle.
 - A **field-of-view vignette** while moving.
-- **Height offset** and **world scale**. The default world scale is **0.85×** as of
-  v0.4.0, up from 0.8×, so the room reads a little larger around you.
+- **Height offset** and **world scale**. The default world scale is **0.85×**.
 
 If VR movement bothers you, teleport plus snap turning plus the vignette is the
 combination to start from.

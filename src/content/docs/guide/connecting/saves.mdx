@@ -22,7 +22,6 @@ looking at.
 - **The console's own memory**: some machines saved inside themselves, and RetroXR keeps
   that with the console rather than the disc (see below).
 - **Save states**: a snapshot of the whole machine, taken and restored at any moment.
-  New in v0.4.0.
 
 ## Save states
 
@@ -56,14 +55,13 @@ you can browse here without launching the game.
 If you have not played it yet, this page says so rather than showing an empty list.
 
 A **disc** game shows no saves here. A disc never held its own save: the game wrote to a
-memory card or to the console. Since v0.8.0 the page just notes whether the game uses memory
+memory card or to the console. The page just notes whether the game uses memory
 cards, and you will find the saves themselves on the card or the console.
 
 ## Saves inside the console
 
 The **Sega CD**, **Sega Saturn** and **3DO** each saved every game into a little
-battery-backed memory on the console itself, and since v0.8.0 (the 3DO since v0.10.0)
-RetroXR does the same: the memory belongs to *that* console in your room, and is kept with
+battery-backed memory on the console itself, and RetroXR does the same: the memory belongs to *that* console in your room, and is kept with
 it when the room is saved. Manage it from the console's own System Settings, on its
 **Saves** tab.
 
@@ -98,7 +96,7 @@ a playthrough.
 ## Where saves live on disk
 
 Battery saves are written into the `libretro/save/` folder, filed by **system** rather
-than by core since v0.8.0, so switching a system to a different core keeps your saves.
+than by core, so switching a system to a different core keeps your saves.
 The Nintendo 64, 64DD and Famicom Disk System are the exceptions, still kept per core. See
 [the libretro folder](/guide/cores/libretro-folder/#save).
 

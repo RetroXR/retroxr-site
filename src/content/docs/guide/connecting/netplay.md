@@ -20,10 +20,6 @@ Beyond the game itself, the room is shared: player poses are broadcast, so you c
 each other as avatars, and objects stay in sync. The core and the ROM can be transferred
 to whoever does not have them.
 
-v0.4.0 reworked the netcode strategy under the hood and fixed a long list of object-sync
-bugs, so the shared room holds together better than it did, but the warning above still
-stands unchanged.
-
 ## Using it
 
 Open the **`NET`** tab. One person hosts; the others enter that machine's address to join.
@@ -36,8 +32,8 @@ means port forwarding, with all the usual difficulty that implies.
 ## Which cores can do it
 
 Rollback only works on a core whose save states are exact enough to rewind to, and most
-cores' are not. RetroXR keeps a list of the ones it has checked, and v0.9.0 fixed the
-state saving in a run of its own core forks so they could join it:
+cores' are not. RetroXR keeps a list of the ones it has checked,
+including a run of its own core forks whose state saving was fixed so they could join it:
 
 | Core | Systems | How it keeps in step |
 | --- | --- | --- |
@@ -65,9 +61,9 @@ A [link cable](/guide/playing/link-cables/) between two machines still carries i
 when the machines belong to different players in a session, whether that is two Game Boys, two
 PlayStations, or a Game Boy and a [printer](/guide/platforms/game-boy-printer/).
 
-:::caution[Everyone on v0.11.1 or later]
-v0.11.1 renamed the protocols the link cables speak (`gb-sio`, `psx-sio`, `ethernet` and
-the rest). A player on an older build, or with cores that have not been updated, will not
+:::caution[Everyone on the same release]
+Both ends of a cable have to speak the same protocol (`gb-sio`, `psx-sio`, `ethernet` and
+the rest). A player on an older build, or with cores that have not been updated, may not
 link with one on a newer build. Update the app, and let the core manager update the cores,
 on every machine in the session.
 :::

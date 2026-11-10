@@ -23,7 +23,7 @@ powered on does what you would expect it to do.
 
 ### Shells, colors and regions
 
-Most cartridges are no longer plain boxes. The **NES**, **Super Nintendo**, **Nintendo
+Most cartridges are not plain boxes. The **NES**, **Super Nintendo**, **Nintendo
 64**, **Game Boy**, **Game Boy Color**, **Game Boy Advance**, **DS**, **3DS**,
 **Genesis** and **32X** cartridges all spawn in a modeled shell. These are free of the original
 trademarks, so the labels are blank apart from your box art.
@@ -64,7 +64,7 @@ Multi-disc games work the way they did. On cores that support disc control you c
 disc 1 out and put disc 2 in while the game is running, and it carries on, which is the
 only way to finish a game that asks for the next disc.
 
-Since v0.4.0, **pulling a disc out no longer switches the machine off** on those cores.
+**Pulling a disc out does not switch the machine off** on those cores.
 The console keeps running with an empty tray, waiting for the next disc, exactly as it
 should.
 
@@ -97,7 +97,7 @@ the save belongs to the machine, not to the disc. The Sega CD and the Saturn eac
 For the same reason, a disc game's saves are not listed in the disc's own menu. It shows
 a note saying whether the game uses memory cards instead.
 
-The GameCube takes **raw memory card files** as of v0.4.0, so a card image from elsewhere
+The GameCube takes **raw memory card files**, so a card image from elsewhere
 is one you can use here.
 
 :::note

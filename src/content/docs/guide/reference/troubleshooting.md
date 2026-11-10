@@ -21,7 +21,7 @@ what you see reflects the state of your wiring. In rough order of likelihood:
 ## A game does not appear in the menu
 
 - The file is in the wrong folder, or the **system folder is misspelled**. The folder
-  name under `roms/` is what assigns a game to a console. Since v0.8.0 the folders use the
+  name under `roms/` is what assigns a game to a console. The folders use the
   short names ES-DE uses (`snes`, `n64`, `psx`, `gb`, `genesis`) rather than libretro's
   longer ones. Old folders such as `super_nes` or `playstation` are still read, so a
   library from an older version keeps working.
@@ -48,10 +48,8 @@ what you see reflects the state of your wiring. In rough order of likelihood:
 
 ## A plug or cartridge will not go in
 
-- Check the [log](/guide/reference/reporting-bugs/): since v0.11.1 it says **why** a held
+- Check the [log](/guide/reference/reporting-bugs/): it says **why** a held
   object will not preview or seat in a socket.
-- On **v0.11.0** specifically, link cables, Ethernet, coax, TRS and VGA plugs refused every
-  socket. Update to v0.11.1 or later.
 
 ## An object floats in mid-air
 
@@ -81,8 +79,7 @@ Netplay is an early prototype rather than a finished feature, and is known to be
 tested. Treat problems there as expected rather than as something you have misconfigured.
 
 Two things are worth checking first: every player must be on the **same version**, and
-linking machines over netplay needs everyone on **v0.11.1 or later** with up-to-date
-cores. See [netplay](/guide/connecting/netplay/).
+linking machines over netplay also needs everyone's cores up to date. See [netplay](/guide/connecting/netplay/).
 
 ## Still stuck
 

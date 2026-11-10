@@ -1,0 +1,232 @@
+---
+title: 'RetroXR v0.12 and v0.13: arcade cabinets, power, and over twenty new cores'
+date: 2026-11-10T12:00:00Z
+authors: ryan
+excerpt: Arcade cabinets that morph to the game you insert, power simulation, over twenty new cores from the PlayStation 3 to Duke Nukem 3D, the PocketStation, the DMG-07 four-player adapter, Sonic & Knuckles lock-on, a shelf of new RETRO XR appliances, and passthrough that knows where your furniture is.
+tags:
+  - release
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+**[Full changelog](https://github.com/RetroXR/RetroXR/compare/v0.11.1...v0.13.0)** ·
+[Download](/download/) ·
+[SideQuest](https://sidequestvr.com/app/61366/retroxr) ·
+[Discord](https://discord.gg/pgUkRhafca)
+
+v0.12.0 shipped two days after the last post and never got one of its own, so this post
+covers it along with v0.13.0. Most of what follows is v0.13, which is the biggest release
+so far.
+
+## 🕹️ Arcade cabinets (*v0.13*)
+
+The Arcade and Neo Geo systems were reworked to look more like the real thing. Arcade and
+DICE games now come out as **JAMMA boards** rather than generic cartridges, Neo Geo games
+as **MVS cartridges**, and they go into cabinets:
+
+- The **Morphing Arcade Cabinet**, for MAME and Arcade games
+- Simpler cabinets for the **Neo Geo**, **DICE** and **Laserdisc** systems
+
+A cabinet skins itself from the game inside it, using the scraped art for its top and
+sides. Its bay holds a disc reader for MAME CHDs and a JAMMA docking board, and the simple
+cabinet has two controller plugs that take any controller-type device.
+
+### It morphs
+
+The Morphing Arcade Cabinet reads MAME's lists and **rebuilds its hardware for the game
+you insert**. Put in a shooter and it grows guns; put in a racer and it grows a wheel. It
+also knows motorbikes, boards, dance pads, taiko drums, guitars, DJ stations, a rifle with
+a scope, a plane cockpit and rolling balls. Some cabinets get racing seats, and some of
+those seats move.
+
+That should cover all the non-standard hardware arcades ever used, and every combination
+was tested, but some may have slipped through. If a cabinet morphs wrong or is missing
+something, please [open an issue](https://github.com/RetroXR/RetroXR/issues). The shapes
+are approximations of the real cabinets, and 3D artists who want to make them better are
+very welcome.
+
+### Attract mode and a component input
+
+A switched-on cabinet plays the game's **scraped video** until someone grabs a controller,
+presses a button or drops a coin. Only then does the emulator start, which keeps an arcade
+full of cabinets cheap to run. Attract mode can be turned off per cabinet or in
+`OPTIONS`.
+
+Each cabinet also has a **component input**, so any other console can use its screen.
+It is bypassed while the JAMMA or Neo Geo bay has a game in it.
+
+## 🔌 Power (*v0.12, v0.13*)
+
+v0.12 laid the groundwork: **regional wall outlets** (pick yours in `OPTIONS` → General
+and the room's sockets and plugs change to match), AA and AAA batteries, and battery
+covers.
+
+v0.13 makes it do something. Turn on **Options → General → Enable Power Simulation**
+and devices only run when power actually reaches them. Handhelds take **AC adapters** in
+their DC IN, as do the 32X, Sega CD, Disk System drive and Game Boy Printer. Each region
+has its own power strip, and there is a universal travel adapter too. The original Game
+Boy gets **C batteries** and the **DMG-05 Battery Case**. Every powered object's menu says
+what it runs on.
+
+<Aside type="note" title="It is opt-in">
+	Power simulation is **off by default**. With it off, nothing needs plugging in. With it
+	on, a room that has no wall outlet still powers everything.
+</Aside>
+
+## 💿 New cores (*v0.13*)
+
+Download them from the **BIOS / Extras** view in `CORES`. New platforms get their own
+tiles and icons.
+
+- **Sony PlayStation 3** (RPCS3). `PS3UPDAT.PUP` goes in `system/rpcs3/`, and a game can
+  be a folder dump.
+- **Microsoft Xbox 360** (Xenia Edge)
+- **Sony PlayStation Vita** (Vita3K)
+- **Sony PlayStation 2** (ARMSX2), Quest only
+- **Sony PocketStation** (Pokket)
+- **Nintendo 64** (n64emu), Windows only
+- **Sega Dreamcast / Naomi** (ParaLLEl DC)
+- **Sega Hikaru** (Odin) and **Sega Lindbergh** (linuxloader), Windows only
+- **Daphne** laserdisc arcade games (HypseusHW)
+- **MSX, MSX2, MSX2+ and turbo R** (openMSX)
+- **Fujitsu FM Towns** (Geartowns)
+- **Atari ST, STE, TT and Falcon** (hatariB, Hatari 2014)
+- **Playdia**, **HyperScan**, **GameTank**, **Wenquxing** and **Coolbar**
+- **DOS** (rust-dos), **Doom, Heretic, Hexen and Strife** (UZDoom), **Duke Nukem 3D**
+  (EDuke32)
+- **Internet radio**
+
+mGBA, Gambatte, PCSX ReARMed and Flycast were all updated as well. Each core has a
+**Download all** button on the BIOS page now. The PS3 and Xbox 360 cores are offered on
+Quest too, to try, and on Quest the PS2 tile recommends Play! and hides PCSX2.
+
+Some cores the libretro buildbot does not build yet (ParaLLEl GameCube/Wii, PSP and Xbox
+among them) already have their info in RetroXR, so they will show up in the list as soon
+as the buildbot builds them.
+
+## New hardware (*v0.13*)
+
+### 🦔 Sonic & Knuckles
+
+The lock-on cartridge, spawned from the Genesis card. Put another Genesis cartridge in the
+slot on its top. It needs `sk.bin` **and** `sk2chip.bin` in genesis_plus_gx's system
+folder, and it also fits a 32X. See [Sega Genesis](/guide/platforms/sega-genesis/).
+
+### 🐾 The PocketStation
+
+Spawned from the PlayStation card: a memory card that is also a handheld, built from
+Sony's own measurements. Out of the console it runs on Pokket, and what you save on it
+goes back to its card. Docked in a PlayStation running PCSX ReARMed, **it is a real
+PocketStation to the game**, so games can download their minigames to it, and its screen
+shows and is kept in savestates. It needs `system/pokket/pocketstation.bin`. See
+[PlayStation](/guide/platforms/playstation/#the-pocketstation).
+
+### 👥 The Game Boy four-player adapter
+
+The **DMG-07** is a core and an object in the room. Plug up to four Game Boys into it, on
+Gambatte or mGBA, for four-player link games. It is powered as long as player 1's plug is
+in a Game Boy. Download it from **BIOS / Extras** under Game Boy. See
+[Game Boy](/guide/platforms/game-boy/#four-players-the-dmg-07).
+
+### More
+
+- **The Game Boy Player**, spawned from the GameCube card. A seated Game Pak can be pulled
+  straight out by hand.
+- **The SNES Super Scope**, with its infrared receiver and sight, on snes9x. The receiver
+  goes in the second controller port, and the scope needs batteries, its switch on, and a
+  clear line of sight. See [light guns](/guide/playing/light-guns/#the-super-scope).
+- **Multiplayer adapters**: the NES Four Score, the NES Satellite, the Famicom 4 Players
+  Adaptor, and the PlayStation and PlayStation 2 Multitaps.
+- **The 32X is wired like the real one.** The Genesis's picture now goes through it: run
+  the Video Link Cable from the Genesis's A/V OUT to the 32X's A/V IN, and the TV from the
+  32X's A/V OUT. That closes the known issue from the last post.
+- **The Sega CD Model 2** (a stand-in for now), and the Model 1 Genesis's 8-pin A/V OUT
+  with its lead and the 32X Conversion Cable.
+- **Console stands** for the Wii and the PS2.
+- **Expansions that need a BIOS are always spawnable.** They used to stay hidden until the
+  firmware was installed. Now they show a red **BIOS missing** line, and switching one on
+  without it tells you which file is missing.
+
+## 📺 A new shelf of appliances (*v0.13*)
+
+New **RETRO XR** models with live displays and buttons you press with a fingertip, the
+laser or the mouse: a **TV** (now the spawn menu's default, with a push-push key door), a
+26-key **universal remote**, a **vinyl player** with an RCA line out, a **cassette player**
+and a **CD player** with working headphone jacks, a **surround amp**, a **DVD player** and
+a **VCR**.
+
+There is also an **AV switch** with four composite inputs and one output to the TV. Click a
+number to switch, click the slide's tab to step, or drag it.
+
+Cassettes and LPs now have **two sides**. Put a `#SIDE B` line in the album's `.m3u`
+before the first track of side B, then flip the tape or the record to play it. See
+[music](/guide/room/music/#side-a-and-side-b).
+
+The TV gained **IPTV channels from M3U playlists** and a 90s volume display. Handhelds and
+TVs have headphone jacks, and there are RETRO XR headphones to plug into them.
+
+## 🧩 Modding (*v0.12, v0.13*)
+
+- **Any labeled mod prop can be spawned** from `SPAWN` → Objects. Before, a mod prop that
+  was not a controller, a gun or a lead could not be spawned at all.
+- **Mod platforms** get a Games tile, and can declare their BIOS and pin core options.
+- New calls for dressing the Morphing Arcade Cabinet, adding AC adapters and battery
+  labels, and adding console stands, plus hooks for remote control, menu rows and
+  fingertip buttons.
+- Installed mods show their version. v0.12 can install and enable mods automatically.
+- **Netplay** tells a peer that was refused over its mods which ones it is missing, and
+  lets it download them from mod.io.
+
+v0.12 also changed `RcaPort` and `LinkPort` to extend `Port`, so mods built on the old
+classes need updating. See [mods](/guide/room/mods/) and the
+[modding guide](https://github.com/RetroXR/RetroXR/blob/master/docs/modding.md).
+
+## 👓 Passthrough that knows your room (*v0.12*, Quest only)
+
+Passthrough can now use Meta's room data: furniture mode by default, or the full room mesh
+on a Quest 3. Quest asks for permission the first time you enter passthrough. The libretro
+camera can use Meta's depth too, so the **Game Boy Camera works in passthrough**, as long
+as what you point it at is visible in passthrough. The options are on the General ribbon.
+
+## Smaller things worth knowing
+
+- **Press any button with a fingertip**: every button on every controller, handheld, VMU,
+  Nunchuk and light gun. D-pads take a press on each arm. Turn it off with **Press
+  Controller Buttons by Touch** in `OPTIONS`.
+- **The bedroom has a street outside**: swaying trees, lit windows and porch lamps, new
+  blinds with a working tilt wand, and a three-gang switch that also runs the ceiling fan.
+  On a headset its lighting now follows the time-of-day lever and the blinds.
+- **A welcome page** at startup, with a console hookup clip and a Quest upload guide. It can
+  be turned off.
+- **Searching Games** now covers every game, by system name and by regional title.
+- **Menus** can be resized, warn about crossed cords, and have a Debug tab on every machine.
+  **SCENE → Objects** finds or deletes what you have spawned, and the SCENE cards now show
+  pictures.
+- **Chairs**: a chair, stool, cushion, sofa and bed, all freely spawnable.
+- **Desktop** runs faster on Windows, and a second laser no longer drags the frame rate down.
+- **The Game Boy Printer** (v0.12) has more accurate motor sounds, paper that can run as long
+  as you like, thermal paper in the official colors, and paper physics.
+- **Deleting things** (v0.12): drag an item onto the trash can in the spawn menu, or use the
+  delete button on its menu.
+- Game Boy LCD settings, handheld screens lit by the room, posters up to 8x, and folder
+  creation in the Web File Manager, which also explains why a ROM is not showing up.
+
+<Aside type="caution" title="Stream channels in channels.json are gone">
+	Hand-typed stream entries in `channels.json` were removed in favor of M3U playlists. Put
+	a `.m3u` in the `tv` folder of your data root, or add an M3U URL on the antenna's menu.
+	Old entries are ignored and logged but left in the file. HDHomeRun and M3U sources in
+	`channels.json` still work. See [the television](/guide/room/television/#iptv-channels).
+</Aside>
+
+## Fixes
+
+Objects no longer hang in the air after you let go (the known issue from the last post),
+or jitter while moving in VR. VLC audio no longer plays slow and flat on devices whose
+sample rate differs from the engine's, which affected VHS, DVD, CD and TV on Quest. Book
+pages stop clipping, the Systems tab no longer freezes on Quest, and a netplay joiner no
+longer times out before the host's room loads.
+
+## Known issues
+
+- Some cores for later generations may struggle on Quest.
+- Netplay is still experimental.

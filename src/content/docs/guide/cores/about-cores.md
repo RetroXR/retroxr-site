@@ -14,12 +14,19 @@ actually care about, from inside the headset, and RetroXR runs them.
 ## What this gets you
 
 Anything libretro supports, RetroXR can play: NES, SNES, Mega Drive, Nintendo 64,
-PlayStation, Saturn, Dreamcast, GameCube, Game Boy through to the DS and 3DS, PSP, plus
-the long tail: Neo Geo Pocket, WonderSwan, Virtual Boy, Amiga, C64, MSX, DOS, ScummVM,
-arcade boards, and fantasy consoles like PICO-8.
+PlayStation, Saturn, Dreamcast, GameCube, Game Boy through to the DS and 3DS, PSP and
+Vita, the PlayStation 3 and Xbox 360, plus the long tail: Neo Geo Pocket, WonderSwan,
+Virtual Boy, Amiga, Atari ST, C64, MSX, FM Towns, DOS, ScummVM, Doom and Duke Nukem 3D,
+arcade boards from JAMMA to Sega Lindbergh, and fantasy consoles like PICO-8.
 
-RetroXR knows about **76 systems**. How many of them you can play comes down to which
-cores you install and which BIOS files you own.
+How many systems you can play comes down to which cores you install and which BIOS files
+you own.
+
+Not every core runs everywhere. A few, such as Sega Hikaru and Lindbergh and the n64emu
+Nintendo 64 core, are **Windows only**, and ARMSX2 for the PlayStation 2 is **Quest only**.
+The PlayStation 3 and Xbox 360 cores are offered on Quest to try, but later-generation
+systems may struggle there. Some cores the libretro build server does not build yet are
+already known to RetroXR, and appear in the list as soon as it does.
 
 ## Several cores per system
 

@@ -3,7 +3,7 @@ title: Mods
 description: Browse and install mods from inside RetroXR, such as consoles, cartridges, rooms and props published on mod.io, and learn what a mod is and is not allowed to be.
 ---
 
-Since **v0.10.0** RetroXR has a **mod browser**. Mods add to the room (modeled consoles
+RetroXR has a **mod browser**. Mods add to the room (modeled consoles
 and cartridge shells, whole platforms, rooms, props, television cabinets and controllers)
 or replace something RetroXR ships. They are published on
 **[mod.io](https://mod.io/g/retroxr)**, and an initial set of models is already there.
@@ -30,6 +30,20 @@ press.
 **Packs** lists mod packs, which are collections somebody has put together on mod.io. One press
 downloads a pack's mods, and removing the pack removes the mods it brought, leaving any you
 had installed on their own.
+
+Installed mods show their version on a line under the name.
+
+## Using what a mod adds
+
+- **Props**: every labeled prop in an enabled mod is listed on `SPAWN` → **Objects**.
+- **Platforms**: a mod platform gets a tile under **Games**, running on one of the game's
+  cores, and can declare its own BIOS files.
+- **Rooms**: a mod room's card on the `SCENE` tab shows its pack's thumbnail.
+
+## Mods and netplay
+
+If a peer is refused from a netplay session because its mods do not match the host's, it is
+told which mods it needs, and can download them from mod.io from there.
 
 ## Mods are off until you say so
 

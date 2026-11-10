@@ -81,7 +81,7 @@ So installing a second core for a machine gives you a second, empty firmware fol
 is the usual reason a game that ran fine yesterday boots to a black screen after you
 switched cores.
 
-Saves are the exception. Since v0.8.0, cartridge saves and memory cards are filed **by
+Saves are the exception. Cartridge saves and memory cards are filed **by
 system**, so they follow the game to a different core. The exception is the Nintendo 64, 64DD
 and Famicom Disk System, whose cores cannot read each other's files. See
 [the libretro folder](/guide/cores/libretro-folder/#save).
@@ -92,7 +92,7 @@ Cores can be re-downloaded to pick up a newer build, and removed when you no lon
 them. A system with no core installed simply cannot be spawned, and that is the constraint
 you are managing.
 
-Since v0.4.0 you can **delete cores and BIOS files from inside the headset**, from the
+You can **delete cores and BIOS files from inside the headset**, from the
 same screens you installed them on, rather than going back to a PC to reclaim the space.
 The storage screen will also clear out **orphaned metadata**, meaning box art and scraped details
 left behind by games that are no longer there.

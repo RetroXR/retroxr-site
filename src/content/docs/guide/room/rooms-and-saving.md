@@ -11,13 +11,22 @@ RetroXR gives you somewhere to put all this. Switch rooms from the **`SCENE`** t
 
 ![The SCENE tab, showing the selectable rooms: Arcade Room, Cozy Den, 90s Bedroom and Test Hallway.](../../../../assets/screenshots/menu_scene.png)
 
-- **Arcade room**: the default space. Since v0.5.0 it no longer comes with a table; spawn
+- **Arcade room**: the default space. It does not come with a table; spawn
   one from `SPAWN` → `Objects` and put it where you want it.
 - **Cozy den**: a lounge, with a corner TV stand and somewhere to sit.
-- **Bedroom**: a bedroom with a desk, a bed, bookcases and a wardrobe.
+- **Bedroom**: a bedroom with a desk, a bed, bookcases and a wardrobe. Outside the window
+  is a 90s street, with swaying trees, the neighbors' lit windows and porch lamps. Its vinyl
+  blinds tilt with a working wand, and a three-gang wall switch runs the lights and the
+  ceiling fan. On a headset the room's lighting follows the time-of-day lever and the
+  blinds.
 - **Test hallway**: a long hall of pre-cabled stations, one per generation. Useful for
   trying a lot of systems quickly without wiring each one.
-- **Passthrough**: your actual room, in AR, with the hardware placed into it.
+- **Passthrough**: your actual room, in AR, with the hardware placed into it. On Quest it
+  can use Meta's room data, so objects know where your furniture is: **furniture mode** by
+  default, or the full **room mesh** on a Quest 3. Quest asks for permission the first time
+  you enter passthrough, and the options are on `OPTIONS` → General.
+
+The `SCENE` tab's room and slot cards show pictures of each room.
 
 Rooms have working props: light switches, a pull-cord lamp, a ceiling fan, blinds, string
 lights, and a bin for things you are finished with.
@@ -55,14 +64,9 @@ themselves to follow their plugs.
 A restored layout also brings back **which input each TV was showing**, so a set you left
 on the console's input comes back on it rather than on a blank channel.
 
-:::note[A loading screen, since v0.5.0]
-A room change now shows a loading screen while the new space is built, rather than the app
+:::note[A loading screen]
+A room change shows a loading screen while the new space is built, rather than the app
 appearing to hang.
-:::
-
-:::caution[Crashes between rooms]
-Changing rooms can still crash the app in v0.5.0. Saving your layout before you switch is
-worth the ten seconds.
 :::
 
 ## Posters
@@ -71,7 +75,7 @@ Anything you drop into your `posters/` folder becomes a **poster you can stick t
 such as walls, the side of a console or the front of the TV stand. Pick one up, hold it against a
 surface and let go, and it stays; peel it off to move it. Posters are saved with the room.
 
-Posters are new in v0.4.0 and deliberately basic. See [adding your games](/guide/adding-games/)
+Posters are deliberately basic. See [adding your games](/guide/adding-games/)
 for where the folder lives.
 
 ## Autosave

@@ -10,8 +10,12 @@ downloads its own build of it, which adds the console's i.LINK port and network 
 It is a heavy machine to emulate: it runs best on a PC, and a standalone headset will
 struggle with many games.
 
+On **Quest** the PS2 tile hides PCSX2 and recommends **Play!** instead, and the
+Quest-only **ARMSX2** core is offered too.
+
 Out of the box the console is a procedural stand-in; modeled PS2 shells are published as
-[mods](/guide/room/mods/).
+[mods](/guide/room/mods/). A **vertical stand** can be spawned for it, and the
+**PlayStation 2 Multitap** gives a controller port four players.
 
 ## The BIOS is required
 
@@ -27,7 +31,7 @@ cannot be. See [BIOS files](/guide/cores/bios/).
 
 ## Memory cards
 
-As of **v0.7.0** both of the console's **memory card slots** work, and PS2 cards are real
+Both of the console's **memory card slots** work, and PS2 cards are real
 objects, as the PlayStation's are: spawn a **Memory Card** from the PS2's spawn card, push
 it into a slot, and the game saves to it.
 
@@ -49,7 +53,7 @@ libretro/save/memcards/playstation2/
 
 ## The GunCon 2
 
-The PS2 has two **USB sockets** on its front, and as of **v0.9.0** light-gun games work
+The PS2 has two **USB sockets** on its front, and light-gun games work
 through them: the **GunCon 2** plugs into a USB socket, not a controller port. USB socket 1
 is player 1's gun and socket 2 is player 2's, and the pad in the matching controller port
 keeps working alongside it. See [light guns](/guide/playing/light-guns/).
@@ -60,14 +64,14 @@ The PS2 had two ways of putting several consoles in one game, and both are in th
 
 ### i.LINK
 
-As of **v0.9.0** the fat PS2's **i.LINK** port works. Run an **i.LINK cable** between two
+The fat PS2's **i.LINK** port works. Run an **i.LINK cable** between two
 consoles, or plug up to **six** into the **i.LINK hub**. Both are on the PS2's spawn card.
 Gran Turismo 3's i.LINK Battle, Time Crisis II and others see each other as they did on the
 hardware.
 
 ### Network adapter and LAN
 
-As of **v0.11.0** the PS2's **Network Adapter** works. Seat it in the bay at the back of
+The PS2's **Network Adapter** works. Seat it in the bay at the back of
 the console, then run an **Ethernet cable** from it to an **Ethernet hub**, or straight to
 another console. Gran Turismo 4's Multi-LAN race links up to six consoles that way, and a
 GameCube with its Broadband Adapter goes on the same kind of LAN.

@@ -12,7 +12,7 @@ of its cartridge slot; a Nintendo 64 got a disk drive bolted to its floor; a Sup
 took a Super Game Boy, a Sufami Turbo or the BS-X cartridge in the same slot an ordinary
 game went into.
 
-Since **v0.5.0** those are real objects in the room. You spawn the expansion, you spawn the
+In RetroXR those are real objects in the room. You spawn the expansion, you spawn the
 console, and you **stack them**, the same way you would on a shelf.
 
 ## Assembling a stack
@@ -62,8 +62,9 @@ See [about cores](/guide/cores/about-cores/) if you want to know which core is r
 ## Units that need a BIOS
 
 Four of these are not consoles at all. They are **cartridges carrying a program**, and
-that program is firmware you supply. Until the file is installed, the unit is not offered
-in the spawn menu at all, because without it the unit would be a prop.
+that program is firmware you supply. The unit can always be spawned, but until the file is
+installed its spawn row shows a red **BIOS missing** line, and switching on a console
+built with it is refused with a notice naming the missing file.
 
 | Unit | File | Goes in |
 | --- | --- | --- |

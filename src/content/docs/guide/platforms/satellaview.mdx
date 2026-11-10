@@ -15,7 +15,7 @@ onto an **8M Memory Pack**, and what you had not caught by the end of the slot y
 missed. The service went dark in 2000, and everything that survives survives because
 somebody wrote it to a pack and kept it.
 
-RetroXR models all three layers of that, as of **v0.5.0**.
+RetroXR models all three layers of that.
 
 ## The three pieces
 
@@ -78,8 +78,7 @@ being decoration. POWER follows the console bolted above it. ACCESS is the tuner
 The emulated BS-X flips it while data is moving, snes9x reports that over libretro's LED
 interface, and the lamp lights **because the emulated machine said so**.
 
-New in v0.5.0: the LED interface that carries it went into RetroXR's snes9x fork for
-exactly this.
+The LED interface that carries it went into RetroXR's snes9x fork for exactly this.
 
 ## 8M Memory Packs
 
@@ -119,10 +118,11 @@ The list is deliberately **read-only**, with no delete. The block-erase behavior
 not been pinned down, and a wrong guess destroys a download that can only be obtained from
 a live broadcast.
 
-<Aside type="caution" title="snes9x fixes for this landed in v0.5.0">
-	Saving a download to an 8M pack needed two fixes in RetroXR's snes9x fork: flash pack
-	writing for BS-X, and a bug where the 8 Mbit flash was initialized to the wrong values.
-	An older build will not keep what you catch.
+<Aside type="caution" title="It needs RetroXR's snes9x">
+	Saving a download to an 8M pack relies on two fixes in RetroXR's own snes9x build: flash
+	pack writing for BS-X, and correct initial values for the 8 Mbit flash. The core manager
+	downloads that build for you, so there is nothing to do unless you have swapped in a
+	snes9x from somewhere else.
 </Aside>
 
 ## Some programs need an IPS patch

@@ -21,6 +21,14 @@ one, and the ports are labeled, so a two-player game needs two pads in the right
 
 Then pick the pad up and play. Your thumbs drive the buttons directly.
 
+### Pressing buttons with a fingertip
+
+Every button on every controller, handheld, VMU, Nunchuk and light gun can
+also be **pressed with a fingertip**, as you would press a button on a pad lying on the
+desk. A D-pad takes a press on each of its arms, and a handheld's buttons still go in when
+it is switched off. Turn it off with **Press Controller Buttons by Touch** in `OPTIONS`; it
+is on by default.
+
 ## Using a real gamepad, keyboard or mouse
 
 Holding an imaginary controller is charming for about ten minutes. If you have real
@@ -39,6 +47,8 @@ mouse](/guide/playing/external-devices/)**.
   The Super Multitap has the real one's **2P / 5P switch**: at 5P it is a multitap, at 2P
   only its first socket is live and it is nothing more than an extension cord, exactly as
   the hardware behaved. Flip it with the tap plugged in and the ports re-route on the spot.
+  There are also the **NES Four Score**, the **NES Satellite**, the **Famicom 4 Players
+  Adaptor**, and the **PlayStation** and **PlayStation 2 Multitaps**.
 - **Light gun / ray gun**: point it at the screen and pull the trigger.
 - **Mouse**: for the systems that had one.
 - **Keyboard**: for the computers that needed one.

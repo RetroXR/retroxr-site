@@ -13,10 +13,9 @@ Two machines in the same room can be **cabled together**, and the data really cr
 is not a netplay session dressed up as a wire: both machines are emulated here, in your
 room, and the lead between them carries the same serial traffic the hardware did.
 
-New in v0.4.0. **In v0.5.0 the link became event-driven** rather than polled: the cores
-wake each other when there is something to send instead of checking a shared lock on every
-step, which cuts the contention three to fourfold and is felt as a smoother run with up to
-**four cores** cabled together.
+The link is **event-driven** rather than polled: the cores wake each other when there is
+something to send instead of checking a shared lock on every step, which keeps the run
+smooth with up to **four cores** cabled together.
 
 <Clip
 	src="/video/link/gc_gba_link.mp4"
@@ -47,7 +46,6 @@ step, which cuts the contention three to fourfold and is felt as a smoother run 
 | **Link Cable** (Virtual Boy) | Two Virtual Boys | Nothing extra |
 | *No cable: infrared* | Two Game Boy Colors facing each other | Nothing extra |
 
-Most of these arrived in v0.9.0 and v0.10.0, the Ethernet LAN and the printer in v0.11.0.
 Several of these machines will not start at all without their BIOS, cable or no cable,
 so see [BIOS files](/guide/cores/bios/).
 
@@ -123,7 +121,7 @@ Three kinds of lead join more than a pair.
 
 ## Infrared
 
-A Game Boy Color has an infrared window, and since v0.10.0 two of them can talk through it
+A Game Boy Color has an infrared window, and two of them can talk through it
 for Mystery Gift and the games that swap items by beaming them. There is no cable: **point
 the two windows at each other**.
 
@@ -174,9 +172,9 @@ core manager downloads them for you; there is nothing to build.
 
 A cable to a core that is **not** one of these joins nothing, because the stock build has
 no far end for the wire. If a link seems dead, check in the core manager that the machine
-is running the RetroXR build. Both ends also have to speak the same protocol, and v0.11.1
-renamed them, so linking across [netplay](/guide/connecting/netplay/) needs every player
-on v0.11.1 or later with updated cores.
+is running the RetroXR build. Both ends also have to speak the same protocol, so linking
+across [netplay](/guide/connecting/netplay/) needs every player on the same RetroXR release
+with updated cores.
 
 :::caution[Needs an in-headset pass]
 The cable rules above are read from the source and from probe runs against real cores. The

@@ -64,7 +64,7 @@ Locomotion is configurable in **`OPTIONS`**:
 You can play with controller models shown, or with hands. The finger poses follow what you
 are doing: a pointing finger when you point, a fist on grip.
 
-On **Meta Quest Touch controllers**, v0.4.0 reads the controllers' **capacitive sensors**,
+On **Meta Quest Touch controllers**, RetroXR reads the controllers' **capacitive sensors**,
 so your fingers sit where they actually are on the controller rather than snapping between
 a few canned poses. A finger lifted off a button is a finger lifted off a button.
 

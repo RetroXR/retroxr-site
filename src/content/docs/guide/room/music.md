@@ -6,7 +6,7 @@ sidebar:
 ---
 
 Alongside the video hardware there is audio hardware: a **CD player**, a **cassette deck**
-and, new in v0.5.0, a **record player**. All three take your own music files.
+and a **record player**. All three take your own music files.
 
 ## Getting music in
 
@@ -35,6 +35,29 @@ Cassettes and records wear a picture if one is sitting beside the album:
 An album with no side B picture shows side A on both sides, like a pressing with one
 design. On a record the picture is cropped to its middle square for the round label.
 
+A cassette or record whose album has no art at all wears a RetroXR label with the album's
+name on it. A mod's cassette shell wears the album's pictures on its own labels.
+
+### Side A and side B
+
+Cassettes and records have **two sides**. To say where side B starts, put a
+`#SIDE B` line in the album's `.m3u` playlist, just before the first track of side B:
+
+```
+Track 01.mp3
+Track 02.mp3
+Track 03.mp3
+#SIDE B
+Track 04.mp3
+Track 05.mp3
+```
+
+Insert the cassette turned over, or lay the record upside down, to play side B. The sides
+are laid out by the tracks' real lengths.
+
+An album with no `#SIDE B` line has every track on side A. The CD player ignores sides and
+plays the whole album.
+
 ## Playing something
 
 Spawn a **CD player**, a **cassette deck** or a **record player** from **`SPAWN`** →
@@ -43,6 +66,18 @@ cassette in, and press play.
 
 A deck can feed a television's audio input too, and from there a full surround rig. See
 [speakers and surround](/guide/playing/plugging-in/#speakers-and-surround).
+
+### The RETRO XR decks
+
+All three are **RETRO XR** models, with live displays and buttons you
+can press with a fingertip, the laser or the mouse:
+
+- The **vinyl player** has an RCA line out, into a television or the surround amp.
+- The **cassette player**'s door carries the tape, and it has a working **PHONES** jack and
+  **VOLUME** knob.
+- The **CD player** has a front tray, a working **PHONES** jack and a **LEVEL** knob.
+
+Plug a pair of RETRO XR **headphones** into a PHONES jack to listen on them.
 
 Both decks have the transport buttons you would expect. The CD player can skip tracks; the
 cassette deck cannot, because a cassette could not. You rewind and fast-forward and

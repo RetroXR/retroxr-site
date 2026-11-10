@@ -24,7 +24,7 @@ hold, slot in, and can lose.
 	src="/video/ps1/console.mp4"
 	poster={consolePoster}
 	alt="The gray PlayStation console rotating, showing the sprung disc lid on top, the POWER, RESET and OPEN buttons, the two controller ports and the two memory card slots along the front."
-	caption="The PlayStation, a modeled shell as of v0.4.0 that replaced the procedural box. The lid springs, the buttons press, and both card slots and both controller ports take real objects."
+	caption="The PlayStation, a modeled shell. The lid springs, the buttons press, and both card slots and both controller ports take real objects."
 />
 
 ## The BIOS is optional
@@ -90,8 +90,8 @@ There is a manager for all of this, reachable from the card itself: point at it 
 **clicking the left thumbstick**.
 
 The running game notices when a card is **pulled or pushed in**, the way the console did.
-Pull the card mid-game and the machine sees it go. That began with slot 1 in v0.4.0; since
-v0.7.0 the **second slot** is a real card under PCSX ReARMed too, so a game that copies
+Pull the card mid-game and the machine sees it go. Both slots hold real cards under PCSX
+ReARMed, so a game that copies
 between cards, or wants its save on card 2, has a card 2 to use.
 
 <Aside type="tip" title="If a game cannot find your save">
@@ -161,17 +161,32 @@ problem entirely.
 
 Full detail on [game saves and backups](/guide/connecting/saves/).
 
+The card panel shows Japanese save titles properly.
+
+## The PocketStation
+
+Spawned from the PlayStation's card: Sony's **PocketStation**, a
+memory card that is also a tiny handheld, built from Sony's own measurements.
+
+- **On its own**, out of the console, it runs on the **Pokket** core. Anything you save on
+  it goes back to its card.
+- **Docked in a PlayStation** running PCSX ReARMed in RetroXR's own build, it is a
+  real PocketStation as far as the game is concerned. Games can download their minigames
+  to it, the docked unit's screen is shown, and its state is kept in savestates.
+
+It needs the PocketStation's own firmware, `pocketstation.bin`, in `system/pokket/`. See
+[BIOS files](/guide/cores/bios/).
+
 ## Discs
 
 Spawn a game from `SPAWN` → **Games** and it arrives as a disc rather than a
 cartridge. Open the console's lid, set the disc in the tray, close it, and power on.
 
 Multi-disc games work. RetroXR retrieves the right image for each disc rather than
-handing every disc the first one, which was a real bug fixed in
-[v0.3.0](/blog/).
+handing every disc the first one.
 
 Multi-disc games can also be **swapped mid-game** on cores that support disc control: take
-disc 1 out and put disc 2 in, and the game carries on. Pulling a disc no longer switches
+disc 1 out and put disc 2 in, and the game carries on. Pulling a disc does not switch
 the machine off either. See [cartridges and discs](/guide/playing/cartridges-and-discs/).
 
 ## Controllers
@@ -205,6 +220,9 @@ for games that predate the sticks and get confused by them.
 For a real gamepad, spawn a **Controller Receiver** and plug that in instead, as described in
 [controllers and peripherals](/guide/playing/controllers/).
 
+For more than two players, the **PlayStation Multitap** plugs into a
+controller port and gives it four.
+
 ## The serial link
 
 The PlayStation's **SERIAL I/O** socket on the back is wired. Run a link cable between two
@@ -222,5 +240,5 @@ cores](/guide/cores/downloading/).
 
 :::caution[Needs an in-headset pass]
 The memory card manager's exact controls, and the lid and tray interaction, are written
-from the code and the v0.3.0 release notes rather than from a session in the headset.
+from the code and the release notes rather than from a session in the headset.
 :::

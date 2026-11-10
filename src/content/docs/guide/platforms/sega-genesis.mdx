@@ -18,10 +18,10 @@ They stack in **opposite directions**, which is what makes the full tower possib
 
 See [expansion hardware](/guide/playing/expansion-hardware/) for how a stack goes together.
 
-Since v0.9.0 the console is a modeled **Genesis 2**, the smaller second model, and the
+The console is a modeled **Genesis 2**, the smaller second model, and the
 32X and both kinds of cartridge are modeled too, from photographs and caliper
 measurements. Every trademark has been taken off them, which is a legal necessity rather
-than a style. The Sega CD is still a stand-in.
+than a style. The Sega CD and the Sega CD Model 2 are still stand-ins.
 
 Cartridges carry your scraped label art if the scraper found one. See [box
 art](/guide/connecting/box-art/).
@@ -35,11 +35,15 @@ past. Put a 32X cartridge in that upper slot.
 A Genesis with a 32X on it is a different machine, and RetroXR switches to **picodrive**,
 which is both halves at once. Take the 32X off and the console goes back to its usual core.
 
-<Aside type="caution" title="Known issue: keep the A/V cable in the Genesis">
-	On the real hardware the picture went through the 32X, with a short link cable from the
-	Genesis's A/V out into the 32X. Here the A/V cable still has to be plugged into the
-	**Genesis itself** for a picture.
-</Aside>
+### Wiring a 32X
+
+The picture goes through the 32X, as it did on the real hardware:
+
+1. Run Sega's **Video Link Cable** from the Genesis's **A/V OUT** to the 32X's **A/V IN**.
+2. Run the TV's lead from the 32X's **A/V OUT**.
+
+A Model 1 Genesis has the older 8-pin A/V OUT, so it takes its own lead and the **32X
+Conversion Cable**.
 
 ## The Sega CD
 
@@ -65,16 +69,24 @@ core is **genesis_plus_gx**.
 
 ### Where Sega CD games save
 
-Since v0.8.0 a Sega CD game saves where it did on the hardware: to the **backup RAM inside
+A Sega CD game saves where it did on the hardware: to the **backup RAM inside
 the unit**, or to a **Backup RAM Cartridge** in the Genesis's slot if you have put one
 there. The cartridge is offered on the Sega CD's card, and it is the way to carry saves
 from one Sega CD to another, just as it was. Manage either from the console's **System
-Settings** → **Saves** tab. A disc game's saves no longer appear in the disc's own menu;
+Settings** → **Saves** tab. A disc game's saves do not appear in the disc's own menu;
 it shows a note pointing you here instead. See also [saves](/guide/connecting/saves/).
+
+## Sonic & Knuckles
+
+Spawned from the Genesis card: the **lock-on cartridge**. It goes
+into the cartridge slot (or a 32X's slot) like any game, and has a slot of its own on top.
+Put another Genesis cartridge in that slot to lock it on.
+
+It needs two files in genesis_plus_gx's system folder: `sk.bin` **and** `sk2chip.bin`.
 
 ## The Power Base Converter
 
-New in **v0.6.0**: the adapter that goes into the cartridge slot and lets a Genesis play
+The adapter that goes into the cartridge slot and lets a Genesis play
 **Master System** games. Put it in, put a Master System cartridge into it, and RetroXR
 switches to genesis_plus_gx, which is both machines.
 

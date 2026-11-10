@@ -70,7 +70,7 @@ do all of it.
    swings with your hand. Once latched your hand can leave; the latch holds until you
    release the trigger.
 
-2. **Press SYNC.** Reach in and **push the button with your fingertip**. As of v0.4.0 this
+2. **Press SYNC.** Reach in and **push the button with your fingertip**. This
    is an ordinary poke, with no arming and no trigger pull. The cover is what keeps it safe.
 
 </Steps>
@@ -156,7 +156,7 @@ Controllers. It plugs into the Wii and stands on the set.
 	src="/video/wii/wiimote.mp4"
 	poster={wiimotePoster}
 	alt="The remodeled Wii Remote rotating, showing the D-pad, A button, the 1 and 2 buttons, the player LEDs, the minus, Home and plus row, and the expansion port on its base."
-	caption="The Wii Remote, remodeled in v0.4.0. The expansion port on its base is what MotionPlus and the Nunchuk plug into."
+	caption="The Wii Remote. The expansion port on its base is what MotionPlus and the Nunchuk plug into."
 />
 
 Pick it up and swing it. Pointing works off the sensor bar you placed, so if the pointer is
@@ -179,7 +179,7 @@ designed around. Grab it with both, turn it across you, and it plays as a horizo
 
 ### The speaker
 
-The Wii Remote has a small speaker of its own, and since v0.7.0 what a game sends to it
+The Wii Remote has a small speaker of its own, and what a game sends to it
 comes **out of the remote in your hand** rather than out of the television. Hold it close
 and it is louder; put it down across the room and it is faint, as it should be.
 
@@ -280,7 +280,7 @@ fetches it for you, so you do not need to build anything.
 
 ## The Wii Menu
 
-A Wii's equivalent of a BIOS is its **System Menu**, and since v0.9.0 RetroXR can install
+A Wii's equivalent of a BIOS is its **System Menu**, and RetroXR can install
 it for you. Open `OPTIONS` → **Cores** → **BIOS / Extras**, pick the **Nintendo Wii** tile,
 choose a region and install the **Wii System Menu** row. It needs the Dolphin core
 installed first, and it downloads through Dolphin's own online system update, so it takes
@@ -298,7 +298,7 @@ See [BIOS files](/guide/cores/bios/).
 	src="/video/wii/nunchuk.mp4"
 	poster={nunchukPoster}
 	alt="The remodeled Nunchuk rotating, showing its analog stick, the C and Z buttons on its underside, and the cable coming out of its base."
-	caption="The Nunchuk, remodeled in v0.4.0 from a laser scan of the real accessory, all of it except the stick. Thanks to Wesk of the BitBuilt forums for the scan."
+	caption="The Nunchuk, modeled from a laser scan of the real accessory, all of it except the stick. Thanks to Wesk of the BitBuilt forums for the scan."
 />
 
 Plug it into the **expansion port** on the base of the remote. Its stick and buttons work:
@@ -309,15 +309,8 @@ Plug it into the **expansion port** on the base of the remote. Its stick and but
 | **A / X button** | **C** |
 | **Trigger** | **Z** |
 
-Swing it, too: **the Nunchuk's own accelerometer works as of v0.4.0**, so games that ask
+Swing it, too: **the Nunchuk's own accelerometer works**, so games that ask
 you to jerk the Nunchuk read that motion rather than ignoring it.
-
-<Aside type="note" title="What that took">
-	Until v0.4.0 this was impossible rather than merely missing: libretro had no way to
-	express a *second* motion sensor on one controller port, so the Nunchuk's accelerometer
-	had nowhere to go. It works now because a sensor sub-index was added to libretro
-	upstream, and RetroXR's Dolphin fork reads it.
-</Aside>
 
 <Aside type="note" title="MotionPlus and the Nunchuk together">
 	The MotionPlus dongle passes the expansion port through, so the Nunchuk still plugs in
@@ -334,10 +327,6 @@ core manager's options for that core. See [downloading and managing
 cores](/guide/cores/downloading/).
 
 ## Still to come
-
-The Wii arrived in [v0.3.0](/blog/) and got most of its second pass in v0.4.0: a
-remodeled remote and Nunchuk, a working power button, the sideways grip and Nunchuk
-motion, which had been the big missing piece.
 
 :::note
 The Wii Remote and the Nunchuk have real shells, but the console, the sensor bar and

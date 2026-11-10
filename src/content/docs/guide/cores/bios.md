@@ -174,12 +174,14 @@ A few rows on a system's page fetch something libretro does not host:
 | **Nintendo 64** | Voice Recognition Unit speech: English / Japanese | The speech recognizer and language model the [VRU](/guide/platforms/nintendo-64/) needs to hear you in *Hey You, Pikachu!* and *Densha de Go! 64*. Each language is its own download. Without it the VRU still plugs in; it just cannot understand anything. |
 | **Wii** | Wii System Menu | Installs the Wii's home screen into Dolphin, by running Dolphin's own online system update. Pick the region on the row. Needs Dolphin installed first. |
 | **Game Boy / Game Boy Color** | Game Boy Printer | The [printer's](/guide/platforms/game-boy-printer/) own core. Without it the printer cannot be spawned. |
+| **Game Boy** | DMG-07 4 Player Adapter | The [four-player adapter's](/guide/platforms/game-boy/#four-players-the-dmg-07) own core. Without it, its spawn row says the core is missing. |
 
-Downloads on this view show a progress bar while they run.
+Downloads on this view show a progress bar while they run. Each core also
+has a **Download all** button that fetches every file it offers in one go.
 
 ## Booting to the BIOS
 
-Since v0.4.0, if a system's BIOS is on the device, RetroXR turns on that core's **show the
+If a system's BIOS is on the device, RetroXR turns on that core's **show the
 BIOS startup** option for you. A console you power on with no game in it comes up on
 its own firmware screen, the way it did on the shelf, instead of straight into nothing.
 
@@ -198,8 +200,8 @@ Some of the screens that unlocks:
 
 ## Files worth knowing by name
 
-Most systems list their files clearly in the BIOS view. These are the ones added since
-v0.6.0, or the ones people ask about:
+Most systems list their files clearly in the BIOS view. These are the ones people ask
+about most:
 
 | System | File | Folder | Required? |
 | --- | --- | --- | --- |
@@ -208,6 +210,9 @@ v0.6.0, or the ones people ask about:
 | Sega Saturn | `sega_101.bin` (Japan) or `mpr-17933.bin` (US/Europe) | `system/mednafen_saturn/` | **Required** |
 | Saturn Video CD Card | `mpeg_card.bin` | `system/mednafen_saturn/` | Required for the card (see below) |
 | PlayStation 2 | the PS2 BIOS dump | `system/pcsx2/bios/`, a **folder** rather than a single file | **Required** |
+| PlayStation 3 | `PS3UPDAT.PUP`, the system software update | `system/rpcs3/` | **Required** |
+| PocketStation | `pocketstation.bin` | `system/pokket/` | **Required** |
+| Sonic & Knuckles lock-on | `sk.bin` **and** `sk2chip.bin` | `system/genesis_plus_gx/` | Required for the lock-on cartridge |
 
 The link cables between two [Sega Saturns](/guide/platforms/sega-saturn/), two
 [PlayStation 2s](/guide/platforms/playstation-2/) and the other newer
@@ -216,8 +221,9 @@ The link cables between two [Sega Saturns](/guide/platforms/sega-saturn/), two
 ## Firmware that unlocks hardware
 
 Five of the [expansion units](/guide/playing/expansion-hardware/) are cartridges carrying a
-program, and that program is firmware you supply. Until the file is present the unit is not
-offered in the spawn menu at all, because without it there would be nothing to run.
+program, and that program is firmware you supply. The unit is always offered
+in the spawn menu, but without its file the spawn row shows a red **BIOS missing** line,
+and switching on a machine built with it is refused with a notice naming the missing file.
 
 | Unit | File | Folder |
 | --- | --- | --- |
@@ -227,7 +233,7 @@ offered in the spawn menu at all, because without it there would be nothing to r
 | BS-X | `BS-X.bin` | `system/snes9x/` |
 | Saturn Video CD Card | `mpeg_card.bin` | `system/mednafen_saturn/` |
 
-New in v0.5.0; the Video CD Card in v0.10.0. Seating the card in a Saturn turns the
+Seating the Video CD Card in a Saturn turns the
 core's MPEG card option on for you.
 
 ## Optional files

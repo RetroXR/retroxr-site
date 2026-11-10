@@ -42,6 +42,9 @@ into the hand that clicked. If a game has been scraped, its row also has a 📖 
 spawns the scanned manual as a book, a **flag** for the game's region, and a **number** for
 the disc it is in a multi-disc set.
 
+The search box covers every game across all systems, and matches system names and regional
+titles as well as the game's own name.
+
 With a [RomM server](/guide/connecting/romm/) connected, a source filter narrows the list
 to **All**, **Downloaded**, **Downloaded + local**, **Not downloaded** or **Local only**.
 *Downloaded + local* is everything you can spawn right now without waiting on the
@@ -57,16 +60,20 @@ second** instead of clicking it. See
 
 **DVDs**: your disc images, as DVDs.
 
-**Objects**: the hardware itself, meaning the VCR, the DVD player, the CD player and cassette
-deck, speakers, surround cabinets, a subwoofer, stands and an amplifier, the antenna, the
-TV remote, every kind of A/V cable, the RF switch, the Wii sensor bar, a table to stand
-things on, and the room's own props like the storage box.
+**Objects**: the hardware itself, meaning the VCR, the DVD player, the CD player, cassette
+player and vinyl player, speakers, surround cabinets, a subwoofer, stands and an amplifier,
+headphones, the antenna, the TV remote, every kind of A/V cable, the RF switch and the AV
+switch, power strips and adapters, the Wii sensor bar, a table to stand things on,
+somewhere to sit (a chair, stool, cushion, sofa or bed), the room's own props like the
+storage box, and any props from [mods](/guide/room/mods/) you have enabled.
 
-:::note[New in v0.5.0]
-The **table** is spawnable, and is no longer part of the arcade room by default. The room
-starts empty and you furnish it. The bin became a **storage box**: things dropped into it
-are animated away rather than simply disappearing.
-:::
+To get rid of something, drag it onto the **trash can** in the spawn menu, or use the
+delete button on its own menu. `SCENE` → **Objects** lists everything you have spawned, so
+you can find or delete it.
+
+The room starts empty and you furnish it, so even the **table** is something you spawn. The
+bin is a **storage box**: things dropped into it are animated away rather than simply
+disappearing.
 
 ![The Objects tab, listing spawnable hardware: trash can, VCR, DVD player, CD player, cassette player and more.](../../../../assets/screenshots/menu_spawn_objects.png)
 

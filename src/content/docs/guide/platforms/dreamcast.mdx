@@ -6,7 +6,7 @@ description: The Dreamcast and its Visual Memory Unit, with saves on a VMU you p
 import { Aside, Steps } from '@astrojs/starlight/components';
 
 The Dreamcast plays discs from `roms/dreamcast/` on **Flycast**: `.chd`, `.cdi`, `.gdi` or `.cue`, or
-an `.m3u` for a multi-disc game. As of **v0.9.0** it wears a modeled shell.
+an `.m3u` for a multi-disc game. It wears a modeled shell.
 
 Its spawn card offers the console's own accessories: the **Visual Memory Unit**, the **Jump
 Pack**, the **Microphone**, and Sega's **Stereo AV Cable**, which is the only lead that fits
@@ -21,8 +21,7 @@ folder), you get the console's own startup swirl and its system menu. See
 ## The VMU
 
 The Dreamcast saved to a **Visual Memory Unit**: a memory card with a screen and buttons,
-plugged into the top of the controller. RetroXR has had it since **v0.7.0**, and it is a
-real object, the same as a [PlayStation memory card](/guide/platforms/playstation/).
+plugged into the top of the controller. In RetroXR it is a real object, the same as a [PlayStation memory card](/guide/platforms/playstation/).
 
 <Steps>
 
@@ -68,7 +67,7 @@ it.
 A standalone VMU runs on the **VeMUlator** core; install it from `CORES` if the menu says
 it is missing. Whatever progress you make is carried back onto the card when you stop.
 
-As of **v0.9.0** VeMUlator also takes a **VMU BIOS**, either `en1005-19991026-315-6208-05.bin`
+VeMUlator also takes a **VMU BIOS**, either `en1005-19991026-315-6208-05.bin`
 (US) or `jp1004-19980930-315-6208-01.bin` (Japan), and with one the unit shows its own
 icons along the bottom of the screen. It is optional. Standalone VMUs also support save
 states and rollback [netplay](/guide/connecting/netplay/). RetroXR's VeMUlator build can
@@ -82,7 +81,7 @@ that has one. A VMU in slot 1 and the Jump Pack in slot 2 is what most players h
 
 ## The microphone
 
-As of **v0.8.0** the **Dreamcast Microphone** works, fed by your headset's (or PC's)
+The **Dreamcast Microphone** works, fed by your headset's (or PC's)
 microphone. It fits either expansion slot on the pad, and has no button of its own. Each
 game talks on a pad button, A in Seaman and Y in Alien Front Online.
 
@@ -96,7 +95,7 @@ consoles that have one.
 
 ## Naomi and Atomiswave
 
-Sega's arcade boards run on the same core, and as of **v0.9.0** each has a tile of its own
+Sega's arcade boards run on the same core, and each has a tile of its own
 in the spawn menu (**Naomi**, **Naomi 2** and **Atomiswave**) rather than being lumped
 in with the Dreamcast. Their BIOS files (`dc/naomi.zip`, `dc/naomi2.zip`, `dc/awbios.zip`
 and a few per-game ones) are listed on the [BIOS](/guide/cores/bios/) page.

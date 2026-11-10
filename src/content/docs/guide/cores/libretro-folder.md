@@ -73,10 +73,10 @@ A **cartridge** kept its save on its own chip, so the path is keyed by the game.
 card** is one image that every game on that console writes into. That is the entire point
 of a card, so it is keyed by the card instead.
 
-Neither path carries a core name. Since v0.8.0 a cartridge's battery is filed under the
+Neither path carries a core name. A cartridge's battery is filed under the
 **system** it belongs to, so it survives switching cores the way a real cartridge survives
 being moved to another console. It also means a Transfer Pak reads the same file a Game
-Boy playing that cartridge does. A card was always like that.
+Boy playing that cartridge does. A card works the same way.
 
 Three systems are the exception and still keep their saves per core: the **Nintendo 64**,
 the **64DD** and the **Famicom Disk System**. Their cores store saves in layouts that are

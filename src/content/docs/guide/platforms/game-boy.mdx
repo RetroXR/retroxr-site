@@ -25,7 +25,7 @@ Two accessories have pages of their own:
 
 ## Which machine a game runs as
 
-As of **v0.11.1** each machine runs as the hardware it is, whichever cartridge is in it:
+Each machine runs as the hardware it is, whichever cartridge is in it:
 
 - **An original Game Boy is an original Game Boy.** Its screen is drawn as the green
   dot-matrix LCD, in the DMG's four shades, rather than in whatever colors the core would
@@ -50,7 +50,7 @@ runs on mGBA, because it is the only one of the two that supports it.
 
 ## Cartridges in the right plastic
 
-As of **v0.9.0** a Game Boy cartridge is a modeled shell, and its color is read off the
+A Game Boy cartridge is a modeled shell, and its color is read off the
 ROM's own header, never guessed from the filename:
 
 | Cartridge | Shell |
@@ -88,9 +88,20 @@ CGB-003 and the adapter. Gambatte and mGBA speak the same link, so a Game Boy on
 and a Game Boy on the other link up happily. See [link cables](/guide/playing/link-cables/)
 for how leads work in general.
 
+## Four players: the DMG-07
+
+The **DMG-07 4 Player Adapter** is for the handful of games that link four Game Boys at
+once. It is both a core and an object in the room, so download it first
+from `CORES` → **BIOS / Extras**, under **Game Boy**. Until you do, its spawn row says the
+core is missing.
+
+Plug up to four Game Boys into it. They can be on **Gambatte** or **mGBA**. The adapter is
+powered while **player 1's plug** is in a Game Boy, as the real one drew its power from
+player 1.
+
 ## Infrared, on the Game Boy Color
 
-As of **v0.10.0** the Game Boy Color's **infrared port** works on both cores, for instance
+The Game Boy Color's **infrared port** works on both cores, for instance
 for Pokémon Gold and Silver's Mystery Gift. There is no lead: two Colors link while
 **each one's IR window can see the other's**.
 
@@ -105,8 +116,20 @@ for Pokémon Gold and Silver's Mystery Gift. There is no lead: two Colors link w
 These distances are far more forgiving than the hardware's, which wanted its partner a
 hand's width away and nearly dead ahead.
 
+## Batteries and the screen
+
+With [power simulation](/guide/room/power/) turned on, the original Game Boy runs on **C
+batteries** in the **DMG-05 Battery Case**, which holds four cells, or on an AC adapter in
+its DC IN. With power simulation off (the default) it simply runs.
+
+A **Game Boy LCD** settings tab adjusts how the screen is drawn, and a reflective handheld
+screen is lit by the room around it, so it gets harder to see in the dark. The Game Boy
+Advance SP's light button works.
+
+A Game Boy cartridge can also go into a GameCube's **Game Boy Player**, spawned from the
+GameCube's card. Pull a seated Game Pak straight out by hand.
+
 ## Netplay
 
 Both Game Boys support rollback netplay, and a linked pair plays over netplay too (see
-[netplay](/guide/connecting/netplay/)). Everyone in the session needs to be on **v0.11.1 or
-later** for a link to cross the network.
+[netplay](/guide/connecting/netplay/)).
