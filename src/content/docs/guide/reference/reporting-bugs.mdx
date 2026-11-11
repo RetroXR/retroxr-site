@@ -35,23 +35,30 @@ seat** in a socket, which is worth a look before reporting "it will not plug in"
 ### The easy way: the web file manager
 
 RetroXR writes its log to a file on the headset, and the
-[web file manager](/guide/adding-games/) can show it without a cable or `adb`.
+[web file manager](/guide/adding-games/) can show it in a browser, with no cable and no
+`adb`.
 
 <Steps>
 
-1. Turn on **Web File Manager** in `OPTIONS` and open the address it shows from a browser
-   on your network.
+1. Turn on **Web File Manager** in `OPTIONS`. Note the address and the 4-digit PIN that
+   appear under it.
 
-2. Press **Show game log** to watch it live while you reproduce the problem, or
-   **Save game log** to download the whole file.
+2. On a computer or phone on the same network, open that address in a browser and enter
+   the PIN.
 
-3. Attach the saved file to your report.
+3. Press **Game log**, at the top right of the page. A panel opens with the log in it,
+   marked **live**: it updates every second while the app runs, and stays at the bottom
+   unless you scroll up. Keep it open while you reproduce the problem.
+
+4. Press **Save** to download the whole log as a file (named like
+   `retroxr-2026-11-11T20-15-00.log`), and attach it to your report.
 
 </Steps>
 
-The file covers the current run of the app. If RetroXR crashed outright, restart it and
-save the log *before* doing anything else, or use `adb` below. A crash in the middle of
-something is exactly what the next run's log will not contain.
+The log covers the **current run** of the app only. Each launch starts a fresh one, and the
+live panel starts over when it does. So if RetroXR crashed outright, the moment of the
+crash is in the run that died, which a restarted app no longer shows. For a crash, leave
+the panel open *while* you reproduce it, or use `adb` below.
 
 ### With adb
 
