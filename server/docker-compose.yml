@@ -18,12 +18,20 @@ services:
       - "8080"
 
   noray:
-    # Pinned to a digest, not the moving :main tag. noray's Bun runtime has
-    # segfaulted three times in a week (Aug 25/26/28 2026), and a moving tag
-    # means the binary that crashed is not necessarily the binary that comes
-    # back - which makes every recurrence a new investigation. This digest is
-    # the one verified working on 2026-08-31.
-    image: ghcr.io/foxssake/noray@sha256:6b948c584c46f9b1bf60bb76f2c20bf397733505105730b91af006da3118f6b2
+    # Pinned to a digest, not the moving :main tag, so the binary that crashed is
+    # the binary that comes back and every incident is not a new investigation.
+    #
+    # This is e5a9ff7 (2026-09-20), the fix for noray#81: every register-host
+    # leaked an event listener that was never removed, until noray accepted TCP
+    # and stopped answering. The digest it replaced (verified 2026-08-31)
+    # predated the fix, and this stack's own probes register a host every
+    # minute, so the server was feeding the leak itself: 94 crash-and-repair
+    # cycles in the 30 days to 2026-11-18, about three a day.
+    #
+    # Still open upstream as of this pin: noray#86, where all connections share
+    # one parser buffer, so one client sending a stray quote can wedge it. The
+    # watchdog is what covers that.
+    image: ghcr.io/foxssake/noray@sha256:bddf39cd5abb0388ddf90397aa50c98113eb7ed70e5420671df2483959d6b54b
     restart: unless-stopped
     # Speak the protocol. noray fails by accepting TCP, parsing register-host,
     # logging the registration, and never writing set-oid back - so a port
@@ -36,7 +44,11 @@ services:
       # inside a JavaScript string literal, and the check would fail to parse -
       # reporting the container unhealthy for a reason that is not noray.
       test: ["CMD", "bun", "-e", "const s=require('node:net').connect(8890,'127.0.0.1');s.setTimeout(5000);let b='';s.on('connect',()=>s.write('register-host'+String.fromCharCode(10)));s.on('data',d=>{b+=d;if(b.includes('set-oid')){s.destroy();process.exit(0)}});s.on('timeout',()=>process.exit(1));s.on('error',()=>process.exit(1));s.on('close',()=>process.exit(1))"]
-      interval: 60s
+      # Every ten minutes, not every minute. Each probe is a real register-host,
+      # and the watchdog already sends one a minute and repairs on failure; this
+      # check is only here so `docker compose ps` tells the truth, and doubling
+      # the probe traffic is how the listener leak above was fed twice as fast.
+      interval: 10m
       timeout: 15s
       retries: 3
       start_period: 30s

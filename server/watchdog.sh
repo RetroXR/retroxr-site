@@ -85,6 +85,20 @@ echo "$now" > "$STAMP"
 
 log "noray is not answering register-host - taking the stack down and back up"
 cd "$COMPOSE_DIR" || { log "no compose dir at $COMPOSE_DIR"; exit 1; }
+
+# Keep the evidence. `down` deletes the container and its log with it, so until
+# this was added every repair destroyed the only record of what noray was doing
+# when it died - 94 of them in a month, none explained. The tail goes to the
+# journal under its own tag, with addresses masked: which players were online
+# is not something this server keeps.
+#
+# IPv4 first, then IPv6 as anything holding "::" or three or more colons - a
+# looser IPv6 pattern also eats clock times like 12:34:56 inside messages.
+docker compose logs --no-color --timestamps --tail=60 noray 2>&1 |
+	sed -E -e 's/[0-9]{1,3}(\.[0-9]{1,3}){3}/x.x.x.x/g' \
+		-e 's/[0-9a-fA-F:]*::[0-9a-fA-F:]*/x::x/g' \
+		-e 's/([0-9a-fA-F]{1,4}:){3,7}[0-9a-fA-F]{1,4}/x::x/g' |
+	logger -t rendezvous-noray-last-words
 docker compose down >/dev/null 2>&1
 docker compose up -d >/dev/null 2>&1
 sleep 15

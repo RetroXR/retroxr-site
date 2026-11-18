@@ -188,9 +188,15 @@ is the outage outliving it:
 
 - **The image is pinned to a digest**, so a recurrence is not also a new binary.
   `ghcr.io/foxssake/noray:main` is a moving tag and made every incident a fresh
-  investigation.
+  investigation. The pin moved on 2026-11-18 to `e5a9ff7`, the fix for
+  [noray#81](https://github.com/foxssake/noray/issues/81): every `register-host`
+  leaked a listener until noray stopped answering. The old pin predated it, and
+  the stack's own probes register a host every minute, so the server fed the
+  leak itself: 94 crash-and-repair cycles in the 30 days before the move.
 - **noray has a healthcheck that speaks the protocol**, so `docker compose ps`
-  stops lying. It reports `(healthy)` only on a `set-oid` reply.
+  stops lying. It reports `(healthy)` only on a `set-oid` reply. It runs every
+  ten minutes, not every minute: the watchdog already probes each minute, and
+  every probe is a real registration.
 - **`rendezvous-watchdog.timer` runs the same check every minute** and repairs
   with `down`/`up`. Both it and the deploy take `/var/lock/rendezvous-deploy.lock`:
   without that they race, because a deploy's `down` looks exactly like the outage
@@ -203,6 +209,18 @@ is the outage outliving it:
 systemctl list-timers rendezvous-watchdog.timer
 journalctl -t rendezvous-watchdog --since today
 ```
+
+Before each repair the watchdog copies the last 60 lines of noray's log into
+the journal, addresses masked, because `down` deletes the container and the log
+with it. Until that existed every repair destroyed its own evidence.
+
+```sh
+journalctl -t rendezvous-noray-last-words --since '7 days ago'
+```
+
+Still open upstream: [noray#86](https://github.com/foxssake/noray/issues/86),
+where every connection shares one parser buffer, so a single client sending a
+stray quote character can wedge noray for everybody. The watchdog covers it.
 
 The watchdog logs and gives up rather than looping when a repair does not take,
 so `noray did NOT come back after down/up` in that journal means the crash has
