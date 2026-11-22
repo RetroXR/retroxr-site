@@ -1,0 +1,167 @@
+---
+title: Arcade cabinets
+description: Cabinets for arcade, Neo Geo, DICE and Laserdisc games, including one that rebuilds its controls for whatever game you insert, and how to open them, put coins in and cable a NAOMI.
+sidebar:
+  order: 1
+---
+
+import Turntable from '../../../../components/Turntable.astro';
+import openPoster from '../../../../assets/arcade/arcade_open_poster.png';
+import coinsPoster from '../../../../assets/arcade/arcade_coins_poster.png';
+import nncPoster from '../../../../assets/arcade/naomi_jvs_new_net_city_poster.png';
+import bcPoster from '../../../../assets/arcade/naomi_jvs_blast_city_poster.png';
+
+Arcade games do not come out as cartridges. They come out as the hardware they were sold
+as, and they go into a cabinet:
+
+| System | The game is | Its cabinet |
+| --- | --- | --- |
+| **MAME** and **Arcade** | a **JAMMA board** | the Morphing Arcade Cabinet |
+| **DICE** | a **JAMMA board** | a simple arcade cabinet |
+| **Neo Geo** | a **Neo Geo MVS cartridge** | a simple Neo Geo cabinet |
+| **Laserdisc** | a disc | a simple arcade cabinet |
+
+## Putting a game in
+
+Each cabinet has a **bay** made of a disc reader, for MAME CHDs, and a **JAMMA docking
+board**. Insert the board or cartridge, and the cabinet **skins itself from the game**:
+its top and sides take the game's scraped art. See [box art](/guide/connecting/box-art/)
+for scraping.
+
+The simple cabinets have **two controller plugs**, which take any controller-type device.
+
+## Opening a cabinet
+
+A cabinet's doors swing on hinges, and you take each one by its handle:
+
+- **In VR**, put a hand on the handle, pull the **trigger** and swing the door with your
+  hand.
+- **On desktop**, aim at the handle until the open-hand icon shows, hold the **left mouse
+  button** (the icon becomes a fist) and roll the **scroll wheel**: up opens, down closes.
+
+The Morphing Arcade Cabinet has two. The **coin panel** under the controls carries the coin
+doors, and behind it is the **cash box**: every coin you put in drops into its tray. The
+tray slides out on its rail with its coins in it, can be carried off, and goes back in. The
+coins in it are saved with the room. The **bay door** below opens on the board. A board
+only goes in or comes out while that door is open.
+
+<Turntable
+	src="/video/arcade/arcade_open.mp4"
+	poster={openPoster}
+	alt="A Morphing Arcade Cabinet dressed for 1942. The desktop reticle takes the coin panel under the controls and swings it open; the steel cash tray behind it is drawn out with coins in it and slid back, and the panel is shut. Then the bay door below drops open on the JAMMA board standing in its bay."
+	caption="Opening the Morphing Arcade Cabinet on desktop: the coin panel and its cash tray, then the bay door on the board."
+/>
+
+For games that read them, the bay also holds the **TEST** and **SERVICE** switches and an
+operator's selector, for the game's own settings menu.
+
+## Putting in coins
+
+A coin is a credit, as on the real thing, and the coin doors are the only way in for one.
+
+- **In VR**, bring a free hand to the slot. A token appears pinched at your fingertip; push
+  it through the slot.
+- **On desktop**, aim at the slot until the coin icon shows, and click. A token flies in
+  from the corner of the view.
+
+You hear it scrape in and land in the cash box, and that is the moment the game counts it.
+Tokens are free and never run out, and loose ones (from the cash box) go into a slot the
+same way. A coin put into a cabinet that is only showing its game starts the real one. The
+slot's lamp blinks while the game is starting, and the coins are counted as soon as it is
+up. The **coin return** button on the coin door gives back any coin the game has not
+counted yet, into the door's return cup.
+
+<Turntable
+	src="/video/arcade/arcade_coins.mp4"
+	poster={coinsPoster}
+	alt="A Morphing Arcade Cabinet dressed for 1942, playing the game's attract video. The view drops to the coin door, the reticle settles on the slot and a coin icon appears, and two clicks send two tokens flying in from the lower corner of the view and sliding into the slot."
+	caption="Two tokens clicked into a coin slot on desktop."
+/>
+
+## The Morphing Arcade Cabinet
+
+Arcades used all sorts of hardware beyond a stick and buttons. The Morphing Arcade
+Cabinet reads MAME's lists and **rebuilds its controls for the game you insert**. Put in a
+shooter and it grows guns; put in a racing game and it grows a wheel.
+
+It knows guns, driving wheels, motorbikes, boards, dance pads, taiko drums, guitars, DJ
+stations, a rifle with a scope, a plane cockpit and rolling balls. Some cabinets come with
+a **racing seat**, and some of those seats move.
+
+The shapes are approximations, not copies of the original cabinets. If a cabinet morphs
+wrong for a game, or a game needs hardware it does not grow, please
+[open an issue](https://github.com/RetroXR/RetroXR/issues). And if you are a 3D artist,
+contributions to make the cabinets more faithful are very welcome.
+
+## Attract mode
+
+A switched-on cabinet plays the game's **scraped video**, the way a real cabinet loops its
+attract sequence. The emulator is not running yet, which keeps a room full of cabinets
+cheap. It starts when you grab a controller, press a button or insert a coin.
+
+Attract mode can be turned off on a single cabinet's menu, or for every cabinet in
+`OPTIONS`.
+
+## Using the screen for something else
+
+Every cabinet has a **component input**, so any other console can be cabled to it and
+played on the cabinet's screen. The input is bypassed while the JAMMA or Neo Geo bay has a
+game in it, so take the game out to use it.
+
+## Sega's NAOMI cabinets
+
+Four of Sega's own cabinets are on [mod.io](/guide/room/mods/): **Sega Blast City**,
+**Sega Aero City**, **Sega New Net City** and **Sega NAOMI Universal**. Once installed they
+are on the **Naomi** and **Arcade** cards in the spawn menu. Each comes with a **NAOMI
+board** in its bay, cabled up the way it would leave the factory. Its game goes on the
+board: a NAOMI cartridge, or the DIMM board with its key chip and a GD-ROM drive cabled to
+it, with the disc in the drive. More mods on mod.io give the NAOMI, the JVS boards and the
+GD-ROM set their real looks; without them RetroXR draws its own stand-ins.
+
+A NAOMI is a board on its own, and every cord between it and the cabinet does a job. Take
+one out and that part of the cabinet stops, as it would on the real hardware:
+
+| Cord | From the NAOMI to | Without it |
+| --- | --- | --- |
+| **Power** | the cabinet's supply | nothing works |
+| **VGA** | the monitor | a black screen |
+| **Audio** (two phono plugs) | the amplifier | silence, one channel per plug |
+| **JVS** (a USB cable) | the cabinet's I/O board, or the converter | the controls and the coin slots do nothing |
+
+### JVS cabinets: New Net City and NAOMI Universal
+
+These were made for the NAOMI. Their controls and coin switches are wired to a **JVS I/O
+board**, and the JVS cable runs from the NAOMI's USB-A socket to the I/O board's USB-B. On
+New Net City the board is in the base, behind the rear hatch.
+
+<Turntable
+	src="/video/arcade/naomi_jvs_new_net_city.mp4"
+	poster={nncPoster}
+	alt="The back of a Sega New Net City. The rear hatch in its base swings open on the NAOMI board, with its cords and the green JVS I/O board in front of it. The JVS cable's USB-A plug is pushed into the NAOMI's JVS socket beside the phono and VGA plugs, and the view follows the cable to its other end in the I/O board."
+	caption="New Net City: the rear hatch opened, and the JVS cable plugged into the NAOMI. Its other end is in the I/O board."
+/>
+
+### JAMMA cabinets: Blast City and Aero City
+
+These are older JAMMA cabinets, wired to a **JAMMA harness** rather than an I/O board. A
+NAOMI goes into one through a **JVS-to-JAMMA converter**, as it did in an arcade: the
+NAOMI's JVS cable goes into the converter, and the cabinet's JAMMA harness goes on the
+converter's edge. The VGA cable can go to the monitor or into the converter. On Blast City
+the converter stands on the floor behind the front left door, under the board's shelf, with
+its JVS socket at the back.
+
+<Turntable
+	src="/video/arcade/naomi_jvs_blast_city.mp4"
+	poster={bcPoster}
+	alt="The front of a Sega Blast City. The left door under the control panel swings open on the NAOMI board on its shelf, and the view drops under the shelf to the JVS-to-JAMMA converter on the floor beside the power supply. The NAOMI's JVS cable comes down into the back of the converter, and the cabinet's JAMMA harness, rainbow wires on a blue edge connector, is joined to the converter's edge."
+	caption="Blast City: the board door opened, and the JVS-to-JAMMA converter under the board's shelf, with the NAOMI's JVS cable going into its back and the cabinet's JAMMA harness on its edge."
+/>
+
+A fresh cabinet comes with all of this already plugged in. The videos show where each
+plug goes if you take the board out or pull a cord. The NAOMI Universal's board sits on a
+tray that slides out of the cabinet; unplug its cords first, as you would on the real one.
+
+## Somewhere to sit
+
+A chair, a stool, a cushion, a sofa and a bed can all be spawned from `SPAWN` → **Objects**,
+whether or not there is a cabinet to sit at.
