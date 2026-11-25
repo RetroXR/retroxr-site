@@ -1,6 +1,8 @@
 ---
 title: Mods
 description: Browse and install mods from inside RetroXR, such as consoles, cartridges, rooms and props published on mod.io, and learn what a mod is and is not allowed to be.
+sidebar:
+  order: 20
 ---
 
 RetroXR has a **mod browser**. Mods add to the room (modeled consoles
@@ -90,7 +92,9 @@ in the browser.
 
 ## Making mods
 
-Mods are made in Godot, inside a checkout of RetroXR. The
-**[modding guide](https://github.com/RetroXR/RetroXR/blob/master/docs/modding.md)** covers
-the lot: the manifest, adding or replacing a console, cartridge shells, rooms and props,
-building a pack and publishing it on mod.io.
+Mods are made in Godot, inside a copy of the RetroXR project.
+**[Making a mod](/guide/room/making-mods/)** takes you through it step by step: setting up,
+starting a mod, building it, trying it in the game and publishing it on mod.io. The
+**[modding reference](https://github.com/RetroXR/RetroXR/blob/master/docs/modding.md)**
+covers what a mod can do: the manifest, adding or replacing a console, cartridge shells,
+rooms and props.

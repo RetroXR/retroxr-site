@@ -1,0 +1,164 @@
+---
+title: Making a mod
+description: Set up Godot and the RetroXR project, make a mod, build it into a pack, try it in the game and publish it on mod.io, step by step, with fixes for the errors people hit first.
+sidebar:
+  order: 21
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+A mod is a folder of models, scenes, pictures, sound and scripts, built into **one `.zip`
+file**. This page takes you from nothing installed to a mod on
+[mod.io](https://mod.io/g/retroxr). What a mod can *do* (add a console, a cartridge, a room,
+a prop, replace something RetroXR ships) is covered in the
+**[modding reference](https://github.com/RetroXR/RetroXR/blob/master/docs/modding.md)**.
+
+## What you need
+
+- **Godot 4.7.2**, the version RetroXR is built with, from the
+  [Godot download archive](https://godotengine.org/download/archive/). On Windows the
+  download has two programs: `Godot_v4.7.2-stable_win64.exe` (the editor) and
+  `Godot_v4.7.2-stable_win64_console.exe`. Use the **console** one for every command on
+  this page: it waits and prints in your terminal, where the other returns at once and its
+  messages go nowhere.
+- **Python 3**, for the script that starts a new mod. On Windows, if `python` opens the
+  Microsoft Store or is "not recognized", install it from
+  [python.org](https://www.python.org/downloads/) and tick **Add Python to PATH**.
+- **The RetroXR project**, from [GitHub](https://github.com/RetroXR/RetroXR). Either
+  `git clone` it with [Git LFS](https://git-lfs.com) installed (run `git lfs install` once,
+  before cloning: the game's models are LFS files), or press **Code → Download ZIP** and
+  unpack it.
+
+## Why you work inside RetroXR
+
+A mod is made inside the game's own project, not a Godot project of your own. Your scripts
+extend the game's classes and use its autoloads, and your models and textures have to be
+imported with the game's settings. Only the real project has all of that. Your work-in-progress
+mods live in the project's `mods/` folder, which never ends up in a build of the game.
+
+## Which folder is which
+
+```
+RetroXR-master/                        the folder you cloned or unpacked
+├── Tools/mods/new_mod.py              starts a new mod
+└── RetroXR/                           THE GODOT PROJECT: it holds project.godot
+    ├── project.godot
+    ├── DevTools/mods/pack_mod.gd      builds a mod into a pack
+    └── mods/<your id>/                your mod
+```
+
+Two folders matter, and they are easy to confuse. The outer one is what you downloaded. The
+inner **`RetroXR`**, the one with `project.godot` in it, is the Godot project: that is the one
+you open in the Godot editor, and the one every `--path` below names.
+
+The commands give every path in full, so they work from any folder. They use
+`D:\RetroXR-master`; put the folder you downloaded to in its place, and the full path to your
+Godot console program in place of `Godot_v4.7.2-stable_win64_console.exe` if it is not on
+your PATH.
+
+## Making your first mod
+
+<Steps>
+
+1. **Import the project.** Open `RetroXR\project.godot` in the Godot editor and wait for the
+   import to finish, or run:
+
+   ```powershell
+   Godot_v4.7.2-stable_win64_console.exe --headless --path D:\RetroXR-master\RetroXR --import
+   ```
+
+   The first import of a fresh download takes several minutes. Do it again whenever you add
+   or change a model, texture or sound in your mod.
+
+2. **Start your mod.**
+
+   ```powershell
+   python D:\RetroXR-master\Tools\mods\new_mod.py you.mymod --name "My Mod" --author "You"
+   ```
+
+   That makes `RetroXR\mods\you.mymod\` with a `mod.json` and a `mod_main.gd` in it.
+   `you.mymod` is your mod's **id**: lower-case, no spaces, starting with a name of your own.
+   Keep it for good, since the id is how RetroXR knows a new upload is an update. Every id your
+   mod registers starts with it too, like `you.mymod:console`.
+
+3. **Fill it in.** Put your models, scenes and scripts in the mod's folder, and register
+   them in `mod_main.gd` (the [reference](https://github.com/RetroXR/RetroXR/blob/master/docs/modding.md)
+   has a section for each kind of thing). Everything has to stay inside `mods/you.mymod/`:
+   RetroXR refuses a pack with files anywhere else.
+
+4. **Add a preview image.** `thumbnail.png` in the mod's folder, **16:9 and at least
+   512×288** (1280×720 is usual). It is your mod's tile in RetroXR and its logo on mod.io.
+   No thumbnail, no pack.
+
+5. **Build it.** Import again if you added assets, then:
+
+   ```powershell
+   Godot_v4.7.2-stable_win64_console.exe --headless --path D:\RetroXR-master\RetroXR --script res://DevTools/mods/pack_mod.gd -- --id=you.mymod
+   ```
+
+   `--script` is the packer's path *inside* the project, which is why it starts `res://`. It
+   writes `you.mymod.zip` straight into your [mods folder](/guide/room/mods/#installing-by-hand),
+   so **building is also installing**, and then reads the pack back the way the game will,
+   refusing to finish if RetroXR could not load it. Add `--out=D:\somewhere\you.mymod.zip`
+   to write it somewhere else instead.
+
+6. **Try it.** In RetroXR, open **MODS → Installed**, enable your mod and press **Apply now**.
+   Anything wrong with it is listed on its page there. For a Quest, copy the zip to the
+   headset's mods folder, for example with
+   `adb push you.mymod.zip /sdcard/Android/data/com.xenu.retroxr/files/mods/`.
+
+</Steps>
+
+To check a zip you already have, made by the packer or some other way:
+
+```powershell
+Godot_v4.7.2-stable_win64_console.exe --headless --path D:\RetroXR-master\RetroXR --script res://DevTools/mods/pack_mod.gd -- --check=D:\full\path\to\you.mymod.zip
+```
+
+Give the zip's **full path**: Godot runs from inside the project folder, so a bare
+`you.mymod.zip` is looked for there.
+
+## Publishing on mod.io
+
+RetroXR's mod browser lists what is published at
+**[mod.io/g/retroxr](https://mod.io/g/retroxr)**. Add your mod there, then:
+
+- Upload the **`.zip` itself**, not a zip with your pack inside it.
+- Use your `thumbnail.png` as the logo. The name, summary and logo on your mod.io page are
+  what players see before they download; your `mod.json` is what they see after.
+- **Updates:** keep the same id, raise `version` in `mod.json`, build again and upload the
+  new zip. RetroXR offers it as an update to the one installed.
+- If your mod needs other mods (`dependencies` in `mod.json`), add the same mods as
+  **dependencies on its mod.io page**: that list, not your `mod.json`, is what the game
+  downloads with it.
+- A new upload shows as *Being scanned by mod.io* until mod.io's scan finishes.
+
+A mod may not carry a game or a program. See
+[what a mod may not contain](/guide/room/mods/#what-a-mod-may-not-contain); notes in
+particular go in as `.txt`, because `.md` is also a Mega Drive ROM extension and is refused.
+
+<Aside type="caution">
+RetroXR changes fast, and mods are expected to break when it updates. Build against the
+latest RetroXR, and check your mod again after each release.
+</Aside>
+
+## When a command fails
+
+- **Dozens of `Parse Error`s, such as `Could not find type "ModManifest"` or
+  `Identifier "JsonStore" not declared`.** Godot could not see the game's code. Either
+  `--path` is not the folder holding `project.godot` (a common slip is giving it the folder
+  the packer is in, or the outer download folder), or the project has never been imported:
+  do step 1.
+- **Nothing printed, and the prompt came back at once.** That was the editor program; use
+  the one ending `_console.exe`.
+- **`Failed to load script "res://..."`.** The `--script` path is wrong. It is
+  `res://DevTools/mods/pack_mod.gd`; a download from before 20 November 2026 has it at
+  `res://Tools/mods/pack_mod.gd` instead.
+- **`... is not imported yet` or `has no .import`.** Run the import (step 1) again.
+- **`python` is "not recognized" or opens the Microsoft Store.** Install Python from
+  python.org with **Add Python to PATH** ticked, and open a new terminal.
+- **The game's own models are missing or tiny.** The `.glb` files were not fetched from Git
+  LFS: run `git lfs pull` in your clone. A GitHub zip has them only if the repository
+  includes LFS files in its archives.
+- **The mod is not listed under MODS → Installed.** The zip is not in the mods folder of the
+  copy of RetroXR you are running, or it was built with `--out` somewhere else.
